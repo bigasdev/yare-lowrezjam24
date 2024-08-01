@@ -1,0 +1,64 @@
+#include "Projectile.hpp"
+#include "../Utils/Math.hpp"
+#include "../Renderer/ParticleSystem.hpp"
+#include "EntityParty.hpp"
+#include "../Entity/Hero.hpp"
+
+Projectile::Projectile() {}
+
+Projectile::Projectile(Resources *_res, float _scale) : Entity(_res, _scale) {
+  m_speed = 0.5f;
+  m_friction = .94f;
+  lifeTime = 1;
+  
+  add_sprite_animation(SpriteAnimation{"idle", {0,2}, 3, 0.15f, get_current_sprite()});
+  set_animation("idle");
+  m_tag = Tag::BULLET;
+}
+
+Projectile::~Projectile() { delete this; }
+
+void Projectile::reset() {
+  m_speed = 0.5f;
+  m_friction = .94f;
+  lifeTime = 1;
+}
+
+void Projectile::fixed_update(double deltaTime) {
+  m_pos += m_velocity * m_speed * deltaTime;
+
+  m_current_animation.update(deltaTime);
+
+  auto fric = Math::pow(m_friction, deltaTime);
+  m_speed *= fric;
+
+  lifeTime -= deltaTime;
+
+  if (lifeTime <= 0) {
+    kill();
+  }
+
+  // Collision
+  if (b_tag == ProjectileTag::PROJECTILE_HERO) {
+    for (auto mob : *g_enemies) {
+      if (is_colliding(mob)) {
+        mob->hit(-100, this);
+        g_particle_system->grab_example(mob->get_pos() + vec2f(20, 25),
+                                        m_angle);
+
+        set_enable(false);
+      }
+    }
+  }
+
+  if (b_tag == ProjectileTag::PROJECTILE_ENEMY) {
+    if (is_colliding(g_hero)) {
+      l_hero->hit(-10, this);
+
+      set_enable(false);
+    }
+  }
+}
+
+void Projectile::update(double deltaTime) {
+}
