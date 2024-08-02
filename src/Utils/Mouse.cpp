@@ -10,6 +10,12 @@ bool Mouse::is_at_area(Area pArea) {
   return mouseArea.intersects(pArea);
 }
 
+Area Mouse::get_mouse_area() {
+  int x = 0, y = 0;
+  SDL_GetMouseState(&x, &y);
+  return Area(x - 4, y - 4, 8, 8);
+}
+
 vec2f Mouse::get_mouse_pos() {
   int x = 0, y = 0;
   SDL_GetMouseState(&x, &y);

@@ -36,7 +36,7 @@ bool mouse_press = false;
 struct MenuOption {
   std::string name;
   float x;
-  float *y;
+  float y;
 };
 
 std::vector<MenuOption> options;
@@ -65,8 +65,8 @@ void MainScene::init() {
 
   MenuOption play;
   play.name = "Play";
-  play.x = 20;
-  play.y = m_app->get_window_y();
+  play.x = 5;
+  play.y = 32;
   options.push_back(play);
 }
 
@@ -76,14 +76,14 @@ void MainScene::update(double deltaTime) {
 
   for (auto &option : options) {
     if (Mouse::is_at_area(
-            {20, *option.y - (*option.y / 2 + 100), 200, 50})) {
+            {option.x, option.y, 45, 5})) {
       if (mouse_press) {
         g_app->change_scene(game_scene);
       }
 
-      option.x = Math::move_to(option.x, 23, 25.5f * deltaTime);
+      option.x = Math::move_to(option.x, 8, 5.5f * deltaTime);
     }else{
-      option.x = Math::lerp(option.x, 20, 12.f * deltaTime);
+      option.x = Math::lerp(option.x, 5, 2.f * deltaTime);
     }
   }
 }
@@ -95,11 +95,15 @@ void MainScene::draw() {
 #if F_ENABLE_IMGUI
   GUI::draw([this]() { this->ui(); });
 #endif
+#if F_ENABLE_DEBUG
+  Area mouse = Mouse::get_mouse_area();
+  Gizmos::draw_area({mouse.x,mouse.y}, mouse.h, m_atlas, {0,255,0});
+#endif
 
   for (auto &option : options) {
-    m_atlas->draw_text({option.x, *option.y - (*option.y / 2 + 100)},
+    m_atlas->draw_text({option.x, option.y},
                        option.name.c_str(), m_app->get_main_font(),
-                       {255, 255, 255, 255}, 2.f);
+                       {255, 255, 255, 255}, 1.f);
   }
 
   m_atlas->draw_text({5, 52},

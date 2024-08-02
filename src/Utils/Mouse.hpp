@@ -7,6 +7,7 @@
 namespace Mouse {
 
 bool is_at_area(Area pArea);
+Area get_mouse_area();
 vec2f get_mouse_pos();
 float get_mouse_angle(vec2f pos);
 
