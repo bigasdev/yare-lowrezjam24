@@ -56,9 +56,6 @@ LightSystem *m_light_system = nullptr;
 
 // Test purpouses
 // FIX: always remember to remove stuff from here
-bool m_filter_tilt = false;
-int m_filter_tilt_amnt = 0;
-Entity *test_light = nullptr;
 
 GameScene::GameScene(App *app, Logger *logger, Cooldown *cooldown,
                      Camera *camera)
@@ -107,15 +104,6 @@ void GameScene::load_assets() {
     e->set_collision_box({{2, 2}, {10, 11}});
     e->init();
   }
-
-  test_light = m_fort->recruit<Entity>(m_resources, m_atlas->get_game_scale());
-  test_light->set_pos(1200, 400);
-  test_light->get_current_sprite()->texture =
-      m_resources->get_aseprite_texture("character_atlas");
-  test_light->get_current_sprite()->xpu = 8;
-  test_light->get_current_sprite()->ypu = 8;
-  test_light->get_current_sprite()->x = 0;
-  test_light->get_current_sprite()->y = 8;
 }
 
 void GameScene::init() {
@@ -132,7 +120,6 @@ void GameScene::init() {
   g_fort = m_fort;
   g_projectile_system = m_projectile_system;
   g_particle_system = m_particle_system;
-  g_grid = 8;
   g_ALL = &visible_entities;
   g_enemies = &visible_enemies;
   // example of castle db loading
@@ -147,7 +134,6 @@ void GameScene::init() {
   m_input_manager->bind_keyboard(SDLK_a, &g_hero->actions.left);
   m_input_manager->bind_keyboard(SDLK_d, &g_hero->actions.right);
   m_input_manager->bind_keyboard(SDLK_e, &g_hero->actions.interact);
-  m_input_manager->bind_keyboard(SDLK_SPACE, &m_filter_tilt);
   m_input_manager->bind_keyboard(SDLK_SOFTLEFT, &g_hero->actions.roll);
 
   m_input_manager->bind_mouse(&g_hero->actions.attack, nullptr, nullptr);
@@ -167,16 +153,6 @@ void GameScene::update(double deltaTime) {
 
   m_particle_system->update(deltaTime);
   m_light_system->update(deltaTime);
-
-  test_light->set_pos(g_hero->get_pos().x + 25, g_hero->get_pos().y);
-
-  if (m_filter_tilt) {
-    m_filter_tilt_amnt++;
-    if (m_filter_tilt_amnt > 100) {
-      m_filter_tilt = false;
-      m_filter_tilt_amnt = 0;
-    }
-  }
 
   ui_partial_scene->update(deltaTime);
   if(!m_cd->has_state("update_drawing")){
@@ -222,8 +198,6 @@ void GameScene::draw() {
     m_atlas->draw_from_sheet(e, m_camera);
     e->draw(m_resources);
   }
-
-  m_atlas->draw_screen_filter(155, 0, 125, m_filter_tilt_amnt);
 
   m_particle_system->draw();
   m_light_system->draw(m_atlas, m_camera);

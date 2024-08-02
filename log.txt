@@ -49,11 +49,1444 @@ Aseprite : concept
 Loaded resources and utils!...
 Adding components to globals
 Finished loading!...
-Loading time : 161ms
+Loading time : 201ms
 ----------------------------------
-why
-why
-why
-why
-why
+ERROR : Texture framework not found!
+0
+0
+Animation : idle
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+ERROR : Texture framework not found!
+Animation : walk
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+ERROR : Texture framework not found!
+0
+Animation : idle
+Animation : idle
 App cleaned!

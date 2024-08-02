@@ -79,7 +79,6 @@ void MainScene::update(double deltaTime) {
                         m_app->get_window_size().y)) {
     if (mouse_press && !m_cd->has_state("open_bigas")) {
       m_cd->set_state("open_bigas", 10.f, [&] {
-          F_Debug::log("why");
       });
       system("start https://bigasdev.net/?tab=home");
     }
