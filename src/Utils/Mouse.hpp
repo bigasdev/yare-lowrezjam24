@@ -6,8 +6,8 @@
 #include "SDL.h"
 namespace Mouse {
 
-bool is_at_area(Area pArea);
-Area get_mouse_area();
+bool is_at_area(Area pArea, int width, int height);
+Area get_mouse_area(int width, int height);
 vec2f get_mouse_pos();
 float get_mouse_angle(vec2f pos);
 

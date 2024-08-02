@@ -76,7 +76,7 @@ void MainScene::update(double deltaTime) {
 
   for (auto &option : options) {
     if (Mouse::is_at_area(
-            {option.x, option.y, 45, 5})) {
+            {option.x, option.y, 45, 5}, m_app->get_window_size().x, m_app->get_window_size().y)) {
       if (mouse_press) {
         g_app->change_scene(game_scene);
       }
@@ -96,7 +96,7 @@ void MainScene::draw() {
   GUI::draw([this]() { this->ui(); });
 #endif
 #if F_ENABLE_DEBUG
-  Area mouse = Mouse::get_mouse_area();
+  Area mouse = Mouse::get_mouse_area(m_app->get_window_size().x, m_app->get_window_size().y);
   Gizmos::draw_area({mouse.x,mouse.y}, mouse.h, m_atlas, {0,255,0});
 #endif
 

@@ -36,6 +36,7 @@ public:
 
 	//Local getters
   int find_res(int w, int h);
+  int get_current_res();
 	vec2f get_window_size();
   float* get_window_x() { return &m_window_size.x; }
   float* get_window_y() { return &m_window_size.y; }

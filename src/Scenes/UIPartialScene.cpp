@@ -112,7 +112,7 @@ void UIPartialScene::update(double deltaTime)
     for(auto& object : m_image_objects)
     {
         if(object.get()->has_modifier(HOVERABLE)){
-            if(Mouse::is_at_area(object.get()->get_area()))
+            if(Mouse::is_at_area(object.get()->get_area(), m_app->get_window_size().x, m_app->get_window_size().y))
             {
                 object.get()->on_hover();
                 object.get()->set_hovering(true);
@@ -126,14 +126,14 @@ void UIPartialScene::update(double deltaTime)
         for(auto& object : m_image_objects)
         {
             if(object.get()->has_modifier(CLICKABLE)){
-                if(Mouse::is_at_area(object.get()->get_area()))
+                if(Mouse::is_at_area(object.get()->get_area(), m_app->get_window_size().x, m_app->get_window_size().y))
                 {
                     object.get()->on_click();
                 }
             }
 
             if(object.get()->has_modifier(DRAGGABLE)){
-                if(Mouse::is_at_area(object.get()->get_area())){
+                if(Mouse::is_at_area(object.get()->get_area(), m_app->get_window_size().x, m_app->get_window_size().y)){
                     if(m_mouse_drag){
                         drag_start_pos = {object.get()->get_area().x, object.get()->get_area().y};
                         drag_object = object.get();

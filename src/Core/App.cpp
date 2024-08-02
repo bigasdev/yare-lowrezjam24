@@ -182,6 +182,10 @@ int App::find_res(int w, int h){
   return idx;
 }
 
+int App::get_current_res(){
+  return 64*z_camera;
+}
+
 // This function will be the core of all the events that some scripts can
 // require And will be responsible for listening to the inputs
 void App::handle_events() {

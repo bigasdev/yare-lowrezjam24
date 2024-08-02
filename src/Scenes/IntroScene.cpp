@@ -85,9 +85,6 @@ void IntroScene::update(double deltaTime)
 		}
 	}
 
-	if (Mouse::is_at_area(Area(m_logo->get_pos().x, m_logo->get_pos().y, m_logo->get_current_frame().w, m_logo->get_current_frame().h))) {
-		m_logger->log("Mouse on logo!");
-	}
 }
 
 void Gui() {
