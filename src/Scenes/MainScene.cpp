@@ -3,9 +3,9 @@
 #include "../Utils/PixelDrawer.hpp"
 
 #include "../Core/App.hpp"
-#include "../Utils/Math.hpp"
 #include "../Entity/Item.hpp"
 #include "../Entity/Projectile.hpp"
+#include "../Utils/Math.hpp"
 #if F_ENABLE_IMGUI
 #include "../ImGui/imgui.h"
 #include "../ImGui/imgui_impl_sdl.h"
@@ -25,6 +25,7 @@
 #include "../Renderer/ParticleSystem.hpp"
 #include "../Scenes/GameScene.hpp"
 #include "SDL_keycode.h"
+#include <stdlib.h>
 #include <string>
 
 InputManager *main_input_manager = nullptr;
@@ -55,7 +56,7 @@ void MainScene::load_assets() {}
 // This is where all the classes should be instantiated, this is the place where
 // we can setup stuff too.
 void MainScene::init() {
-  m_app->change_background_color({0,0,0});
+  m_app->change_background_color({0, 0, 0});
   main_input_manager = new InputManager();
   //
   load_assets();
@@ -74,15 +75,23 @@ void MainScene::update(double deltaTime) {
   if (change_scene)
     g_app->change_scene(game_scene);
 
+  if (Mouse::is_at_area({5, 56, 45, 8}, m_app->get_window_size().x,
+                        m_app->get_window_size().y)) {
+    if (mouse_press) {
+      system("start https://bigasdev.net/?tab=home");
+    }
+  }
+
   for (auto &option : options) {
-    if (Mouse::is_at_area(
-            {option.x, option.y, 45, 5}, m_app->get_window_size().x, m_app->get_window_size().y)) {
+    if (Mouse::is_at_area({option.x, option.y, 45, 5},
+                          m_app->get_window_size().x,
+                          m_app->get_window_size().y)) {
       if (mouse_press) {
         g_app->change_scene(game_scene);
       }
 
       option.x = Math::move_to(option.x, 8, 5.5f * deltaTime);
-    }else{
+    } else {
       option.x = Math::lerp(option.x, 5, 2.f * deltaTime);
     }
   }
@@ -96,19 +105,18 @@ void MainScene::draw() {
   GUI::draw([this]() { this->ui(); });
 #endif
 #if F_ENABLE_DEBUG
-  Area mouse = Mouse::get_mouse_area(m_app->get_window_size().x, m_app->get_window_size().y);
-  Gizmos::draw_area({mouse.x,mouse.y}, mouse.h, m_atlas, {0,255,0});
+  Area mouse = Mouse::get_mouse_area(m_app->get_window_size().x,
+                                     m_app->get_window_size().y);
+  Gizmos::draw_area({mouse.x, mouse.y}, mouse.h, m_atlas, {0, 255, 0});
 #endif
 
   for (auto &option : options) {
-    m_atlas->draw_text({option.x, option.y},
-                       option.name.c_str(), m_app->get_main_font(),
-                       {255, 255, 255, 255}, 1.f);
+    m_atlas->draw_text({option.x, option.y}, option.name.c_str(),
+                       m_app->get_main_font(), {255, 255, 255, 255}, 1.f);
   }
 
-  m_atlas->draw_text({5, 52},
-                     "@bigasdev",
-                     m_app->get_main_font(), {255, 255, 255, 255}, 1.f);
+  m_atlas->draw_text({5, 52}, "@bigasdev", m_app->get_main_font(),
+                     {255, 255, 255, 255}, 1.f);
 }
 
 // This is where the Dear ImGui "update" is called, add any function with imgui

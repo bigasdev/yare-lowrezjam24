@@ -317,9 +317,6 @@ void App::render() {
 
     // logger rendering
     m_logger->draw();
-
-    m_atlas_ptr->draw_text({2, 2}, std::to_string(Math::round(m_fps)).c_str(),
-                           s_main_font, {255, 255, 255, 255}, 1.f);
   } else {
     m_atlas_ptr->draw_text(
         {(m_window_size.x - 70) / 2, (m_window_size.y - 50) / 2}, "Loading...",
