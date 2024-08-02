@@ -138,7 +138,7 @@ void App::load() {
       m_current_scene = new IntroScene(this, m_logger, m_cd, m_camera);
     } else {
 #if F_ENABLE_DEBUG
-      m_current_scene = new GameScene(this, m_logger, m_cd, m_camera);
+      m_current_scene = new MainScene(this, m_logger, m_cd, m_camera);
 #else
       m_current_scene = new MainScene(this, m_logger, m_cd, m_camera);
 #endif

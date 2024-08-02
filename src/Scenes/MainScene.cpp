@@ -55,6 +55,7 @@ void MainScene::load_assets() {}
 // This is where all the classes should be instantiated, this is the place where
 // we can setup stuff too.
 void MainScene::init() {
+  m_app->change_background_color({0,0,0});
   main_input_manager = new InputManager();
   //
   load_assets();
@@ -101,8 +102,8 @@ void MainScene::draw() {
                        {255, 255, 255, 255}, 2.f);
   }
 
-  m_atlas->draw_text({10, m_app->get_window_size().y - 30},
-                     "@bigasdev v0.1 powered by fortress framework!",
+  m_atlas->draw_text({5, 52},
+                     "@bigasdev",
                      m_app->get_main_font(), {255, 255, 255, 255}, 1.f);
 }
 
