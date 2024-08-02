@@ -77,7 +77,10 @@ void MainScene::update(double deltaTime) {
 
   if (Mouse::is_at_area({5, 56, 45, 8}, m_app->get_window_size().x,
                         m_app->get_window_size().y)) {
-    if (mouse_press) {
+    if (mouse_press && !m_cd->has_state("open_bigas")) {
+      m_cd->set_state("open_bigas", 10.f, [&] {
+          F_Debug::log("why");
+      });
       system("start https://bigasdev.net/?tab=home");
     }
   }

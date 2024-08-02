@@ -49,6 +49,11 @@ Aseprite : concept
 Loaded resources and utils!...
 Adding components to globals
 Finished loading!...
-Loading time : 163ms
+Loading time : 161ms
 ----------------------------------
+why
+why
+why
+why
+why
 App cleaned!
