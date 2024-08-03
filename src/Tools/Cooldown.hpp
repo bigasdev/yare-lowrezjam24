@@ -15,6 +15,7 @@ struct Event{
 	Event() 
 		:name("event"), timer(1), event(NULL), repeat(false) 
 	{}
+  Event(std::string name, float _timer) : name(name), timer(_timer), event(NULL), repeat(false) {}
 	Event(std::string _name, float _timer, std::function<void()> _event, bool _repeat)
 		:name(_name), timer(_timer), event(_event), repeat(_repeat)
 	{}
@@ -31,7 +32,7 @@ struct Event{
 
 			if (current_timer >= timer) {
 				//std::cout << "finished the event of : " << name << std::endl;
-				event();
+				if(event != NULL)event();
 				if (!repeat) {
 					//std::cout << "finishing the event : " << name << std::endl;
 					finished = true;
@@ -52,6 +53,7 @@ public:
 
 	//set
 	void set_state(std::string _name, float _timer, std::function<void()> _event, bool _repeat = false);
+  void set_state(std::string _name, float _timer);
 	bool has_state(std::string _name);
 
 private:

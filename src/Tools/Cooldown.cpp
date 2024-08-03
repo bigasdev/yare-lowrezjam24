@@ -40,6 +40,17 @@ void Cooldown::set_state(std::string _name, float _timer, std::function<void()> 
 	m_events.push_back(new Event(_name, _timer, _event, _repeat));
 }
 
+void Cooldown::set_state(std::string _name, float _timer)
+{
+  for (auto const& e : m_events) {
+    if (e->name == _name) {
+      //std::cout << "trying to add an defined event already! skipping this iteration.." << e->name << std::endl;
+      return;
+    }
+  }
+  m_events.push_back(new Event(_name, _timer));
+}
+
 bool Cooldown::has_state(std::string _name)
 {
 	for (auto const& e : m_events) {
