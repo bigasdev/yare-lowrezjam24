@@ -1,6 +1,7 @@
 #include "InputManager.hpp"
 #include "../Utils/FDebug.hpp"
 #include "SDL_events.h"
+#include "SDL_joystick.h"
 #include "SDL_keycode.h"
 
 InputManager::InputManager() {
@@ -48,6 +49,9 @@ void InputManager::update(SDL_Event event) {
         *right_click = true;
     }
     break;
+  case SDL_JOYSTICK_AXIS_MAX:
+    F_Debug::log("Axis Max: %d" + std::to_string(event.jaxis.value));
+    break;
   case SDL_JOYAXISMOTION:
       switch (event.jaxis.axis){
         case 0:
@@ -61,6 +65,12 @@ void InputManager::update(SDL_Event event) {
         break;
         case 3:
           F_Debug::log("Right Y Axis");
+        break;
+        case 4:
+          F_Debug::log("Left Trigger");
+        break;
+        case 5:
+          F_Debug::log("Right Trigger");
         break;
       }
     break;

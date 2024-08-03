@@ -6,6 +6,19 @@
 #include "SDL.h"
 #include <map>
 
+enum JoyInput{
+  A = 0,
+  B = 1,
+  X = 2,
+  Y = 3,
+  L = 4,
+  R = 5,
+  BACK = 6,
+  START = 7,
+  JOY_X_CLICK,
+  JOY_Y_CLICK,
+};
+
 class InputManager{
 public:
   InputManager();
