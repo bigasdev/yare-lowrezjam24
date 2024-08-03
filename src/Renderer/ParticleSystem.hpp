@@ -25,6 +25,7 @@ struct Particle {
   vec2f gravity = {0, 0};
 
   bool alive = true;
+  bool fixed = false;
 
   float dx;
   float dy;

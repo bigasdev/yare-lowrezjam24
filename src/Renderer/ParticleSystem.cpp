@@ -3,6 +3,7 @@
 #include "../Renderer/Camera.hpp"
 #include "../Utils/FDebug.hpp"
 #include "../Utils/Math.hpp"
+#include "../Core/Globals.hpp"
 
 #include "../Utils/Common.hpp"
 #include <cmath>
@@ -61,6 +62,13 @@ void ParticleSystem::draw() {
     if (!particle.alive)
       continue;
 
+    if(particle.fixed){
+      m_atlas_ptr->draw_pixel(particle.position.x, particle.position.y,
+                              particle.color.r, particle.color.g,
+                              particle.color.b, particle.color.a, g_camera, particle.mode,
+                              particle.size);
+      continue;
+    }
     m_atlas_ptr->draw_pixel(particle.position.x, particle.position.y,
                             particle.color.r, particle.color.g,
                             particle.color.b, particle.color.a, m_camera_ptr, particle.mode,
@@ -125,6 +133,7 @@ void ParticleSystem::snow_dust(vec2f pos) {
     particle.color = {255, 255, 255, 255};
     particle.size = rnd(1,2);
     particle.mode = 1;
+    particle.fixed = true;
     particle.color.a = rnd(45, 125);
     particle.opacity_decrease = 0;
     particle.position = {pos.x + rnd(5, 35), pos.y + rnd(2.5f, 45.f)};
