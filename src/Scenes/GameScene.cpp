@@ -140,6 +140,7 @@ void GameScene::init() {
   m_input_manager->bind_mouse(&g_hero->actions.attack, nullptr, nullptr);
 
   //input controller 
+  m_input_manager->bind_joy(JoyInput::RIGHT_TRIGGER, &g_hero->actions.interact);
 }
 
 void GameScene::fixed_update(double deltaTime) {

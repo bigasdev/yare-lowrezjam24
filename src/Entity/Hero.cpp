@@ -21,22 +21,7 @@ void Hero::init(){
 }
 
 void Hero::fixed_update(double deltaTime){
-  /*if(actions.up){
-    m_pos.y -= m_speed * deltaTime;
-  }
-  if(actions.down){
-    m_pos.y += m_speed * deltaTime;
-  }
-  if(actions.left){
-    if(m_current_sprite.facing_right) m_current_sprite.facing_right = false;
-    m_pos.x -= m_speed * deltaTime;
-  }
-  if(actions.right){
-    if(!m_current_sprite.facing_right) m_current_sprite.facing_right = true;
-    m_pos.x += m_speed * deltaTime;
-  }*/
   m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
-
 }
 
 void Hero::update(double deltaTime){

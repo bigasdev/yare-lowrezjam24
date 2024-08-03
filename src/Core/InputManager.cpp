@@ -5,7 +5,7 @@
 #include "SDL_joystick.h"
 #include "SDL_keycode.h"
 
-void connect_controller(){
+void connect_controller() {
   if (SDL_NumJoysticks() < 1) {
     F_Debug::error("No joysticks connected!\n");
   } else {
@@ -18,9 +18,7 @@ void connect_controller(){
   }
 }
 
-InputManager::InputManager() {
- connect_controller(); 
-}
+InputManager::InputManager() { connect_controller(); }
 
 InputManager::~InputManager() {}
 
@@ -62,41 +60,76 @@ void InputManager::update(SDL_Event event) {
     }
     break;
   case SDL_JOYSTICK_AXIS_MAX:
-    F_Debug::log("Axis Max: %d" + std::to_string(event.jaxis.value));
     break;
   case SDL_JOYAXISMOTION:
     switch (event.jaxis.axis) {
     case 0:
-      F_Debug::log("Left X Axis");
-      if(event.jaxis.value < -8000){
+      //Left X Axis
+      if (event.jaxis.value < -8000) {
         raw_axis.x = -1;
-      }else if(event.jaxis.value > 8000){
+      } else if (event.jaxis.value > 8000) {
         raw_axis.x = 1;
-      }else{
+      } else {
         raw_axis.x = 0;
       }
       break;
     case 1:
-      F_Debug::log("Left Y Axis");
-      if(event.jaxis.value < -8000){
+      //Left Y axis
+      if (event.jaxis.value < -8000) {
         raw_axis.y = -1;
-      }else if(event.jaxis.value > 8000){
+      } else if (event.jaxis.value > 8000) {
         raw_axis.y = 1;
-      }else{
+      } else {
         raw_axis.y = 0;
       }
       break;
     case 2:
-      F_Debug::log("Right X Axis");
+      //Right x axis
+      if (event.jaxis.value < -8000) {
+        right_axis.x = -1;
+      } else if (event.jaxis.value > 8000) {
+        right_axis.x = 1;
+      } else {
+        right_axis.x = 0;
+      }
       break;
     case 3:
-      F_Debug::log("Right Y Axis");
+      //Right y axis
+      if (event.jaxis.value < -8000) {
+        right_axis.y = -1;
+      } else if (event.jaxis.value > 8000) {
+        right_axis.y = 1;
+      } else {
+        right_axis.y = 0;
+      }
       break;
     case 4:
-      F_Debug::log("Left Trigger");
+      //LT
+      if (event.jaxis.value > 8000) {
+        if (m_joy_map.find(static_cast<JoyInput>(10)) !=
+            m_joy_map.end()) {
+          *m_joy_map[static_cast<JoyInput>(10)] = true;
+        }
+      } else {
+        if (m_joy_map.find(static_cast<JoyInput>(10)) !=
+            m_joy_map.end()) {
+          *m_joy_map[static_cast<JoyInput>(10)] = false;
+        }
+      }
       break;
     case 5:
-      F_Debug::log("Right Trigger");
+      //RT
+      if (event.jaxis.value > 8000) {
+        if (m_joy_map.find(static_cast<JoyInput>(11)) !=
+            m_joy_map.end()) {
+          *m_joy_map[static_cast<JoyInput>(11)] = true;
+        }
+      } else {
+        if (m_joy_map.find(static_cast<JoyInput>(11)) !=
+            m_joy_map.end()) {
+          *m_joy_map[static_cast<JoyInput>(11)] = false;
+        }
+      }
       break;
     }
     break;
@@ -128,16 +161,16 @@ void InputManager::update(SDL_Event event) {
     if (m_key_map.find(event.key.keysym.sym) != m_key_map.end()) {
       *m_key_map[event.key.keysym.sym] = true;
     }
-    if(event.key.keysym.sym == SDLK_d || event.key.keysym.sym == SDLK_RIGHT){
+    if (event.key.keysym.sym == SDLK_d || event.key.keysym.sym == SDLK_RIGHT) {
       raw_axis.x = 1;
     }
-    if(event.key.keysym.sym == SDLK_a || event.key.keysym.sym == SDLK_LEFT){
+    if (event.key.keysym.sym == SDLK_a || event.key.keysym.sym == SDLK_LEFT) {
       raw_axis.x = -1;
     }
-    if(event.key.keysym.sym == SDLK_w || event.key.keysym.sym == SDLK_UP){
+    if (event.key.keysym.sym == SDLK_w || event.key.keysym.sym == SDLK_UP) {
       raw_axis.y = -1;
     }
-    if(event.key.keysym.sym == SDLK_s || event.key.keysym.sym == SDLK_DOWN){
+    if (event.key.keysym.sym == SDLK_s || event.key.keysym.sym == SDLK_DOWN) {
       raw_axis.y = 1;
     }
     break;
@@ -145,17 +178,21 @@ void InputManager::update(SDL_Event event) {
     if (m_key_map.find(event.key.keysym.sym) != m_key_map.end()) {
       *m_key_map[event.key.keysym.sym] = false;
     }
-    if(event.key.keysym.sym == SDLK_d || event.key.keysym.sym == SDLK_RIGHT){
-      raw_axis.x = 0;
+    if (event.key.keysym.sym == SDLK_d || event.key.keysym.sym == SDLK_RIGHT) {
+      if (raw_axis.x != -1)
+        raw_axis.x = 0;
     }
-    if(event.key.keysym.sym == SDLK_a || event.key.keysym.sym == SDLK_LEFT){
-      raw_axis.x = 0;
+    if (event.key.keysym.sym == SDLK_a || event.key.keysym.sym == SDLK_LEFT) {
+      if (raw_axis.x != 1)
+        raw_axis.x = 0;
     }
-    if(event.key.keysym.sym == SDLK_w || event.key.keysym.sym == SDLK_UP){
-      raw_axis.y = 0;
+    if (event.key.keysym.sym == SDLK_w || event.key.keysym.sym == SDLK_UP) {
+      if (raw_axis.y != 1)
+        raw_axis.y = 0;
     }
-    if(event.key.keysym.sym == SDLK_s || event.key.keysym.sym == SDLK_DOWN){
-      raw_axis.y = 0;
+    if (event.key.keysym.sym == SDLK_s || event.key.keysym.sym == SDLK_DOWN) {
+      if (raw_axis.y != -1)
+        raw_axis.y = 0;
     }
     break;
   default:
