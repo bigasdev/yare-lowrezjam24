@@ -5,6 +5,7 @@
 #include "../Utils/Mouse.hpp"
 #include "Projectile.hpp"
 #include "../Renderer/ParticleSystem.hpp"
+#include "../Core/InputManager.hpp"
 
 Hero::Hero(){
 }
@@ -20,7 +21,7 @@ void Hero::init(){
 }
 
 void Hero::fixed_update(double deltaTime){
-  if(actions.up){
+  /*if(actions.up){
     m_pos.y -= m_speed * deltaTime;
   }
   if(actions.down){
@@ -33,7 +34,8 @@ void Hero::fixed_update(double deltaTime){
   if(actions.right){
     if(!m_current_sprite.facing_right) m_current_sprite.facing_right = true;
     m_pos.x += m_speed * deltaTime;
-  }
+  }*/
+  m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
 
 }
 

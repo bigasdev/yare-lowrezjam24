@@ -120,6 +120,7 @@ void GameScene::init() {
   g_fort = m_fort;
   g_projectile_system = m_projectile_system;
   g_particle_system = m_particle_system;
+  g_input_manager = m_input_manager;
   g_ALL = &visible_entities;
   g_enemies = &visible_enemies;
   // example of castle db loading
