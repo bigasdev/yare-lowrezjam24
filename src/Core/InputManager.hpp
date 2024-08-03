@@ -15,8 +15,10 @@ enum JoyInput{
   R = 5,
   BACK = 6,
   START = 7,
-  JOY_X_CLICK,
-  JOY_Y_CLICK,
+  JOY_X_CLICK = 8,
+  JOY_Y_CLICK = 9,
+  LEFT_TRIGGER = 10,
+  RIGHT_TRIGGER = 11
 };
 
 class InputManager{
@@ -25,11 +27,13 @@ public:
   ~InputManager();
 
   void bind_keyboard(SDL_KeyCode key, bool* value);
+  void bind_joy(JoyInput key, bool* value);
   void bind_mouse(bool* left, bool* right, bool* wheel);
   void update(SDL_Event event);
 
 private:
   std::map<SDL_Keycode, bool*> m_key_map;
+  std::map<JoyInput, bool*> m_joy_map;
 
   bool* left_click = nullptr;
   bool* right_click = nullptr;

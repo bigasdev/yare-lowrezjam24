@@ -22,6 +22,10 @@ void InputManager::bind_keyboard(SDL_KeyCode key, bool *value) {
   m_key_map[key] = value;
 }
 
+void InputManager::bind_joy(JoyInput key, bool *value) {
+  m_joy_map[key] = value;
+}
+
 void InputManager::bind_mouse(bool *left, bool *right, bool *wheel) {
   left_click = left;
   right_click = right;
@@ -31,22 +35,11 @@ void InputManager::bind_mouse(bool *left, bool *right, bool *wheel) {
 void InputManager::update(SDL_Event event) {
   switch (event.type) {
   case SDL_JOYBUTTONUP:
-    if (event.jbutton.button == 0) {
-      if (left_click != nullptr)
-        *left_click = false;
-    } else if (event.jbutton.button == 1) {
-      if (right_click != nullptr)
-        *right_click = false;
-    }
+
     break;
   case SDL_JOYBUTTONDOWN:
-    F_Debug::log("button: %d" + std::to_string(event.jbutton.button));
-    if (event.jbutton.button == 0) {
-      if (left_click != nullptr)
-        *left_click = true;
-    } else if (event.jbutton.button == 1) {
-      if (right_click != nullptr)
-        *right_click = true;
+    if (m_joy_map.find(event.button.button) != m_joy_map.end()) {
+      *m_key_map[event.key.keysym.sym] = true;
     }
     break;
   case SDL_JOYSTICK_AXIS_MAX:
