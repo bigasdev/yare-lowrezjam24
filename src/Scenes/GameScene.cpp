@@ -128,7 +128,7 @@ void GameScene::init() {
   //
   ui_partial_scene = new UIPartialScene(m_app, m_logger, m_cd, m_camera);
 
-  // input
+  // input keyboard
   m_input_manager->bind_keyboard(SDLK_w, &g_hero->actions.up);
   m_input_manager->bind_keyboard(SDLK_s, &g_hero->actions.down);
   m_input_manager->bind_keyboard(SDLK_a, &g_hero->actions.left);
@@ -137,6 +137,8 @@ void GameScene::init() {
   m_input_manager->bind_keyboard(SDLK_SOFTLEFT, &g_hero->actions.roll);
 
   m_input_manager->bind_mouse(&g_hero->actions.attack, nullptr, nullptr);
+
+  //input controller 
 }
 
 void GameScene::fixed_update(double deltaTime) {
