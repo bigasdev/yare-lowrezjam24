@@ -119,6 +119,25 @@ void ParticleSystem::walk_dust(vec2f pos) {
   }
 }
 
+void ParticleSystem::snow_dust(vec2f pos) {
+  for (int i = 0; i < 18; i++) {
+    Particle particle;
+    particle.color = {255, 255, 255, 255};
+    particle.size = rnd(1,2);
+    particle.mode = 1;
+    particle.color.a = rnd(45, 125);
+    particle.opacity_decrease = 0;
+    particle.position = {pos.x + rnd(5, 35), pos.y + rnd(2.5f, 45.f)};
+    particle.move_away_from_src({15, 0}, rnd(0.1f, 0.15f));
+    particle.friction = rnd(.8f, .9f);
+    particle.gravity = {rnd(.08f, .12f), rnd(.05f, .1f)};
+    if(particle.size == 1)particle.gravity = {rnd(.2f, .35f), rnd(.15f, .25f)};
+    particle.life_time = rnd(220.8f, 345.2f);
+
+    add_particle(particle);
+  }
+}
+
 void ParticleSystem::add_particle(Particle particle) {
   if (m_particles_vector.size() >= m_max_particles){
     m_particles_vector.erase(m_particles_vector.begin(), m_particles_vector.begin() +100);

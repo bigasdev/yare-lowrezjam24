@@ -65,6 +65,7 @@ public:
   void dots_explosion_example();
   void grab_example(vec2f pos, float angle);
   void walk_dust(vec2f pos);
+  void snow_dust(vec2f pos);
   void add_particle(Particle particle);
 
 private:

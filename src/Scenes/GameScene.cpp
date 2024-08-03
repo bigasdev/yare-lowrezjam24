@@ -172,6 +172,12 @@ void GameScene::update(double deltaTime) {
                  [](Entity *e) { return e->is_visible() && e->m_tag == Tag::ENEMY; });
   }
 
+  if(!m_cd->has_state("snow")){
+    m_particle_system->snow_dust(g_hero->get_pos() + vec2f(-28, -24));
+
+    m_cd->set_state("snow", rnd(400, 602));
+  }
+
   for (auto &e : visible_entities) {
     e->update(deltaTime);
   }
