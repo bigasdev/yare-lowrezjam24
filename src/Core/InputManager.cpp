@@ -48,6 +48,22 @@ void InputManager::update(SDL_Event event) {
         *right_click = true;
     }
     break;
+  case SDL_JOYAXISMOTION:
+      switch (event.jaxis.axis){
+        case 0:
+          F_Debug::log("Left X Axis");
+        break;
+        case 1:
+          F_Debug::log("Left Y Axis");
+        break;
+        case 2:
+          F_Debug::log("Right X Axis");
+        break;
+        case 3:
+          F_Debug::log("Right Y Axis");
+        break;
+      }
+    break;
   case SDL_MOUSEBUTTONDOWN:
     if (event.button.button == SDL_BUTTON_LEFT) {
       if (left_click != nullptr)
