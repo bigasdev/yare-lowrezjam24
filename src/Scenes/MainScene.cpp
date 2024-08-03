@@ -62,6 +62,7 @@ void MainScene::init() {
   load_assets();
   //
   main_input_manager->bind_keyboard(SDLK_e, &change_scene);
+  main_input_manager->bind_joy(JoyInput::A, &change_scene);
   main_input_manager->bind_mouse(&mouse_press, &mouse_press, &mouse_press);
 
   MenuOption play;

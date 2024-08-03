@@ -10,4 +10,5 @@ Atlas *g_atlas;
 Resources *g_resources;
 
 int g_grid;
+bool g_controller_connected;
 

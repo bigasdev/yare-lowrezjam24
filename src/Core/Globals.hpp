@@ -22,4 +22,6 @@ extern Resources *g_resources;
 
 extern int g_grid;
 
+extern bool g_controller_connected;
+
 #endif

@@ -4,6 +4,7 @@
 #define INPUTMANAGER_HPP
 
 #include "SDL.h"
+#include "../Utils/Common.hpp"
 #include <map>
 
 enum JoyInput{
@@ -34,6 +35,8 @@ public:
 private:
   std::map<SDL_Keycode, bool*> m_key_map;
   std::map<JoyInput, bool*> m_joy_map;
+  vec2i raw_axis;
+  vec2f axis;
 
   bool* left_click = nullptr;
   bool* right_click = nullptr;
