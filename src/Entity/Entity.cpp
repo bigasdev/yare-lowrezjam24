@@ -23,7 +23,7 @@ Entity::Entity() {}
 Entity::Entity(Resources *_resources, float _scale) {
   Sprite _sprite;
   if (_resources != nullptr)
-    _sprite.texture = _resources->get_aseprite_texture("framework");
+    _sprite.texture = _resources->get_aseprite_texture("character_atlas");
 
   _sprite.xpu = 11;
   _sprite.ypu = 10;
