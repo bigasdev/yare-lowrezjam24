@@ -170,7 +170,7 @@ void GameScene::update(double deltaTime) {
   }
 
   if(!m_cd->has_state("snow")){
-    m_particle_system->snow_dust(g_hero->get_pos() + vec2f(-28, -24));
+    m_particle_system->snow_dust({0,0});
 
     m_cd->set_state("snow", rnd(400, 602));
   }

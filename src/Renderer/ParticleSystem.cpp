@@ -65,7 +65,7 @@ void ParticleSystem::draw() {
     if(particle.fixed){
       m_atlas_ptr->draw_pixel(particle.position.x, particle.position.y,
                               particle.color.r, particle.color.g,
-                              particle.color.b, particle.color.a, g_camera, particle.mode,
+                              particle.color.b, particle.color.a, nullptr, particle.mode,
                               particle.size);
       continue;
     }
@@ -136,7 +136,7 @@ void ParticleSystem::snow_dust(vec2f pos) {
     particle.fixed = true;
     particle.color.a = rnd(45, 125);
     particle.opacity_decrease = 0;
-    particle.position = {pos.x + rnd(5, 35), pos.y + rnd(2.5f, 45.f)};
+    particle.position = {pos.x + rnd(5, 15), pos.y + rnd(2.5f, 45.f)};
     particle.move_away_from_src({15, 0}, rnd(0.1f, 0.15f));
     particle.friction = rnd(.8f, .9f);
     particle.gravity = {rnd(.08f, .12f), rnd(.05f, .1f)};
