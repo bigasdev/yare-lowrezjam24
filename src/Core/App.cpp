@@ -108,7 +108,7 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
       m_camera = new Camera(nullptr, &m_window_size, {64, 64});
       m_atlas_ptr = new Atlas(m_renderer, &m_camera->s_scale);
 
-      s_main_font = TTF_OpenFont("res/font/pixolleta.ttf", 10);
+      s_main_font = TTF_OpenFont("res/font/NotJamChunkySans.ttf", 6);
       F_Debug::log("Loaded atlas and fonts!...");
     }
     m_is_running = true;
@@ -317,6 +317,8 @@ void App::render() {
 
     // logger rendering
     m_logger->draw();
+
+    m_atlas_ptr->draw_text({1, 1}, std::to_string(m_fps).c_str(), s_main_font, {255, 255, 255, 255}, 1);
   } else {
     m_atlas_ptr->draw_text(
         {(m_window_size.x - 70) / 2, (m_window_size.y - 50) / 2}, "Loading...",
