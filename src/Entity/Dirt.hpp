@@ -1,11 +1,13 @@
 #pragma once
+#ifndef DIRT_HPP
+#define DIRT_HPP
 
 #include "Entity.hpp"
 
 class Dirt : public Entity {
 public:
   Dirt();
-  Dirt(Resources* _resources, float _scale) : Entity(_resources, _scale) {}
+  Dirt(Resources *_resources, float _scale) : Entity(_resources, _scale) {}
   ~Dirt();
 
   void init() override;
@@ -15,4 +17,8 @@ public:
   void post_update(double deltaTime) override;
 
   void animation_manager();
+
+private:
+  bool interact_range = false;
 };
+#endif

@@ -1,6 +1,11 @@
 #include "Dirt.hpp"
-#include "EntityParty.hpp"
+#include "../Core/App.hpp"
+#include "../Core/Globals.hpp"
+#include "../Renderer/Atlas.hpp"
 #include "../Utils/Gizmos.hpp"
+#include "EntityParty.hpp"
+#include "Hero.hpp"
+#include <string>
 
 Dirt::Dirt() {}
 
@@ -15,20 +20,32 @@ void Dirt::init() {
   m_current_sprite.y = 2;
   set_life(100, 100);
 
-  m_interaction_box.scale = {16,16};
+  m_interaction_box.offset = {4,4};
+  m_interaction_box.scale = {8, 8};
+  m_collision_box.scale = {8, 8};
 }
 
-void Dirt::fixed_update(double deltaTime) {}
-
-void Dirt::update(double deltaTime) {
-  Entity::update(deltaTime);
+void Dirt::fixed_update(double deltaTime) {
+  if (is_interacting(g_hero)) {
+    interact_range = true;
+  } else {
+    interact_range = false;
+  }
 }
 
+void Dirt::update(double deltaTime) { Entity::update(deltaTime); }
 
 void Dirt::draw() {
 #if F_ENABLE_DEBUG
-  Gizmos::draw_rect(get_pos() + get_interaction_box().offset, get_interaction_box().scale, g_atlas, {255, 0, 0}, 85, g_camera);
+  Gizmos::draw_rect(get_interaction_box().offset,
+                    get_interaction_box().scale, g_atlas, {255, 0, 0}, 85,
+                    g_camera);
 #endif
+  if (interact_range) {
+    auto str = "Crop : " + std::to_string(m_uid);
+    g_atlas->draw_text({10, 55}, str.c_str(), g_app->get_main_font(),
+                       {255, 255, 255});
+  }
 }
 
 void Dirt::post_update(double deltaTime) {}

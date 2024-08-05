@@ -72,7 +72,7 @@ void GameScene::load_assets() {
   for(int i = 0; i < 4; i++){
     for(int j = 0; j < 4; j++){
       auto d = m_fort->recruit<Dirt>(m_resources, m_atlas->get_game_scale());
-      d->set_pos(70 + i*10, 70 + j*10);
+      d->set_pos(70 + i*25, 70 + j*25);
       d->init();
     }
   }
@@ -96,7 +96,7 @@ void GameScene::load_assets() {
   hero->init();
   g_hero = hero;
 
-  for(int i = 0; i < 1000; i++){
+  /*for(int i = 0; i < 1000; i++){
     auto e = m_fort->recruit<Entity>(m_resources, m_atlas->get_game_scale());
     e->set_pos(1200 + rnd(-1900, 1900), 400 + rnd(-1900, 1900));
     e->get_current_sprite()->texture =
@@ -109,7 +109,7 @@ void GameScene::load_assets() {
     e->m_tag = Tag::ENEMY;
     e->set_collision_box({{2, 2}, {10, 11}});
     e->init();
-  }
+  }*/
 }
 
 void GameScene::init() {
@@ -212,6 +212,9 @@ void GameScene::draw() {
 
   for (auto &e : visible_entities) {
     m_atlas->draw_from_sheet(e, m_camera);
+  }
+
+  for(auto &e : visible_entities){
     e->draw();
   }
 

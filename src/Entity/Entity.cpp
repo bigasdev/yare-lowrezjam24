@@ -156,8 +156,6 @@ CollisionBox2D Entity::get_interaction_box(float _scale) {
   if (_scale == 1)
     _scale = m_parent_scale;
 
-  if(_scale == m_parent_scale) return m_interaction_box;
-
   box.offset = {m_pos.x + m_interaction_box.offset.x * _scale,
                 m_pos.y + m_interaction_box.offset.y * _scale};
   box.scale = {m_interaction_box.scale.x * _scale,
@@ -221,6 +219,16 @@ bool Entity::is_close_to_pos(vec2f pos, float radius) {
 bool Entity::is_colliding(Entity *en) {
   CollisionBox2D box1 = get_collision_box();
   CollisionBox2D box2 = en->get_collision_box();
+
+  return (box1.offset.x < box2.offset.x + box2.scale.x) &&
+         (box2.offset.x < box1.offset.x + box1.scale.x) &&
+         (box1.offset.y < box2.offset.y + box2.scale.y) &&
+         (box2.offset.y < box1.offset.y + box1.scale.y);
+}
+
+bool Entity::is_interacting(Entity *en) {
+  CollisionBox2D box1 = get_interaction_box();
+  CollisionBox2D box2 = en->get_interaction_box();
 
   return (box1.offset.x < box2.offset.x + box2.scale.x) &&
          (box2.offset.x < box1.offset.x + box1.scale.x) &&

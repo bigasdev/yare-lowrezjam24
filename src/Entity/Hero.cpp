@@ -21,8 +21,8 @@ void Hero::init(){
 
   actions = {false,false,false,false,false,false,false};
 
-  m_interaction_box.offset = {-8,-8};
-  m_interaction_box.scale = {32,32};
+  m_interaction_box.offset = {0,0};
+  m_interaction_box.scale = {15,15};
 }
 
 void Hero::fixed_update(double deltaTime){
@@ -61,7 +61,7 @@ void Hero::update(double deltaTime){
 void Hero::draw(){
   Entity::draw();
 #if F_ENABLE_DEBUG
-  Gizmos::draw_rect(get_pos() + get_interaction_box().offset, get_interaction_box().scale, g_atlas, {255, 0, 0}, 85, g_camera);
+  Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale, g_atlas, {255, 0, 0}, 85, g_camera);
 #endif
 }
 
