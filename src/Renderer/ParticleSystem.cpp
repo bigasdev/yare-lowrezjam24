@@ -128,15 +128,15 @@ void ParticleSystem::walk_dust(vec2f pos) {
 }
 
 void ParticleSystem::snow_dust(vec2f pos) {
-  for (int i = 0; i < 18; i++) {
+  for (int i = 0; i < 68; i++) {
     Particle particle;
     particle.color = {255, 255, 255, 255};
     particle.size = rnd(1,2);
     particle.mode = 1;
     particle.fixed = true;
-    particle.color.a = rnd(45, 125);
+    particle.color.a = rnd(15, 55);
     particle.opacity_decrease = 0;
-    particle.position = {pos.x + rnd(5, 15), pos.y + rnd(2.5f, 45.f)};
+    particle.position = {pos.x + rnd(-25, 5), pos.y + rnd(-32.5f, 15.f)};
     particle.move_away_from_src({15, 0}, rnd(0.1f, 0.15f));
     particle.friction = rnd(.8f, .9f);
     particle.gravity = {rnd(.08f, .12f), rnd(.05f, .1f)};

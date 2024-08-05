@@ -4,6 +4,8 @@
 
 #include "Entity.hpp"
 
+#define PLANT_CD 15
+
 class Dirt : public Entity {
 public:
   Dirt();
@@ -21,5 +23,7 @@ public:
 private:
   bool interact_range = false;
   bool has_plant = false;
+
+  int plant_state = 0;
 };
 #endif

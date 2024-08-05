@@ -232,6 +232,41 @@ void Atlas::draw_pixel(float p_x, float p_y, Uint8 r, Uint8 g, Uint8 b, Uint8 a,
   }
 }
 
+void Atlas::draw_line(vec2f start, vec2f end, vec3f color, int a, Camera *camera,
+                      int mode, int scale) {
+  SDL_SetRenderDrawColor(m_renderer_ptr, color.x, color.y, color.z, a);
+
+  switch(mode) {
+    case 0:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+      break;
+    case 1:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
+      break;
+    case 2:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
+      break;
+    case 3:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
+      break;
+    case 4:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
+      break;
+    default:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+      break;
+  }
+
+  if (camera != nullptr) {
+    start.x -= camera->get_pos().x;
+    start.y -= camera->get_pos().y;
+    end.x -= camera->get_pos().x;
+    end.y -= camera->get_pos().y;
+  }
+
+  SDL_RenderDrawLine(m_renderer_ptr, start.x, start.y, end.x, end.y);
+}
+
 void Atlas::draw_rect(vec2f pos, vec2f size, vec3f color, int a, Camera *camera, int mode, int scale) {
   SDL_SetRenderDrawColor(m_renderer_ptr, color.x, color.y, color.z, a);
 

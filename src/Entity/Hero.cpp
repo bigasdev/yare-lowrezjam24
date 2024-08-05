@@ -1,38 +1,45 @@
 #include "Hero.hpp"
 #include "../Core/Fort.hpp"
 #include "../Core/Globals.hpp"
-#include "../Renderer/Camera.hpp"
-#include "../Utils/Mouse.hpp"
-#include "Projectile.hpp"
-#include "../Renderer/ParticleSystem.hpp"
 #include "../Core/InputManager.hpp"
+#include "../Renderer/Camera.hpp"
+#include "../Renderer/ParticleSystem.hpp"
 #include "../Tools/Cooldown.hpp"
 #include "../Utils/Gizmos.hpp"
+#include "../Utils/Mouse.hpp"
+#include "Projectile.hpp"
 
-Hero::Hero(){
-}
+Hero::Hero() {}
 
-Hero::~Hero(){
-  Entity::~Entity();
-}
+Hero::~Hero() { Entity::~Entity(); }
 
-void Hero::init(){
+void Hero::init() {
   Entity::init();
 
-  actions = {false,false,false,false,false,false,false};
+  actions = {false, false, false, false, false, false, false};
 
-  m_interaction_box.offset = {0,0};
-  m_interaction_box.scale = {15,15};
+  m_interaction_box.offset = {0, 0};
+  m_interaction_box.scale = {15, 15};
 }
 
-void Hero::fixed_update(double deltaTime){
+void Hero::fixed_update(double deltaTime) {
   m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
 }
 
-void Hero::update(double deltaTime){
+void Hero::update(double deltaTime) {
   Entity::update(deltaTime);
 
-  if(actions.interact && !m_entity_cd->has_state("attack")){
+  if (g_input_manager->get_raw_axis() != vec2f(0, 0)) {
+    m_current_sprite.facing_right = g_input_manager->get_raw_axis().x == 1;
+
+    if (!m_entity_cd->has_state("dust")) {
+      g_particle_system->walk_dust(get_pos());
+
+      m_entity_cd->set_state("dust", 10.f);
+    }
+  }
+
+  if (actions.attack && !m_entity_cd->has_state("attack")) {
     auto p = g_fort->recruit<Projectile>(g_resources, g_camera->s_scale);
     p->get_current_sprite()->texture = get_current_sprite()->texture;
     p->set_pos(get_pos().x + 5, get_pos().y);
@@ -40,40 +47,45 @@ void Hero::update(double deltaTime){
     p->get_current_sprite()->ypu = 8;
     p->get_current_sprite()->x = 0;
     p->get_current_sprite()->y = 5;
-    p->set_life(100,100);
+    p->set_life(100, 100);
     p->set_tag(ProjectileTag::PROJECTILE_HERO);
     p->set_collision_box({{2, 2}, {10, 11}});
     p->set_speed(250);
     p->init();
 
-    auto angle = atan2(Mouse::get_mouse_pos().y - get_pos().y, Mouse::get_mouse_pos().x - get_pos().x);
-    if(g_input_manager->get_right_axis() != vec2f(0,0)){
-      angle = atan2(g_input_manager->get_right_axis().y, g_input_manager->get_right_axis().x);
+    auto angle = atan2(Mouse::get_mouse_pos().y - get_pos().y,
+                       Mouse::get_mouse_pos().x - get_pos().x);
+    if (g_input_manager->get_right_axis() != vec2f(0, 0)) {
+      angle = atan2(g_input_manager->get_right_axis().y,
+                    g_input_manager->get_right_axis().x);
     }
     p->set_velocity({cos(angle), sin(angle)});
 
     m_entity_cd->set_state("attack", 5.f);
   }
-  
+
   animation_manager();
 }
 
-void Hero::draw(){
+void Hero::draw() {
   Entity::draw();
 #if F_ENABLE_DEBUG
-  Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale, g_atlas, {255, 0, 0}, 85, g_camera);
+  Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale,
+                    g_atlas, {255, 0, 0}, 85, g_camera);
 #endif
 }
 
-void Hero::animation_manager(){
-  if(g_input_manager->get_raw_axis().x == 1 || g_input_manager->get_right_axis().x == 1){
+void Hero::animation_manager() {
+  if (g_input_manager->get_raw_axis().x == 1 ||
+      g_input_manager->get_right_axis().x == 1) {
     m_current_sprite.facing_right = true;
   }
-  if(g_input_manager->get_raw_axis().x == -1 || g_input_manager->get_right_axis().x == -1){
+  if (g_input_manager->get_raw_axis().x == -1 ||
+      g_input_manager->get_right_axis().x == -1) {
     m_current_sprite.facing_right = false;
   }
 
-  if(g_input_manager->get_raw_axis() != vec2f(0,0)){
+  if (g_input_manager->get_raw_axis() != vec2f(0, 0)) {
     set_animation("walk");
     return;
   }
@@ -81,6 +93,4 @@ void Hero::animation_manager(){
   set_animation("idle");
 }
 
-void Hero::post_update(double deltaTime){
-  Entity::post_update(deltaTime);
-}
+void Hero::post_update(double deltaTime) { Entity::post_update(deltaTime); }

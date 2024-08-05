@@ -2,6 +2,7 @@
 #include "../Core/App.hpp"
 #include "../Core/Globals.hpp"
 #include "../Renderer/Atlas.hpp"
+#include "../Tools/Cooldown.hpp"
 #include "../Utils/Gizmos.hpp"
 #include "EntityParty.hpp"
 #include "Hero.hpp"
@@ -20,30 +21,40 @@ void Dirt::init() {
   m_current_sprite.y = 2;
   set_life(100, 100);
 
-  m_interaction_box.offset = {4,4};
+  m_interaction_box.offset = {4, 4};
   m_interaction_box.scale = {8, 8};
   m_collision_box.scale = {8, 8};
+
+  plant_state = 0;
 }
 
 void Dirt::fixed_update(double deltaTime) {
   if (is_interacting(g_hero)) {
     interact_range = true;
 
-    if(g_hero->has_interact()){
-      if(!has_plant) has_plant = true;
+    if (g_hero->has_interact()) {
+      if (!has_plant)
+        has_plant = true;
     }
   } else {
     interact_range = false;
   }
 }
 
-void Dirt::update(double deltaTime) { Entity::update(deltaTime); }
+void Dirt::update(double deltaTime) { 
+  Entity::update(deltaTime); 
+
+  if(!m_entity_cd->has_state("plant_grown") && has_plant){
+    m_entity_cd->set_state("plant_grown", PLANT_CD);
+
+    plant_state++;
+  }
+}
 
 void Dirt::draw() {
 #if F_ENABLE_DEBUG
-  Gizmos::draw_rect(get_interaction_box().offset,
-                    get_interaction_box().scale, g_atlas, {255, 0, 0}, 85,
-                    g_camera);
+  Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale,
+                    g_atlas, {255, 0, 0}, 85, g_camera);
 #endif
   if (interact_range) {
     auto str = "Crop : " + std::to_string(m_uid);
@@ -51,8 +62,14 @@ void Dirt::draw() {
                        {255, 255, 255});
   }
 
-  if(has_plant){
-    m_atlas->draw_texture_from_sheet(*m_current_sprite.texture, get_pos()+vec2f(0,-4), {8,8,0,3}, g_camera);
+  if (has_plant) {
+    m_atlas->draw_texture_from_sheet(*m_current_sprite.texture,
+                                     get_pos() + vec2f(0, -4), {8, 8, 0, 3},
+                                     g_camera);
+    m_atlas->draw_line(get_pos() + vec2f(-2, 16), get_pos() + vec2f(plant_state, 16),
+                       {0, 255, 0}, 255, g_camera, 0, 2);
+    m_atlas->draw_line(get_pos() + vec2f(-2, 17), get_pos() + vec2f(plant_state, 17),
+                       {0, 255, 0}, 255, g_camera, 0, 2);
   }
 }
 

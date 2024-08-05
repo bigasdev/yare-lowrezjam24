@@ -38,6 +38,8 @@ public:
   // a);
   void draw_pixel(float p_x, float p_y, Uint8 r, Uint8 g, Uint8 b, Uint8 a,
                   Camera *camera, int mode = 0, int scale = 1);
+  void draw_line(vec2f start, vec2f end, vec3f color, int a, Camera *camera,
+                 int mode = 0, int scale = 1);
   void draw_rect(vec2f pos, vec2f size, vec3f color, int a, Camera *camera, int mode = 0, int scale = 1);
   void draw_screen_filter(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
