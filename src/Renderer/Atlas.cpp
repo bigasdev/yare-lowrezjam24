@@ -232,6 +232,39 @@ void Atlas::draw_pixel(float p_x, float p_y, Uint8 r, Uint8 g, Uint8 b, Uint8 a,
   }
 }
 
+void Atlas::draw_rect(vec2f pos, vec2f size, vec3f color, int a, Camera *camera, int mode, int scale) {
+  SDL_SetRenderDrawColor(m_renderer_ptr, color.x, color.y, color.z, a);
+
+  switch(mode) {
+    case 0:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+      break;
+    case 1:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
+      break;
+    case 2:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
+      break;
+    case 3:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
+      break;
+    case 4:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
+      break;
+    default:
+      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+      break;
+  }
+
+  if (camera != nullptr) {
+    pos.x -= camera->get_pos().x;
+    pos.y -= camera->get_pos().y;
+  }
+
+  SDL_Rect rect = {static_cast<int>(pos.x), static_cast<int>(pos.y), static_cast<int>(size.x * scale), static_cast<int>(size.y * scale)};
+  SDL_RenderFillRect(m_renderer_ptr, &rect);
+}
+
 void Atlas::draw_screen_filter(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
   SDL_SetRenderDrawColor(m_renderer_ptr, r, g, b, a);
   SDL_RenderFillRect(m_renderer_ptr, NULL);

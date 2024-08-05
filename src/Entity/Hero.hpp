@@ -23,6 +23,7 @@ public:
   void init() override;
   void fixed_update(double deltaTime) override;
   void update(double deltaTime) override;
+  void draw() override;
   void post_update(double deltaTime) override;
 
   void animation_manager();

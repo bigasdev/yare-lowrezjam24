@@ -10,8 +10,8 @@ public:
   ~Projectile();
 
   void fixed_update(double deltaTime) override;
-  void update(double deltaTime);
-
+  void update(double deltaTime) override;
+  void draw() override;
   // setters
   void set_velocity(vec2f _velocity) { m_velocity = _velocity; }
   void reset();

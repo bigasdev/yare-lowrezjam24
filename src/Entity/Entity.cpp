@@ -151,6 +151,20 @@ CollisionBox2D Entity::get_collision_box(float _scale) {
   return box;
 }
 
+CollisionBox2D Entity::get_interaction_box(float _scale) {
+  CollisionBox2D box;
+  if (_scale == 1)
+    _scale = m_parent_scale;
+
+  if(_scale == m_parent_scale) return m_interaction_box;
+
+  box.offset = {m_pos.x + m_interaction_box.offset.x * _scale,
+                m_pos.y + m_interaction_box.offset.y * _scale};
+  box.scale = {m_interaction_box.scale.x * _scale,
+               m_interaction_box.scale.y * _scale};
+  return box;
+}
+
 float Entity::get_angle() { return m_angle; }
 
 int Entity::get_uid() { return m_uid; }
@@ -257,7 +271,7 @@ void Entity::update(double deltaTime) {
 
 void Entity::post_update(double deltaTime) {}
 
-void Entity::draw(Resources *resources) {}
+void Entity::draw() {}
 
 void Entity::set_affect(Affect affect, float cd) {
   m_affect_manager->set_affect(affect, cd);

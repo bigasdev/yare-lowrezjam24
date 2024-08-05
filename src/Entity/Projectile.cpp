@@ -57,4 +57,9 @@ void Projectile::fixed_update(double deltaTime) {
 }
 
 void Projectile::update(double deltaTime) {
+  Entity::update(deltaTime);
+}
+
+void Projectile::draw() {
+  Entity::draw();
 }

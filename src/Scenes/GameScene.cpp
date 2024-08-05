@@ -203,7 +203,7 @@ void GameScene::draw() {
 
   for (auto &e : visible_entities) {
     m_atlas->draw_from_sheet(e, m_camera);
-    e->draw(m_resources);
+    e->draw();
   }
 
   m_particle_system->draw();

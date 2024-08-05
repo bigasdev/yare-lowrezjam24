@@ -69,6 +69,7 @@ public:
   float get_speed();
   float get_angle();
   CollisionBox2D get_collision_box(float _scale = 1);
+  CollisionBox2D get_interaction_box(float _scale = 1);
   int get_uid();
   Affect get_affect();
   bool is_visible();
@@ -100,7 +101,7 @@ public:
   virtual void fixed_update(double deltaTime);
   virtual void update(double deltaTime);
   virtual void post_update(double deltaTime);
-  void draw(Resources *resources);
+  virtual void draw();
   void set_affect(Affect affect, float cd);
   bool is_alive();
   void kill();
@@ -160,6 +161,7 @@ protected:
 
   // parameters
   CollisionBox2D m_collision_box = CollisionBox2D({0, 0}, {0, 0});
+  CollisionBox2D m_interaction_box = CollisionBox2D({0, 0}, {16, 16});
   Life m_life = Life(0, 100);
   State m_current_state = UPDATE;
 

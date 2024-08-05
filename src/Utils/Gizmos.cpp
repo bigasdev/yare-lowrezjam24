@@ -31,14 +31,9 @@ void Gizmos::draw_area(vec2f pos, float radius, Atlas *atlas, vec3f color) {
 #endif
 }
 
-void Gizmos::draw_rect(vec2f pos, vec2f size, Atlas *atlas, vec3f color) {
+void Gizmos::draw_rect(vec2f pos, vec2f size, Atlas *atlas, vec3f color, int a, Camera* camera) {
 #if F_ENABLE_DEBUG
-  for (int i = 0; i < size.y; ++i) {
-    for (int j = 0; j < size.x; ++j) {
-      atlas->draw_pixel(pos.x + j, pos.y + i, color.x, color.y, color.z, 255,
-                        nullptr);
-    }
-  }
+  atlas->draw_rect(pos, size, color, a, camera, 2);
 #endif
 }
 
