@@ -11,8 +11,6 @@ Projectile::Projectile(Resources *_res, float _scale) : Entity(_res, _scale) {
   m_friction = .94f;
   lifeTime = 1;
   
-  add_sprite_animation(SpriteAnimation{"idle", {0,2}, 3, 0.15f, get_current_sprite()});
-  set_animation("idle");
   m_tag = Tag::BULLET;
 }
 
@@ -26,8 +24,6 @@ void Projectile::reset() {
 
 void Projectile::fixed_update(double deltaTime) {
   m_pos += m_velocity * m_speed * deltaTime;
-
-  m_current_animation.update(deltaTime);
 
   auto fric = Math::pow(m_friction, deltaTime);
   m_speed *= fric;
