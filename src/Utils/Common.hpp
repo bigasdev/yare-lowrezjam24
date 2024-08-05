@@ -117,6 +117,13 @@ struct CollisionBox2D {
   CollisionBox2D() : offset(0, 0), scale(0, 0) {}
   CollisionBox2D(vec2f _offset, vec2f _scale)
       : offset(_offset), scale(_scale) {}
+
+  bool intersects(const CollisionBox2D &other) {
+    return (offset.x < other.offset.x + other.scale.x) &&
+           (other.offset.x < offset.x + scale.x) &&
+           (offset.y < other.offset.y + other.scale.y) &&
+           (other.offset.y < offset.y + scale.y);
+  }
 };
 
 struct Stat {

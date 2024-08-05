@@ -5,6 +5,7 @@
 
 #include "../Core/App.hpp"
 #include "../Entity/Hero.hpp"
+#include "../Entity/Dirt.hpp"
 #include "../Entity/Item.hpp"
 #include "../Entity/Projectile.hpp"
 #include "../Entity/Room.hpp"
@@ -67,6 +68,14 @@ GameScene::GameScene(App *app, Logger *logger, Cooldown *cooldown,
 void GameScene::load_assets() {
   // tileset stuff
   m_room = new Room({1200, 400}, {30, 30});
+
+  for(int i = 0; i < 4; i++){
+    for(int j = 0; j < 4; j++){
+      auto d = m_fort->recruit<Dirt>(m_resources, m_atlas->get_game_scale());
+      d->set_pos(70 + i*10, 70 + j*10);
+      d->init();
+    }
+  }
 
   auto hero = m_fort->recruit<Hero>(m_resources, m_atlas->get_game_scale());
 
