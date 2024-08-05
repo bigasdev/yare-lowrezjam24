@@ -71,21 +71,18 @@ void GameScene::load_assets() {
   auto hero = m_fort->recruit<Hero>(m_resources, m_atlas->get_game_scale());
 
   hero->get_current_sprite()->texture =
-      m_resources->get_aseprite_texture("character_atlas");
-  hero->set_pos(1200, 400);
+      m_resources->get_aseprite_texture("concept");
+  hero->set_pos(50, 50);
 
-  hero->get_current_sprite()->xpu = 12;
+  hero->get_current_sprite()->xpu = 8;
   hero->get_current_sprite()->ypu = 8;
   hero->get_current_sprite()->x = 0;
-  hero->get_current_sprite()->y = 6;
+  hero->get_current_sprite()->y = 1;
   hero->set_life(100, 100);
   hero->m_tag = Tag::HERO;
   hero->set_collision_box({{2, 2}, {10, 11}});
   SpriteAnimation walk = {"walk", {0, 6}, 5, 1.08f, hero->get_current_sprite()};
   SpriteAnimation idle = {"idle", {0, 7}, 5, 1.4f, hero->get_current_sprite()};
-  hero->add_sprite_animation(walk);
-  hero->add_sprite_animation(idle);
-  hero->set_animation("idle");
   hero->set_speed(50);
   hero->init();
   g_hero = hero;

@@ -12,16 +12,16 @@ Room::Room(vec2i _pos, vec2i _size) {
   pos = _pos;
   size = _size;
 
-  m_tileset_texture = g_resources->get_aseprite_texture("character_atlas");
+  m_tileset_texture = g_resources->get_aseprite_texture("concept");
+  for (int i = -size.x; i < size.x; i++) {
+    for (int j = -size.y; j < size.y; j++) {
+      tiles.push_back({i*8, j*8, rnd(0, 7), 0});
+    }
+  }
 }
 
 void Room::draw() {
-  for (int i = -size.x; i < size.x; i++) {
-    for (int j = -size.y; j < size.y; j++) {
-      g_atlas->draw_texture_from_sheet(*m_tileset_texture,
-                                       {pos.x + (i * (16 * g_camera->s_scale)),
-                                        pos.y - (j * (16 * g_camera->s_scale))},
-                                       {16, 16, 0, 1}, g_camera, 1, false);
-    }
+  for (auto& tile : tiles) {
+    g_atlas->draw_texture_from_sheet(*m_tileset_texture, {static_cast<float>(tile.x),static_cast<float>(tile.y)}, {8,8,tile.tile,0}, g_camera);
   }
 }
