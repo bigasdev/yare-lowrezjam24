@@ -28,6 +28,10 @@ void Dirt::init() {
 void Dirt::fixed_update(double deltaTime) {
   if (is_interacting(g_hero)) {
     interact_range = true;
+
+    if(g_hero->has_interact()){
+      if(!has_plant) has_plant = true;
+    }
   } else {
     interact_range = false;
   }
@@ -45,6 +49,10 @@ void Dirt::draw() {
     auto str = "Crop : " + std::to_string(m_uid);
     g_atlas->draw_text({10, 55}, str.c_str(), g_app->get_main_font(),
                        {255, 255, 255});
+  }
+
+  if(has_plant){
+    m_atlas->draw_texture_from_sheet(*m_current_sprite.texture, get_pos()+vec2f(0,-4), {8,8,0,3}, g_camera);
   }
 }
 

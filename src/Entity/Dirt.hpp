@@ -20,5 +20,6 @@ public:
 
 private:
   bool interact_range = false;
+  bool has_plant = false;
 };
 #endif

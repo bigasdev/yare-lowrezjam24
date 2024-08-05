@@ -26,6 +26,8 @@ public:
   void draw() override;
   void post_update(double deltaTime) override;
 
+  bool has_interact() { return actions.interact; }
+
   void animation_manager();
   
   HeroActions actions = {false,false,false,false,false,false,false};
