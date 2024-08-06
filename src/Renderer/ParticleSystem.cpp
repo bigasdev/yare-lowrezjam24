@@ -7,6 +7,7 @@
 
 #include "../Utils/Common.hpp"
 #include <cmath>
+#include <string>
 
 ParticleSystem::ParticleSystem(Atlas *atlas, Camera *camera,
                                int max_particles) {
@@ -48,6 +49,7 @@ void ParticleSystem::update(double delta_time) {
 
     particle.life_time -= delta_time;
     particle.color.a -= particle.opacity_decrease * delta_time;
+    F_Debug::log(std::to_string(particle.color.a));
 
     if (particle.life_time <= 0) {
       particle.alive = false;
@@ -142,6 +144,39 @@ void ParticleSystem::snow_dust(vec2f pos) {
     particle.gravity = {rnd(.08f, .12f), rnd(.05f, .1f)};
     if(particle.size == 1)particle.gravity = {rnd(.2f, .35f), rnd(.15f, .25f)};
     particle.life_time = rnd(220.8f, 345.2f);
+
+    add_particle(particle);
+  }
+}
+
+void ParticleSystem::plant_carrot(vec2f pos){
+  for(int i = 0; i < 4; i++){
+    Particle particle;
+    particle.color = {255, 165, 0,255};
+    particle.size = 2;
+    particle.mode = 2;
+    particle.position = {pos.x + 5.f, pos.y+ 10.f};
+    particle.opacity_decrease = .001f;
+    particle.color.a = 255;
+    particle.move_to({20, 0}, rnd(.01f, .15f));
+    particle.friction = rnd(.8f, .9f);
+    particle.gravity = {.1f,.15f};
+    particle.life_time = 30;
+
+    add_particle(particle);
+  }
+  for(int i = 0; i < 4; i++){
+    Particle particle;
+    particle.color = {255, 165, 0,255};
+    particle.size = 2;
+    particle.mode = 2;
+    particle.position = {pos.x + 5.f, pos.y+ 10.f};
+    particle.opacity_decrease = .001f;
+    particle.color.a = 255;
+    particle.move_to({-20, 0}, rnd(.01f, .15f));
+    particle.friction = rnd(.8f, .9f);
+    particle.gravity = {.1f,.15f};
+    particle.life_time = 30;
 
     add_particle(particle);
   }

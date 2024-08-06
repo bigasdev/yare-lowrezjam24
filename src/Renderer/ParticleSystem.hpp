@@ -16,7 +16,7 @@ struct Particle {
   vec2f position;
   vec2f speed;
   float life_time = 1.5f;
-  float opacity_decrease = 1.0f;
+  float opacity_decrease = .0f;
   int size = 3;
   int mode = 1;
   SDL_Color color = {255, 255, 255, 255};
@@ -67,6 +67,7 @@ public:
   void grab_example(vec2f pos, float angle);
   void walk_dust(vec2f pos);
   void snow_dust(vec2f pos);
+  void plant_carrot(vec2f pos);
   void add_particle(Particle particle);
 
 private:

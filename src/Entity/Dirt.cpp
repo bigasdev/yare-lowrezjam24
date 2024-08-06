@@ -4,6 +4,7 @@
 #include "../Renderer/Atlas.hpp"
 #include "../Tools/Cooldown.hpp"
 #include "../Utils/Gizmos.hpp"
+#include "../Renderer/ParticleSystem.hpp"
 #include "EntityParty.hpp"
 #include "Hero.hpp"
 #include <string>
@@ -33,8 +34,10 @@ void Dirt::fixed_update(double deltaTime) {
     interact_range = true;
 
     if (g_hero->has_interact()) {
-      if (!has_plant)
+      if (!has_plant){
+        g_particle_system->plant_carrot(get_pos());
         has_plant = true;
+      }
     }
   } else {
     interact_range = false;
