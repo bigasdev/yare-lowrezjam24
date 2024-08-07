@@ -1,7 +1,7 @@
 # set the App name
 NAME = rpg_side_screen
 # set compiler
-CC = g++ -std=c++20 -wno-narrowing
+CC = g++ -std=c++20 -Wno-narrowing
 STATIC_LIBS = -static-libstdc++ -static-libgcc
 INCLUDES = -Iinclude -Iinclude/sdl -Iinclude/headers -Llib
 LIBS = -lstdc++fs -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lole32 -mwindows
@@ -64,6 +64,6 @@ compile: bin_dir imgui_o app_o entity_o entity_ui_o renderer_o resources_o scene
 	${CC} $(STATIC_LIBS) $(INCLUDES) -Llib -o ${NAME}_debug ${BIN} $(ICON_DIR) $(LIBS) -mconsole
 
 web: src/Core/*.cpp src/Entity/*.cpp src/Entity/UI/*.cpp src/Renderer/*.cpp src/Resources/*.cpp src/Scenes/*.cpp src/Tools/*.cpp src/Utils/*.cpp
-	em++ $^ -o $@ -g -lm --bind -std=c++20 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' --preload-file res/ --use-preload-plugins
+	em++ $^ -o $@ -g -lm --bind -std=c++20 -Wno-narrowing -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' --preload-file res/ --use-preload-plugins
 
 

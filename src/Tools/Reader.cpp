@@ -1,9 +1,12 @@
 #include "Reader.hpp"
 #include <iostream>
+#ifndef __EMSCRIPTEN__
 #include <experimental/filesystem>
+#endif
 
 std::vector<std::string> Reader::get_folders(std::string path)
 {
+#ifndef __EMSCRIPTEN__
         std::vector<std::string> folders;
         const std::experimental::filesystem::path realPath{ path };
         for (auto const& dir_entry : std::experimental::filesystem::directory_iterator{ realPath }){
@@ -17,10 +20,13 @@ std::vector<std::string> Reader::get_folders(std::string path)
             folders.push_back(dir_entry.path().string());
         }
         return folders;
+#endif
+  return std::vector<std::string>();
 }
 
 std::vector<std::string> Reader::read_file(std::string path)
 {
+#ifndef __EMSCRIPTEN__
     std::vector<std::string> files;
         const std::experimental::filesystem::path realPath{ path };
         for (auto const& dir_entry : std::experimental::filesystem::directory_iterator{ realPath }){
@@ -34,9 +40,12 @@ std::vector<std::string> Reader::read_file(std::string path)
             files.push_back(dir_entry.path().string());
         }
         return files;
+#endif
+  return std::vector<std::string>();
 }
 std::vector<std::string> Reader::get_extension_files(std::string path, const char *ext)
 {
+#ifndef __EMSCRIPTEN__
     std::vector<std::string> files;
     const std::experimental::filesystem::path realPath{ path };
     for (const auto & entry : std::experimental::filesystem::directory_iterator{realPath})
@@ -49,4 +58,6 @@ std::vector<std::string> Reader::get_extension_files(std::string path, const cha
     }
 
     return files;
+#endif
+  return std::vector<std::string>();
 }
