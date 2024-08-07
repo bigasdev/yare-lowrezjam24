@@ -9,7 +9,7 @@
 #include <memory>
 
 // Fps
-Uint64 currentTick = SDL_GetTicks();
+Uint64 currentTick = SDL_GetPerformanceCounter();
 Uint64 lastTick = 0;
 double deltaTime = 0;
 const double desiredFPS = 30.0;
