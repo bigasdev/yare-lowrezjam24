@@ -57,8 +57,11 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
                           SDL_WINDOW_FULLSCREEN_DESKTOP);
   }
 
+  auto ini = SDL_Init(SDL_INIT_EVERYTHING);
+  F_Debug::log("SDL INIT : " + std::to_string(ini));
+
   // SDL Initialization
-  if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
+  if (ini == 0) {
     std::cout << "App initialized!..." << std::endl;
     m_window = SDL_CreateWindow(title, xpos, ypos, width, height, window_flags);
     int h = 0, w = 0;
@@ -320,9 +323,11 @@ void App::render() {
 
     m_atlas_ptr->draw_text({1, 1}, std::to_string(m_fps).c_str(), s_main_font, {255, 255, 255, 255}, 1);
   } else {
+#ifndef __EMSCRIPTEN__
     m_atlas_ptr->draw_text(
         {(m_window_size.x - 70) / 2, (m_window_size.y - 50) / 2}, "Loading...",
         s_main_font, {255, 255, 255, 255});
+#endif
   }
   SDL_RenderPresent(m_renderer);
 }
