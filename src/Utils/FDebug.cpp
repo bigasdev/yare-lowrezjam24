@@ -16,6 +16,9 @@ void F_Debug::log(std::string message)
 #if F_ENABLE_DEBUG
     std::cout << "LOG : " << message << "\n";
 #endif
+#ifdef __EMSCRIPTEN__
+    std::cout << "LOG : " << message << "\n";
+#endif
 }
 
 void F_Debug::log_group(std::string type, std::string value)
@@ -24,12 +27,18 @@ void F_Debug::log_group(std::string type, std::string value)
 #if F_ENABLE_DEBUG
     std::cout << std::left << std::setfill('.') << std::setw(20) << type << std::right << std::setfill('.') << std::setw(20) << value << "\n";
 #endif
+#ifdef __EMSCRIPTEN__
+    std::cout << std::left << std::setfill('.') << std::setw(20) << type << std::right << std::setfill('.') << std::setw(20) << value << "\n";
+#endif
 }
 
 void F_Debug::error(std::string message)
 {
     logs.push_back("ERROR : " + message);
 #if F_ENABLE_DEBUG
+    std::cerr << "ERROR : " << message << "\n";
+#endif
+#ifdef __EMSCRIPTEN__
     std::cerr << "ERROR : " << message << "\n";
 #endif
 }

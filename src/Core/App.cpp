@@ -11,7 +11,7 @@
 #include "../Utils/Common.hpp"
 #include "../Utils/FDebug.hpp"
 #include "../Utils/Math.hpp"
-#include "../renderer/Atlas.hpp"
+#include "../Renderer/Atlas.hpp"
 #include "App.hpp"
 #include "Globals.hpp"
 #include "SDL_hints.h"
@@ -29,6 +29,7 @@ bool debug_mode = false;
 Logger *m_logger = nullptr;
 Cooldown *m_cd = nullptr;
 Camera *m_camera = nullptr;
+int z_camera = 2;
 
 // Scenes
 Scene *m_current_scene = nullptr;
@@ -57,8 +58,21 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
                           SDL_WINDOW_FULLSCREEN_DESKTOP);
   }
 
+#ifdef __EMSCRIPTEN__
+  window_flags = (SDL_WindowFlags)(SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_SHOWN);
+  z_camera = 5;
+#endif
+
+  int ini = -99;
+#ifdef __EMSCRIPTEN__
+  ini = SDL_Init(SDL_INIT_VIDEO);
+#else
+  ini = SDL_Init(SDL_INIT_EVERYTHING);
+#endif
+  F_Debug::log("SDL INIT : " + std::to_string(ini));
+
   // SDL Initialization
-  if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
+  if (ini == 0) {
     std::cout << "App initialized!..." << std::endl;
     m_window = SDL_CreateWindow(title, xpos, ypos, width, height, window_flags);
     int h = 0, w = 0;
@@ -158,7 +172,6 @@ void App::load() {
   }
 }
 // FIX: remove this later
-int z_camera = 2;
 std::vector<vec2i> resolutions = {{128, 128}, {192, 192},
                                   {256, 256}, {320, 320}, 
                                   {384, 384},             
@@ -320,9 +333,11 @@ void App::render() {
 
     m_atlas_ptr->draw_text({1, 1}, std::to_string(m_fps).c_str(), s_main_font, {255, 255, 255, 255}, 1);
   } else {
+#ifndef __EMSCRIPTEN__
     m_atlas_ptr->draw_text(
         {(m_window_size.x - 70) / 2, (m_window_size.y - 50) / 2}, "Loading...",
         s_main_font, {255, 255, 255, 255});
+#endif
   }
   SDL_RenderPresent(m_renderer);
 }

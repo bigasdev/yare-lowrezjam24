@@ -163,8 +163,8 @@ void Atlas::draw_from_sheet(Entity *entity, Camera *camera) {
   vec2f pos = entity->get_pos();
   vec2f cam_pos = camera->get_pos();
 
-  SDL_Rect dst = {pos.x - cam_pos.x,
-                  pos.y - cam_pos.y, scaled_x,
+  SDL_Rect dst = {static_cast<int>(pos.x) - static_cast<int>(cam_pos.x),
+                  static_cast<int>(pos.y) - static_cast<int>(cam_pos.y), scaled_x,
                   scaled_y};
 
   auto flip = !curr_sprite.facing_right ? SDL_FLIP_HORIZONTAL
@@ -186,7 +186,7 @@ void Atlas::draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
   SDL_Rect src = {point.x * point.xpu, point.y * point.ypu, point.xpu,
                   point.ypu};
 
-  SDL_Rect dst = {pos.x - camera->get_pos().x, pos.y - camera->get_pos().y,
+  SDL_Rect dst = {static_cast<int>(pos.x) - static_cast<int>(camera->get_pos().x), static_cast<int>(pos.y) - static_cast<int>(camera->get_pos().y),
                   scaled_x, scaled_y};
 
   auto flip_state = flip ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;

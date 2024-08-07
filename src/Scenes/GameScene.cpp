@@ -153,13 +153,13 @@ void GameScene::fixed_update(double deltaTime) {
   for (auto &e : visible_entities) {
     e->fixed_update(deltaTime);
   }
+  m_camera->update(deltaTime);
+  m_camera->move(deltaTime);
 }
 
 
 void GameScene::update(double deltaTime) {
   m_cd->update(deltaTime);
-  m_camera->update(deltaTime);
-  m_camera->move(deltaTime);
 
   m_particle_system->update(deltaTime);
   m_light_system->update(deltaTime);

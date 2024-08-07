@@ -20,6 +20,7 @@ mono_crash.*
 make/
 .build/
 .release/
+.web/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -304,7 +305,7 @@ node_modules/
 *.dsw
 *.dsp
 
-# Visual Studio 6 technical files 
+# Visual Studio 6 technical files
 *.ncb
 *.aps
 
