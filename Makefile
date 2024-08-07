@@ -64,6 +64,6 @@ compile: bin_dir imgui_o app_o entity_o entity_ui_o renderer_o resources_o scene
 	${CC} $(STATIC_LIBS) $(INCLUDES) -Llib -o ${NAME}_debug ${BIN} $(ICON_DIR) $(LIBS) -mconsole
 
 web: src/Core/*.cpp src/Entity/*.cpp src/Entity/UI/*.cpp src/Renderer/*.cpp src/Resources/*.cpp src/Scenes/*.cpp src/Tools/*.cpp src/Utils/*.cpp
-	em++ $^ -o .web/yare.js -g -lm --bind -std=c++20 -Wno-narrowing -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s USE_SDL_TTF=2 -s SDL2_IMAGE_FORMATS='["png"]' -s ALLOW_MEMORY_GROWTH=1 -s TOTAL_STACK=64MB -s INITIAL_MEMORY=64MB --preload-file res --preload-file res/font --preload-file res/icon --preload-file res/sprites --use-preload-plugins
+	em++ $^ -o .web/yare.js -g -lm --bind -std=c++20 -Wno-narrowing -s USE_SDL=2 -O3 -s USE_SDL_IMAGE=2 -s USE_SDL_TTF=2 -s SDL2_IMAGE_FORMATS='["png"]' -s ALLOW_MEMORY_GROWTH=1 -s TOTAL_STACK=64MB -s INITIAL_MEMORY=96MB --preload-file res --preload-file res/font --preload-file res/icon --preload-file res/sprites --use-preload-plugins
 
 
