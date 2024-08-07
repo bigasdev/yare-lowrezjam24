@@ -12,7 +12,7 @@
 Uint64 currentTick = SDL_GetTicks();
 Uint64 lastTick = 0;
 double deltaTime = 0;
-const double desiredFPS = 120.0;
+const double desiredFPS = 30.0;
 const double frameTime = 1.0 / desiredFPS;
 double accumulatedTime = 0;
 
