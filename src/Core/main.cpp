@@ -24,6 +24,7 @@ float smoothed_fps = 0.0f;
 std::unique_ptr<App> mApp;
 
 void mainloop() {
+#ifndef __EMSCRIPTEN__
   // Gathering the fps before everything so it can calculate the difference
   // for the framerate;
   lastTick = currentTick;
@@ -56,6 +57,32 @@ void mainloop() {
 
   // Sending the fps to the app so it can be displayed
   mApp->set_fps(smoothed_fps);
+#endif
+#ifdef __EMSCRIPTEN__
+  double new_time = SDL_GetTicks();
+  double frame_time = new_time - currentTick;
+
+  if (frame_time > 250)
+    frame_time = 250;
+
+  currentTick = new_time;
+  accumulatedTime += frame_time;
+
+  mApp->handle_events();
+  while (accumulatedTime >= frame_time) {
+    mApp->fixed_update(frame_time);
+    mApp->update(frame_time);
+    accumulatedTime -= frame_time;
+  }
+
+  mApp->post_update(frame_time);
+  mApp->render();
+
+  frame_time = SDL_GetTicks() - currentTick;
+  fps = (frame_time > 0) ? 1000.0f / frame_time : 0.0f;
+  smoothed_fps = (ALPHA * fps) + ((1.0f - ALPHA) * smoothed_fps);
+  mApp->set_fps(smoothed_fps);
+#endif
 
   mApp->load();
 #ifdef __EMSCRIPTEN__
