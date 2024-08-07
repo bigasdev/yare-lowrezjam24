@@ -21,7 +21,7 @@ float fps;
 const float ALPHA = 0.1f;
 float smoothed_fps = 0.0f;
 // App
-std::unique_ptr<App> mApp = std::make_unique<App>();
+std::unique_ptr<App> mApp;
 
 void mainloop() {
   // Gathering the fps before everything so it can calculate the difference
@@ -67,6 +67,8 @@ void mainloop() {
 
 // Initialization of the app and calling all the core functions
 int main(int args, char *argv[]) {
+  mApp = std::make_unique<App>();
+  F_Debug::log("App created!");
 
   mApp->init("Fortress framework", SDL_WINDOWPOS_CENTERED,
              SDL_WINDOWPOS_CENTERED, 128, 128, false, false);
