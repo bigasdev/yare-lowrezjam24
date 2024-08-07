@@ -64,6 +64,6 @@ compile: bin_dir imgui_o app_o entity_o entity_ui_o renderer_o resources_o scene
 	${CC} $(STATIC_LIBS) $(INCLUDES) -Llib -o ${NAME}_debug ${BIN} $(ICON_DIR) $(LIBS) -mconsole
 
 web: src/Core/*.cpp src/Entity/*.cpp src/Entity/UI/*.cpp src/Renderer/*.cpp src/Resources/*.cpp src/Scenes/*.cpp src/Tools/*.cpp src/Utils/*.cpp
-	em++ $^ -o $@ -g -lm --bind -std=c++20 -Wno-narrowing -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' --preload-file res/ --use-preload-plugins
+	em++ $^ -o $@ -g -lm --bind -std=c++20 -Wno-narrowing -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s USE_SDL_TTF=2 -s SDL2_IMAGE_FORMATS='["png"]' --preload-file res/ --use-preload-plugins
 
 
