@@ -11,8 +11,9 @@ CastleDBConverter::CastleDBConverter(const std::string filename, bool update)
     m_has_update = update;
 
     if(m_has_update) update_data();
-
+#ifndef __EMSCRIPTEN__
     m_last_edited = std::to_string(std::filesystem::last_write_time(filename).time_since_epoch().count());
+#endif
 }
 
 CastleDBConverter::~CastleDBConverter()
@@ -77,6 +78,7 @@ CastleData CastleDBConverter::extract_data_from_name(const std::string name, std
 //It updates the cache if enabled too
 bool CastleDBConverter::update(const std::string filename)
 {
+#ifndef __EMSCRIPTEN__
     if(m_last_edited != std::to_string(std::filesystem::last_write_time(filename).time_since_epoch().count())){
         std::ifstream f(filename);
         data = json::parse(f);
@@ -87,6 +89,7 @@ bool CastleDBConverter::update(const std::string filename)
         return true;
     }
     return false;
+#endif
 }
 
 //Updates the cache data
