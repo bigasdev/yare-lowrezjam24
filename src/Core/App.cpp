@@ -29,6 +29,7 @@ bool debug_mode = false;
 Logger *m_logger = nullptr;
 Cooldown *m_cd = nullptr;
 Camera *m_camera = nullptr;
+int z_camera = 2;
 
 // Scenes
 Scene *m_current_scene = nullptr;
@@ -59,6 +60,7 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
 
 #ifdef __EMSCRIPTEN__
   window_flags = (SDL_WindowFlags)(SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_SHOWN);
+  z_camera = 5;
 #endif
 
   int ini = -99;
@@ -170,7 +172,6 @@ void App::load() {
   }
 }
 // FIX: remove this later
-int z_camera = 5;
 std::vector<vec2i> resolutions = {{128, 128}, {192, 192},
                                   {256, 256}, {320, 320}, 
                                   {384, 384},             
