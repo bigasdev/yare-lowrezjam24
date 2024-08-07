@@ -57,6 +57,10 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
                           SDL_WINDOW_FULLSCREEN_DESKTOP);
   }
 
+#ifdef __EMSCRIPTEN__
+  window_flags = (SDL_WindowFlags)(SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_SHOWN);
+#endif
+
   int ini = -99;
 #ifdef __EMSCRIPTEN__
   ini = SDL_Init(SDL_INIT_VIDEO);
@@ -166,7 +170,7 @@ void App::load() {
   }
 }
 // FIX: remove this later
-int z_camera = 2;
+int z_camera = 10;
 std::vector<vec2i> resolutions = {{128, 128}, {192, 192},
                                   {256, 256}, {320, 320}, 
                                   {384, 384},             
@@ -213,7 +217,9 @@ void App::handle_events() {
       {
         int h = 0, w = 0;
         SDL_GetWindowSize(m_window, &h, &w);
+#ifndef __EMSCRIPTEN__
         z_camera = find_res(h, w) + 1;
+#endif
         m_window_size.x = h;
         m_window_size.y = w;
       }
