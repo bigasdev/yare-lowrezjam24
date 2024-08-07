@@ -71,7 +71,7 @@ int main(int args, char *argv[]) {
   F_Debug::log("App created!");
 
   mApp->init("Fortress framework", SDL_WINDOWPOS_CENTERED,
-             SDL_WINDOWPOS_CENTERED, 128, 128, false, false);
+             SDL_WINDOWPOS_CENTERED, 1280, 1280, false, false);
   F_Debug::log("App initialized!");
   F_Debug::log_group("App window size",
                      std::to_string(mApp->get_window_size().x) + "x" +

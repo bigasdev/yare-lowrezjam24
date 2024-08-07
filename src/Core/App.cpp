@@ -57,7 +57,12 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
                           SDL_WINDOW_FULLSCREEN_DESKTOP);
   }
 
-  auto ini = SDL_Init(SDL_INIT_EVERYTHING);
+  int ini = -99;
+#ifdef __EMSCRIPTEN__
+  ini = SDL_Init(SDL_INIT_VIDEO);
+#else
+  ini = SDL_Init(SDL_INIT_EVERYTHING);
+#endif
   F_Debug::log("SDL INIT : " + std::to_string(ini));
 
   // SDL Initialization
