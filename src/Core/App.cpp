@@ -170,7 +170,7 @@ void App::load() {
   }
 }
 // FIX: remove this later
-int z_camera = 10;
+int z_camera = 2;
 std::vector<vec2i> resolutions = {{128, 128}, {192, 192},
                                   {256, 256}, {320, 320}, 
                                   {384, 384},             
@@ -217,9 +217,7 @@ void App::handle_events() {
       {
         int h = 0, w = 0;
         SDL_GetWindowSize(m_window, &h, &w);
-#ifndef __EMSCRIPTEN__
         z_camera = find_res(h, w) + 1;
-#endif
         m_window_size.x = h;
         m_window_size.y = w;
       }

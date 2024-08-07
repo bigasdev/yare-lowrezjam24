@@ -59,7 +59,7 @@ void mainloop() {
 
   mApp->load();
 #ifdef __EMSCRIPTEN__
-  if(!mApp->running()) {
+  if (!mApp->running()) {
     emscripten_cancel_main_loop();
   }
 #endif
@@ -69,9 +69,16 @@ void mainloop() {
 int main(int args, char *argv[]) {
   mApp = std::make_unique<App>();
   F_Debug::log("App created!");
+  int width = 128;
+  int height = 128;
+
+#ifdef __EMSCRIPTEN__
+  width = 448;
+  height = 448;
+#endif
 
   mApp->init("Fortress framework", SDL_WINDOWPOS_CENTERED,
-             SDL_WINDOWPOS_CENTERED, 640, 640, false, false);
+             SDL_WINDOWPOS_CENTERED, width, height, false, false);
   F_Debug::log("App initialized!");
   F_Debug::log_group("App window size",
                      std::to_string(mApp->get_window_size().x) + "x" +
