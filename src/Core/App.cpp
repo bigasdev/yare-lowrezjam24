@@ -11,7 +11,7 @@
 #include "../Utils/Common.hpp"
 #include "../Utils/FDebug.hpp"
 #include "../Utils/Math.hpp"
-#include "../renderer/Atlas.hpp"
+#include "../Renderer/Atlas.hpp"
 #include "App.hpp"
 #include "Globals.hpp"
 #include "SDL_hints.h"
