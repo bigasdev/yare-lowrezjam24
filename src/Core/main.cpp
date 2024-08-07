@@ -1,6 +1,7 @@
 #include "../Utils/FDebug.hpp"
 #include "App.hpp"
 #include "SDL.h"
+#include "SDL_timer.h"
 #include <iostream>
 #ifdef __EMSCRIPTEN__
 #include "emscripten.h"
@@ -8,10 +9,10 @@
 #include <memory>
 
 // Fps
-Uint64 currentTick = SDL_GetPerformanceCounter();
+Uint64 currentTick = SDL_GetTicks();
 Uint64 lastTick = 0;
 double deltaTime = 0;
-const double desiredFPS = 60.0;
+const double desiredFPS = 120.0;
 const double frameTime = 1.0 / desiredFPS;
 double accumulatedTime = 0;
 
@@ -62,8 +63,8 @@ void mainloop() {
   double new_time = SDL_GetTicks();
   double frame_time = new_time - currentTick;
 
-  if (frame_time > 250)
-    frame_time = 250;
+  if (frame_time > frameTime)
+    frame_time = frameTime;
 
   currentTick = new_time;
   accumulatedTime += frame_time;
@@ -71,9 +72,9 @@ void mainloop() {
   mApp->handle_events();
   while (accumulatedTime >= frame_time) {
     mApp->fixed_update(frame_time);
-    mApp->update(frame_time);
     accumulatedTime -= frame_time;
   }
+  mApp->update(frame_time);
 
   mApp->post_update(frame_time);
   mApp->render();
