@@ -170,7 +170,7 @@ void App::load() {
   }
 }
 // FIX: remove this later
-int z_camera = 2;
+int z_camera = 5;
 std::vector<vec2i> resolutions = {{128, 128}, {192, 192},
                                   {256, 256}, {320, 320}, 
                                   {384, 384},             
