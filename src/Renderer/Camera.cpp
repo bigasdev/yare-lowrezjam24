@@ -40,10 +40,8 @@ void Camera::move(double deltaTime) {
   // currentPos.x = refPos.x - (cameraSize.x / 2);
   // currentPos.y = refPos.y - (cameraSize.y / 2);
 
-  m_current_pos.x =
-      (1 - m_smooth_speed) * m_current_pos.x + m_smooth_speed * m_ref_pos.x;
-  m_current_pos.y =
-      (1 - m_smooth_speed) * m_current_pos.y + m_smooth_speed * m_ref_pos.y;
+  m_current_pos.x = m_ref_pos.x;
+  m_current_pos.y = m_ref_pos.y;
 
   /*
   currentPos.x += (x + smoothSpeed)-cameraSize.x/2;

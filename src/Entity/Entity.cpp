@@ -40,6 +40,7 @@ Entity::Entity(Resources *_resources, float _scale) {
 
 void Entity::init() {
   if (m_tag == Tag::HERO) {
+    g_camera->set_entity(this);
   }
 }
 

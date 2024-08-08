@@ -9,10 +9,15 @@
 #include <memory>
 
 // Fps
-Uint64 currentTick = SDL_GetPerformanceCounter();
 Uint64 lastTick = 0;
 double deltaTime = 0;
+#ifndef __EMSCRIPTEN__
+Uint64 currentTick = SDL_GetPerformanceCounter();
 const double desiredFPS = 60.0;
+#else 
+Uint64 currentTick = SDL_GetTicks();
+const double desiredFPS = 15.0;
+#endif
 const double frameTime = 1.0 / desiredFPS;
 double accumulatedTime = 0;
 
