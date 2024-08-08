@@ -158,7 +158,7 @@ void ParticleSystem::plant_carrot(vec2f pos){
     particle.position = {pos.x + 5.f, pos.y+ 10.f};
     particle.opacity_decrease = .001f;
     particle.color.a = 255;
-    particle.move_to({20, 0}, rnd(.01f, .15f));
+    particle.move_to({10, 0}, rnd(.01f, .15f));
     particle.friction = rnd(.8f, .9f);
     particle.gravity = {.1f,.15f};
     particle.life_time = 30;
@@ -173,7 +173,7 @@ void ParticleSystem::plant_carrot(vec2f pos){
     particle.position = {pos.x + 5.f, pos.y+ 10.f};
     particle.opacity_decrease = .001f;
     particle.color.a = 255;
-    particle.move_to({-20, 0}, rnd(.01f, .15f));
+    particle.move_to({-10, 0}, rnd(.01f, .15f));
     particle.friction = rnd(.8f, .9f);
     particle.gravity = {.1f,.15f};
     particle.life_time = 30;
