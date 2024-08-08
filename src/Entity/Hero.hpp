@@ -27,6 +27,7 @@ public:
   void post_update(double deltaTime) override;
 
   bool has_interact() { return actions.interact; }
+  bool is_moving();
 
   void animation_manager();
   

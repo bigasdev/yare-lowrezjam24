@@ -22,6 +22,10 @@ void Hero::init() {
   m_interaction_box.scale = {15, 15};
 }
 
+bool Hero::is_moving(){
+  return !g_input_manager->get_raw_axis().zero();
+}
+
 void Hero::fixed_update(double deltaTime) {
   m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
 }
@@ -72,6 +76,9 @@ void Hero::draw() {
 #if F_ENABLE_DEBUG
   Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale,
                     g_atlas, {255, 0, 0}, 85, g_camera);
+  if(is_moving()){
+    Gizmos::draw_rect(get_interaction_box().offset + g_input_manager->get_raw_axis() * 3, get_interaction_box().scale, g_atlas, {0,255,0}, 125, g_camera); 
+  }
 #endif
 }
 

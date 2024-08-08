@@ -81,7 +81,7 @@ void GameScene::load_assets() {
 
   hero->get_current_sprite()->texture =
       m_resources->get_aseprite_texture("concept");
-  hero->set_pos(50, 50);
+  hero->set_pos(0, 0);
 
   hero->get_current_sprite()->xpu = 8;
   hero->get_current_sprite()->ypu = 8;
@@ -186,8 +186,6 @@ void GameScene::update(double deltaTime) {
     e->update(deltaTime);
   }
 
-  m_camera->update(deltaTime);
-  m_camera->move(deltaTime);
 
 
 #if F_ENABLE_DEBUG
@@ -200,6 +198,8 @@ void GameScene::update(double deltaTime) {
 
 void GameScene::post_update(double deltaTime) {
   m_garbage_collector->update();
+  m_camera->update(deltaTime);
+  m_camera->move(deltaTime);
 }
 
 void GameScene::ui() {}
@@ -218,6 +218,8 @@ void GameScene::draw() {
   for(auto &e : visible_entities){
     e->draw();
   }
+
+  m_room->post_draw();
 
   m_particle_system->draw();
   m_light_system->draw(m_atlas, m_camera);
