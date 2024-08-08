@@ -197,9 +197,9 @@ void GameScene::update(double deltaTime) {
 }
 
 void GameScene::post_update(double deltaTime) {
-  m_garbage_collector->update();
   m_camera->update(deltaTime);
   m_camera->move(deltaTime);
+  m_garbage_collector->update();
 }
 
 void GameScene::ui() {}

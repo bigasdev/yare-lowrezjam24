@@ -37,6 +37,7 @@ void mainloop() {
   currentTick = SDL_GetPerformanceCounter();
   deltaTime = (double)((currentTick - lastTick) /
                        (double)SDL_GetPerformanceFrequency());
+  F_Debug::log("Delta time: " + std::to_string(deltaTime));
 
   start_time = SDL_GetTicks();
 
@@ -47,12 +48,12 @@ void mainloop() {
 
   mApp->handle_events();
   while (accumulatedTime >= frameTime) {
-    mApp->fixed_update(frameTime);
+    mApp->fixed_update(deltaTime);
 
     accumulatedTime -= frameTime;
   }
-  mApp->update(frameTime);
-  mApp->post_update(frameTime);
+  mApp->update(deltaTime);
+  mApp->post_update(deltaTime);
 
   mApp->render();
   // Framerate calculation

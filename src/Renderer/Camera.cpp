@@ -89,6 +89,10 @@ bool Camera::is_on_screen(vec2f pos, float padding) {
 }
 
 void Camera::set_entity(Entity *_target) {
+  if (_target == nullptr) {
+    m_target = nullptr;
+    return;
+  }
   m_target = _target;
   m_ref_pos = m_target->get_pos();
   m_ref_pos.x -= m_camera_size->x / 2;

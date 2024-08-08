@@ -21,6 +21,7 @@ void Hero::init() {
 
   m_interaction_box.offset = {0, 0};
   m_interaction_box.scale = {15, 15};
+  m_speed = 250;
 }
 
 bool Hero::is_moving(){
@@ -63,6 +64,7 @@ void Hero::update(double deltaTime) {
   }
 
   if (actions.attack && !m_entity_cd->has_state("attack")) {
+    g_camera->set_entity(nullptr);
     auto p = g_fort->recruit<Projectile>(g_resources, g_camera->s_scale);
     p->get_current_sprite()->texture = get_current_sprite()->texture;
     p->set_pos(get_pos().x + 5, get_pos().y);
@@ -93,11 +95,11 @@ void Hero::update(double deltaTime) {
 void Hero::draw() {
   Entity::draw();
 #if F_ENABLE_DEBUG
-  Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale,
+  /*Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale,
                     g_atlas, {255, 0, 0}, 85, g_camera);
   if(is_moving()){
     Gizmos::draw_rect(get_pos() + g_input_manager->get_raw_axis() * 3, get_interaction_box().scale, g_atlas, {0,255,0}, 125, g_camera); 
-  }
+  }*/
 #endif
 }
 
