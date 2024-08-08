@@ -25,6 +25,7 @@ Room::Room(vec2i _pos, vec2i _size) {
   }
 
   for(int i = 0; i < 12; i++){
+    coll.scale = {12,12};
     props.push_back({20 + i*8, 30, coll, 6, 1});
   }
 
@@ -35,15 +36,15 @@ void Room::draw() {
   for (auto& tile : tiles) {
     g_atlas->draw_texture_from_sheet(*m_tileset_texture, {static_cast<float>(tile.x),static_cast<float>(tile.y)}, {8,8,tile.tile,0}, g_camera);
   }
-}
-
-void Room::post_draw() {
 #if F_ENABLE_DEBUG
   for (auto& prop : props) {
-    Gizmos::draw_rect({static_cast<float>(prop.x),static_cast<float>(prop.y)}, {16,16}, g_atlas, {255,0,0}, 100, g_camera);
+    Gizmos::draw_rect({static_cast<float>(prop.x),static_cast<float>(prop.y)}, prop.collision.scale, g_atlas, {255,0,0}, 100, g_camera);
   }
 #endif
   for (auto& prop : props) {
     g_atlas->draw_texture_from_sheet(*m_tileset_texture, {static_cast<float>(prop.x),static_cast<float>(prop.y)}, {8,8,0,prop.tile}, g_camera);
   }
+}
+
+void Room::post_draw() {
 }

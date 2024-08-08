@@ -8,6 +8,7 @@
 #include "../Utils/Gizmos.hpp"
 #include "../Utils/Mouse.hpp"
 #include "Projectile.hpp"
+#include "Room.hpp"
 
 Hero::Hero() {}
 
@@ -27,6 +28,24 @@ bool Hero::is_moving(){
 }
 
 void Hero::fixed_update(double deltaTime) {
+  if(is_moving()){
+    for(auto& prop : *g_collider_tiles){
+      CollisionBox2D box = get_interaction_box();
+      box.offset = get_pos() + g_input_manager->get_raw_axis() * 3;
+
+      CollisionBox2D prop_box;
+      if(get_pos().y < prop.y){
+        prop_box.offset = {static_cast<float>(prop.x), static_cast<float>(prop.y+2)};
+      }else{
+        prop_box.offset = {static_cast<float>(prop.x), static_cast<float>(prop.y)-8};
+      }
+      prop_box.scale = prop.collision.scale;
+
+      if(is_colliding(box, prop_box)){
+        return;
+      }
+    }
+  }
   m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
 }
 
