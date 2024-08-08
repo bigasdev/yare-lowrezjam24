@@ -226,6 +226,13 @@ bool Entity::is_colliding(Entity *en) {
          (box2.offset.y < box1.offset.y + box1.scale.y);
 }
 
+bool Entity::is_colliding(CollisionBox2D box1, CollisionBox2D box2) {
+  return (box1.offset.x < box2.offset.x + box2.scale.x) &&
+         (box2.offset.x < box1.offset.x + box1.scale.x) &&
+         (box1.offset.y < box2.offset.y + box2.scale.y) &&
+         (box2.offset.y < box1.offset.y + box1.scale.y);
+}
+
 bool Entity::is_interacting(Entity *en) {
   CollisionBox2D box1 = get_interaction_box();
   CollisionBox2D box2 = en->get_interaction_box();

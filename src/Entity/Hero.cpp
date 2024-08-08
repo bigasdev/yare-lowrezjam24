@@ -77,7 +77,7 @@ void Hero::draw() {
   Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale,
                     g_atlas, {255, 0, 0}, 85, g_camera);
   if(is_moving()){
-    Gizmos::draw_rect(get_interaction_box().offset + g_input_manager->get_raw_axis() * 3, get_interaction_box().scale, g_atlas, {0,255,0}, 125, g_camera); 
+    Gizmos::draw_rect(get_pos() + g_input_manager->get_raw_axis() * 3, get_interaction_box().scale, g_atlas, {0,255,0}, 125, g_camera); 
   }
 #endif
 }

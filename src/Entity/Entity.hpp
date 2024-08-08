@@ -94,6 +94,7 @@ public:
   // utils
   bool is_close_to_pos(vec2f pos, float radius);
   bool is_colliding(Entity* en);
+  bool is_colliding(CollisionBox2D box1, CollisionBox2D box2);
   bool is_interacting(Entity* en);
 
   // functionality methods

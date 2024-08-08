@@ -4,6 +4,7 @@
 #include "../Renderer/Atlas.hpp"
 #include "../Renderer/Camera.hpp"
 #include "../Resources/Resources.hpp"
+#include "../Utils/Gizmos.hpp"
 #include "EntityParty.hpp"
 
 Room::Room() {}
@@ -26,6 +27,8 @@ Room::Room(vec2i _pos, vec2i _size) {
   for(int i = 0; i < 12; i++){
     props.push_back({20 + i*8, 30, coll, 6, 1});
   }
+
+  g_collider_tiles = &props;
 }
 
 void Room::draw() {
@@ -35,6 +38,11 @@ void Room::draw() {
 }
 
 void Room::post_draw() {
+#if F_ENABLE_DEBUG
+  for (auto& prop : props) {
+    Gizmos::draw_rect({static_cast<float>(prop.x),static_cast<float>(prop.y)}, {16,16}, g_atlas, {255,0,0}, 100, g_camera);
+  }
+#endif
   for (auto& prop : props) {
     g_atlas->draw_texture_from_sheet(*m_tileset_texture, {static_cast<float>(prop.x),static_cast<float>(prop.y)}, {8,8,0,prop.tile}, g_camera);
   }
