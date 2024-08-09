@@ -21,7 +21,7 @@ void Hero::init() {
 
   m_interaction_box.offset = {0, 0};
   m_interaction_box.scale = {15, 15};
-  m_speed = 250;
+  m_speed = 50;
 }
 
 bool Hero::is_moving(){

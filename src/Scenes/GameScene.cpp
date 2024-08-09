@@ -150,9 +150,9 @@ void GameScene::init() {
 }
 
 void GameScene::fixed_update(double deltaTime) {
-  for (auto &e : visible_entities) {
+  /*for (auto &e : visible_entities) {
     e->fixed_update(deltaTime);
-  }
+  }*/
 }
 
 
@@ -183,6 +183,7 @@ void GameScene::update(double deltaTime) {
   }
 
   for (auto &e : visible_entities) {
+    e->fixed_update(deltaTime);
     e->update(deltaTime);
   }
 
