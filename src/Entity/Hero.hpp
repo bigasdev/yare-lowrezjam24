@@ -14,6 +14,13 @@ struct HeroActions{
   bool roll = false;
 };
 
+struct Inventory{
+  int coins = 0;
+  int carrots = 0;
+  int potatos = 0;
+  int pumpkins = 0;
+};
+
 class Hero : public Entity {
 public:
   Hero();
@@ -29,10 +36,13 @@ public:
   bool has_interact() { return actions.interact; }
   bool is_moving();
 
+  Inventory* get_inventory() { return &inventory; }
+
   void animation_manager();
   
   HeroActions actions = {false,false,false,false,false,false,false};
 private:
+  Inventory inventory;
 };
 
 #endif

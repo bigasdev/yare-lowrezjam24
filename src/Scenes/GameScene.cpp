@@ -8,6 +8,7 @@
 #include "../Entity/Dirt.hpp"
 #include "../Entity/Item.hpp"
 #include "../Entity/Projectile.hpp"
+#include "../Entity/UI/PlayerUI.hpp"
 #include "../Entity/Room.hpp"
 #include <algorithm>
 #include <memory>
@@ -48,6 +49,7 @@ Fort *m_fort = nullptr;
 ProjectileSystem *m_projectile_system = nullptr;
 Hero *m_hero = nullptr;
 Room *m_room = nullptr;
+PlayerUI *m_player_ui = nullptr;
 std::vector<Entity *> visible_entities;
 std::vector<Entity *> visible_enemies;
 
@@ -119,6 +121,7 @@ void GameScene::init() {
   m_garbage_collector = new GarbageCollector();
 
   m_fort = new Fort();
+  m_player_ui = new PlayerUI();
 
   m_particle_system = new ParticleSystem(m_atlas, m_camera, 1000);
   m_light_system = new LightSystem(1000);
@@ -226,6 +229,7 @@ void GameScene::draw() {
   m_light_system->draw(m_atlas, m_camera);
 
   ui_partial_scene->draw();
+  m_player_ui->draw();
 }
 
 void GameScene::input(SDL_Event event) {
