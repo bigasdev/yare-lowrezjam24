@@ -2,6 +2,17 @@
 #ifndef GLOBALS_HPP
 #define GLOBALS_HPP
 
+enum GameState {
+  PLAYING,
+  PAUSED
+};
+
+enum HeroState{
+  FARM,
+  BATTLE,
+  BATTLE_DEAD
+};
+
 class App;
 class Camera;
 class Fort;
