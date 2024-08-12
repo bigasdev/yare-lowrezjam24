@@ -4,7 +4,7 @@
 
 #include "Entity.hpp"
 
-#define PLANT_CD 15
+#define PLANT_CD 1
 
 class Dirt : public Entity {
 public:

@@ -10,7 +10,8 @@
 #include <string>
 
 ParticleSystem::ParticleSystem(Atlas *atlas, Camera *camera,
-                               int max_particles) {
+                               int max_particles)
+{
   m_atlas_ptr = atlas;
   m_max_particles = max_particles;
   m_current_particles = 0;
@@ -19,21 +20,28 @@ ParticleSystem::ParticleSystem(Atlas *atlas, Camera *camera,
 
 ParticleSystem::~ParticleSystem() {}
 
-void ParticleSystem::update(double delta_time) {
+void ParticleSystem::update(double delta_time)
+{
   // delete the particle memory if it's not alive
-  if (is_deleting_particle) {
+  if (is_deleting_particle)
+  {
     for (auto it = m_particles_vector.begin();
-         it != m_particles_vector.end();) {
-      if (!it->alive) {
+         it != m_particles_vector.end();)
+    {
+      if (!it->alive)
+      {
         it = m_particles_vector.erase(it);
-      } else {
+      }
+      else
+      {
         ++it;
       }
     }
     is_deleting_particle = false;
   }
 
-  for (auto &particle : m_particles_vector) {
+  for (auto &particle : m_particles_vector)
+  {
     if (!particle.alive)
       continue;
 
@@ -49,9 +57,9 @@ void ParticleSystem::update(double delta_time) {
 
     particle.life_time -= delta_time;
     particle.color.a -= particle.opacity_decrease * delta_time;
-    F_Debug::log(std::to_string(particle.color.a));
 
-    if (particle.life_time <= 0) {
+    if (particle.life_time <= 0)
+    {
       particle.alive = false;
       is_deleting_particle = true;
       // delete &particle;
@@ -59,12 +67,15 @@ void ParticleSystem::update(double delta_time) {
   }
 }
 
-void ParticleSystem::draw() {
-  for (auto &particle : m_particles_vector) {
+void ParticleSystem::draw()
+{
+  for (auto &particle : m_particles_vector)
+  {
     if (!particle.alive)
       continue;
 
-    if(particle.fixed){
+    if (particle.fixed)
+    {
       m_atlas_ptr->draw_pixel(particle.position.x, particle.position.y,
                               particle.color.r, particle.color.g,
                               particle.color.b, particle.color.a, nullptr, particle.mode,
@@ -78,8 +89,10 @@ void ParticleSystem::draw() {
   }
 }
 
-void ParticleSystem::dots_explosion_example() {
-  for (int i = 0; i < 80; i++) {
+void ParticleSystem::dots_explosion_example()
+{
+  for (int i = 0; i < 80; i++)
+  {
     Particle particle;
     particle.color.a = rnd(20, 255);
     particle.opacity_decrease = rnd(0.5f, 3.5f);
@@ -93,8 +106,10 @@ void ParticleSystem::dots_explosion_example() {
   }
 }
 
-void ParticleSystem::grab_example(vec2f pos, float angle) {
-  for (int i = 0; i < 80; i++) {
+void ParticleSystem::grab_example(vec2f pos, float angle)
+{
+  for (int i = 0; i < 80; i++)
+  {
     Particle particle;
     particle.color = {255, 255, 255, 255};
     particle.color.a = rnd(30, 195);
@@ -113,8 +128,10 @@ void ParticleSystem::grab_example(vec2f pos, float angle) {
   }
 }
 
-void ParticleSystem::walk_dust(vec2f pos) {
-  for (int i = 0; i < 8; i++) {
+void ParticleSystem::walk_dust(vec2f pos)
+{
+  for (int i = 0; i < 8; i++)
+  {
     Particle particle;
     particle.color = {255, 255, 255, 255};
     particle.color.a = rnd(20, 255);
@@ -129,11 +146,13 @@ void ParticleSystem::walk_dust(vec2f pos) {
   }
 }
 
-void ParticleSystem::snow_dust(vec2f pos) {
-  for (int i = 0; i < 68; i++) {
+void ParticleSystem::snow_dust(vec2f pos)
+{
+  for (int i = 0; i < 68; i++)
+  {
     Particle particle;
     particle.color = {255, 255, 255, 255};
-    particle.size = rnd(1,2);
+    particle.size = rnd(1, 2);
     particle.mode = 1;
     particle.fixed = true;
     particle.color.a = rnd(15, 55);
@@ -142,49 +161,55 @@ void ParticleSystem::snow_dust(vec2f pos) {
     particle.move_away_from_src({15, 0}, rnd(0.1f, 0.15f));
     particle.friction = rnd(.8f, .9f);
     particle.gravity = {rnd(.08f, .12f), rnd(.05f, .1f)};
-    if(particle.size == 1)particle.gravity = {rnd(.2f, .35f), rnd(.15f, .25f)};
+    if (particle.size == 1)
+      particle.gravity = {rnd(.2f, .35f), rnd(.15f, .25f)};
     particle.life_time = rnd(220.8f, 345.2f);
 
     add_particle(particle);
   }
 }
 
-void ParticleSystem::plant_carrot(vec2f pos){
-  for(int i = 0; i < 4; i++){
+void ParticleSystem::plant_carrot(vec2f pos)
+{
+  for (int i = 0; i < 4; i++)
+  {
     Particle particle;
-    particle.color = {255, 165, 0,255};
+    particle.color = {255, 165, 0, 255};
     particle.size = 2;
     particle.mode = 2;
-    particle.position = {pos.x + 5.f, pos.y+ 10.f};
+    particle.position = {pos.x + 5.f, pos.y + 10.f};
     particle.opacity_decrease = .001f;
     particle.color.a = 255;
     particle.move_to({10, 0}, rnd(.01f, .15f));
     particle.friction = rnd(.8f, .9f);
-    particle.gravity = {.1f,.15f};
+    particle.gravity = {.1f, .15f};
     particle.life_time = 30;
 
     add_particle(particle);
   }
-  for(int i = 0; i < 4; i++){
+  for (int i = 0; i < 4; i++)
+  {
     Particle particle;
-    particle.color = {255, 165, 0,255};
+    particle.color = {255, 165, 0, 255};
     particle.size = 2;
     particle.mode = 2;
-    particle.position = {pos.x + 5.f, pos.y+ 10.f};
+    particle.position = {pos.x + 5.f, pos.y + 10.f};
     particle.opacity_decrease = .001f;
     particle.color.a = 255;
     particle.move_to({-10, 0}, rnd(.01f, .15f));
     particle.friction = rnd(.8f, .9f);
-    particle.gravity = {.1f,.15f};
+    particle.gravity = {.1f, .15f};
     particle.life_time = 30;
 
     add_particle(particle);
   }
 }
 
-void ParticleSystem::add_particle(Particle particle) {
-  if (m_particles_vector.size() >= m_max_particles){
-    m_particles_vector.erase(m_particles_vector.begin(), m_particles_vector.begin() +100);
+void ParticleSystem::add_particle(Particle particle)
+{
+  if (m_particles_vector.size() >= m_max_particles)
+  {
+    m_particles_vector.erase(m_particles_vector.begin(), m_particles_vector.begin() + 100);
   }
 
   m_particles_vector.push_back(particle);

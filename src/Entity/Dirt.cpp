@@ -2,9 +2,9 @@
 #include "../Core/App.hpp"
 #include "../Core/Globals.hpp"
 #include "../Renderer/Atlas.hpp"
+#include "../Renderer/ParticleSystem.hpp"
 #include "../Tools/Cooldown.hpp"
 #include "../Utils/Gizmos.hpp"
-#include "../Renderer/ParticleSystem.hpp"
 #include "EntityParty.hpp"
 #include "Hero.hpp"
 #include <string>
@@ -34,9 +34,14 @@ void Dirt::fixed_update(double deltaTime) {
     interact_range = true;
 
     if (g_hero->has_interact()) {
-      if (!has_plant){
+      if (!has_plant) {
         g_particle_system->plant_carrot(get_pos());
         has_plant = true;
+      }else{
+        if(plant_state >= 10){
+          g_hero_state = HeroState::BATTLE;
+          g_hero->set_pos(500, 500);
+        }
       }
     }
   } else {
@@ -44,10 +49,10 @@ void Dirt::fixed_update(double deltaTime) {
   }
 }
 
-void Dirt::update(double deltaTime) { 
-  Entity::update(deltaTime); 
+void Dirt::update(double deltaTime) {
+  Entity::update(deltaTime);
 
-  if(!m_entity_cd->has_state("plant_grown") && has_plant){
+  if (!m_entity_cd->has_state("plant_grown") && has_plant) {
     m_entity_cd->set_state("plant_grown", PLANT_CD);
 
     plant_state++;
@@ -69,10 +74,14 @@ void Dirt::draw() {
     m_atlas->draw_texture_from_sheet(*m_current_sprite.texture,
                                      get_pos() + vec2f(0, -4), {8, 8, 0, 3},
                                      g_camera);
-    m_atlas->draw_line(get_pos() + vec2f(-2, 16), get_pos() + vec2f(plant_state, 16),
-                       {0, 255, 0}, 255, g_camera, 0, 2);
-    m_atlas->draw_line(get_pos() + vec2f(-2, 17), get_pos() + vec2f(plant_state, 17),
-                       {0, 255, 0}, 255, g_camera, 0, 2);
+    if (plant_state <= 10) {
+      m_atlas->draw_line(get_pos() + vec2f(-2, 16),
+                         get_pos() + vec2f(plant_state, 16), {0, 255, 0}, 255,
+                         g_camera, 0, 2);
+      m_atlas->draw_line(get_pos() + vec2f(-2, 17),
+                         get_pos() + vec2f(plant_state, 17), {0, 255, 0}, 255,
+                         g_camera, 0, 2);
+    }
   }
 }
 

@@ -33,7 +33,7 @@ bool Hero::is_moving() { return !g_input_manager->get_raw_axis().zero(); }
 void Hero::fixed_update(double deltaTime) {
   if (can_move) {
     if((m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).x < -g_grid.x/2 || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).x > g_grid.x || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).y < -g_grid.y/2 || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).y > g_grid.y){
-      return;
+      if(g_hero_state == HeroState::FARM)return;
     }
 
     m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
@@ -71,7 +71,7 @@ void Hero::update(double deltaTime) {
     if (!m_entity_cd->has_state("dust")) {
       g_particle_system->walk_dust(get_pos());
 
-      m_entity_cd->set_state("dust", 10.f);
+      m_entity_cd->set_state("dust", 5.f);
     }
   }
 

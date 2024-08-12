@@ -83,7 +83,7 @@ void GameScene::load_assets() {
 
   hero->get_current_sprite()->texture =
       m_resources->get_aseprite_texture("concept");
-  hero->set_pos(0, 0);
+  hero->set_pos(35, 50);
 
   hero->get_current_sprite()->xpu = 8;
   hero->get_current_sprite()->ypu = 8;
@@ -150,6 +150,9 @@ void GameScene::init() {
 
   //input controller 
   m_input_manager->bind_joy(JoyInput::RIGHT_TRIGGER, &g_hero->actions.interact);
+
+  //tutorial and stuff 
+  m_player_ui->set_dialogue("I should start planting some carrots...");
 }
 
 void GameScene::fixed_update(double deltaTime) {
@@ -164,6 +167,7 @@ void GameScene::update(double deltaTime) {
 
   m_particle_system->update(deltaTime);
   m_light_system->update(deltaTime);
+  m_player_ui->update(deltaTime);
 
   ui_partial_scene->update(deltaTime);
   if(!m_cd->has_state("update_drawing")){

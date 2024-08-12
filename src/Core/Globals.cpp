@@ -15,4 +15,4 @@ bool g_controller_connected;
 GameState g_game_state = PLAYING;
 HeroState g_hero_state = FARM;
 
-vec2i g_grid = {150, 150}; 
+vec2i g_grid = {175, 175}; 

@@ -1,10 +1,11 @@
 #include "Atlas.hpp"
-#include "SDL_blendmode.h"
 #include "../Entity/Entity.hpp"
 #include "../Renderer/Camera.hpp"
+#include "SDL_blendmode.h"
+#include "SDL_rect.h"
 #include "SDL_render.h"
 
-Atlas::Atlas(SDL_Renderer *renderer, float* _scale) {
+Atlas::Atlas(SDL_Renderer *renderer, float *_scale) {
   std::cout << "Instantiated atlas!..." << std::endl;
   m_game_scale = _scale;
   m_renderer_ptr = renderer;
@@ -47,18 +48,18 @@ void Atlas::draw_entity(Entity *p_entity, Camera *p_camera) {
   src.h = p_entity->get_current_frame().h * *m_game_scale;
 
   SDL_Rect dst;
-  dst.x =
-      (p_entity->get_pos().x + (p_entity->get_current_frame().w * *m_game_scale -
-                                p_entity->get_current_frame().w * *m_game_scale *
-                                    p_entity->get_scale().x) /
-                                   2) -
-      p_camera->get_pos().x;
-  dst.y =
-      (p_entity->get_pos().y + (p_entity->get_current_frame().h * *m_game_scale -
-                                p_entity->get_current_frame().h * *m_game_scale *
-                                    p_entity->get_scale().y) /
-                                   2) -
-      p_camera->get_pos().y;
+  dst.x = (p_entity->get_pos().x +
+           (p_entity->get_current_frame().w * *m_game_scale -
+            p_entity->get_current_frame().w * *m_game_scale *
+                p_entity->get_scale().x) /
+               2) -
+          p_camera->get_pos().x;
+  dst.y = (p_entity->get_pos().y +
+           (p_entity->get_current_frame().h * *m_game_scale -
+            p_entity->get_current_frame().h * *m_game_scale *
+                p_entity->get_scale().y) /
+               2) -
+          p_camera->get_pos().y;
   dst.w =
       p_entity->get_current_frame().w * p_entity->get_scale().x * *m_game_scale;
   dst.h =
@@ -86,18 +87,18 @@ void Atlas::draw_unique_entity(std::unique_ptr<Entity> p_entity,
   src.h = p_entity->get_current_frame().h * *m_game_scale;
 
   SDL_Rect dst;
-  dst.x =
-      (p_entity->get_pos().x + (p_entity->get_current_frame().w * *m_game_scale -
-                                p_entity->get_current_frame().w * *m_game_scale *
-                                    p_entity->get_scale().x) /
-                                   2) -
-      p_camera->get_pos().x;
-  dst.y =
-      (p_entity->get_pos().y + (p_entity->get_current_frame().h * *m_game_scale -
-                                p_entity->get_current_frame().h * *m_game_scale *
-                                    p_entity->get_scale().y) /
-                                   2) -
-      p_camera->get_pos().y;
+  dst.x = (p_entity->get_pos().x +
+           (p_entity->get_current_frame().w * *m_game_scale -
+            p_entity->get_current_frame().w * *m_game_scale *
+                p_entity->get_scale().x) /
+               2) -
+          p_camera->get_pos().x;
+  dst.y = (p_entity->get_pos().y +
+           (p_entity->get_current_frame().h * *m_game_scale -
+            p_entity->get_current_frame().h * *m_game_scale *
+                p_entity->get_scale().y) /
+               2) -
+          p_camera->get_pos().y;
   dst.w =
       p_entity->get_current_frame().w * p_entity->get_scale().x * *m_game_scale;
   dst.h =
@@ -129,8 +130,8 @@ void Atlas::draw_text(vec2f pos, const char *p_text, TTF_Font *font,
   SDL_Rect dst;
   dst.x = pos.x;
   dst.y = pos.y;
-  dst.w = src.w*size;
-  dst.h = src.h*size;
+  dst.w = src.w * size;
+  dst.h = src.h * size;
 
   SDL_FreeSurface(surfaceMessage);
   SDL_RenderCopyEx(m_renderer_ptr, message, &src, &dst, 0, 0, SDL_FLIP_NONE);
@@ -164,17 +165,17 @@ void Atlas::draw_from_sheet(Entity *entity, Camera *camera) {
   vec2f cam_pos = camera->get_pos();
 
   SDL_Rect dst = {static_cast<int>(pos.x) - static_cast<int>(cam_pos.x),
-                  static_cast<int>(pos.y) - static_cast<int>(cam_pos.y), scaled_x,
-                  scaled_y};
+                  static_cast<int>(pos.y) - static_cast<int>(cam_pos.y),
+                  scaled_x, scaled_y};
 
-  auto flip = !curr_sprite.facing_right ? SDL_FLIP_HORIZONTAL
-                                                          : SDL_FLIP_NONE;
+  auto flip = !curr_sprite.facing_right ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
 
-  //SDL_SetTextureColorMod(*entity->get_current_sprite()->texture, 255, 0, 0);
+  // SDL_SetTextureColorMod(*entity->get_current_sprite()->texture, 255, 0, 0);
 
   SDL_RenderCopyEx(m_renderer_ptr, *entity->get_current_sprite()->texture, &src,
                    &dst, entity->get_angle(), 0, flip);
-  //SDL_SetTextureColorMod(*entity->get_current_sprite()->texture, 255, 255, 255);
+  // SDL_SetTextureColorMod(*entity->get_current_sprite()->texture, 255, 255,
+  // 255);
 }
 void Atlas::draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
                                     AtlasPoint point, Camera *camera, int scale,
@@ -185,9 +186,16 @@ void Atlas::draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
 
   SDL_Rect src = {point.x * point.xpu, point.y * point.ypu, point.xpu,
                   point.ypu};
-
-  SDL_Rect dst = {static_cast<int>(pos.x) - static_cast<int>(camera->get_pos().x), static_cast<int>(pos.y) - static_cast<int>(camera->get_pos().y),
-                  scaled_x, scaled_y};
+  SDL_Rect dst;
+  if (camera != nullptr) {
+    dst = {
+        static_cast<int>(pos.x) - static_cast<int>(camera->get_pos().x),
+        static_cast<int>(pos.y) - static_cast<int>(camera->get_pos().y),
+        scaled_x, scaled_y};
+  }else{
+    dst = {static_cast<int>(pos.x), static_cast<int>(pos.y), scaled_x,
+                    scaled_y};
+  }
 
   auto flip_state = flip ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
 
@@ -200,25 +208,25 @@ void Atlas::draw_pixel(float p_x, float p_y, Uint8 r, Uint8 g, Uint8 b, Uint8 a,
                        Camera *camera, int mode, int scale) {
   SDL_SetRenderDrawColor(m_renderer_ptr, r, g, b, a);
 
-  switch(mode) {
-    case 0:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
-      break;
-    case 1:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
-      break;
-    case 2:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
-      break;
-    case 3:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
-      break;
-    case 4:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
-      break;
-    default:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
-      break;
+  switch (mode) {
+  case 0:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+    break;
+  case 1:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
+    break;
+  case 2:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
+    break;
+  case 3:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
+    break;
+  case 4:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
+    break;
+  default:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+    break;
   }
 
   if (camera != nullptr) {
@@ -232,29 +240,29 @@ void Atlas::draw_pixel(float p_x, float p_y, Uint8 r, Uint8 g, Uint8 b, Uint8 a,
   }
 }
 
-void Atlas::draw_line(vec2f start, vec2f end, vec3f color, int a, Camera *camera,
-                      int mode, int scale) {
+void Atlas::draw_line(vec2f start, vec2f end, vec3f color, int a,
+                      Camera *camera, int mode, int scale) {
   SDL_SetRenderDrawColor(m_renderer_ptr, color.x, color.y, color.z, a);
 
-  switch(mode) {
-    case 0:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
-      break;
-    case 1:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
-      break;
-    case 2:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
-      break;
-    case 3:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
-      break;
-    case 4:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
-      break;
-    default:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
-      break;
+  switch (mode) {
+  case 0:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+    break;
+  case 1:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
+    break;
+  case 2:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
+    break;
+  case 3:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
+    break;
+  case 4:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
+    break;
+  default:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+    break;
   }
 
   if (camera != nullptr) {
@@ -267,28 +275,29 @@ void Atlas::draw_line(vec2f start, vec2f end, vec3f color, int a, Camera *camera
   SDL_RenderDrawLine(m_renderer_ptr, start.x, start.y, end.x, end.y);
 }
 
-void Atlas::draw_rect(vec2f pos, vec2f size, vec3f color, int a, Camera *camera, int mode, int scale) {
+void Atlas::draw_rect(vec2f pos, vec2f size, vec3f color, int a, Camera *camera,
+                      int mode, int scale) {
   SDL_SetRenderDrawColor(m_renderer_ptr, color.x, color.y, color.z, a);
 
-  switch(mode) {
-    case 0:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
-      break;
-    case 1:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
-      break;
-    case 2:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
-      break;
-    case 3:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
-      break;
-    case 4:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
-      break;
-    default:
-      SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
-      break;
+  switch (mode) {
+  case 0:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+    break;
+  case 1:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
+    break;
+  case 2:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
+    break;
+  case 3:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MOD);
+    break;
+  case 4:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_MUL);
+    break;
+  default:
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_NONE);
+    break;
   }
 
   if (camera != nullptr) {
@@ -296,7 +305,9 @@ void Atlas::draw_rect(vec2f pos, vec2f size, vec3f color, int a, Camera *camera,
     pos.y -= camera->get_pos().y;
   }
 
-  SDL_Rect rect = {static_cast<int>(pos.x), static_cast<int>(pos.y), static_cast<int>(size.x * scale), static_cast<int>(size.y * scale)};
+  SDL_Rect rect = {static_cast<int>(pos.x), static_cast<int>(pos.y),
+                   static_cast<int>(size.x * scale),
+                   static_cast<int>(size.y * scale)};
   SDL_RenderFillRect(m_renderer_ptr, &rect);
 }
 

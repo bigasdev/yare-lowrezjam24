@@ -37,7 +37,6 @@ void mainloop() {
   currentTick = SDL_GetPerformanceCounter();
   deltaTime = (double)((currentTick - lastTick) /
                        (double)SDL_GetPerformanceFrequency());
-  F_Debug::log("Delta time: " + std::to_string(deltaTime));
 
   start_time = SDL_GetTicks();
 
