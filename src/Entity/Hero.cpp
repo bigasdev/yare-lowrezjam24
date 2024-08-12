@@ -10,6 +10,8 @@
 #include "Projectile.hpp"
 #include "Room.hpp"
 
+bool can_move = true;
+
 Hero::Hero() {}
 
 Hero::~Hero() { Entity::~Entity(); }
@@ -26,34 +28,42 @@ void Hero::init() {
   inventory.coins = 10;
 }
 
-bool Hero::is_moving(){
-  return !g_input_manager->get_raw_axis().zero();
-}
+bool Hero::is_moving() { return !g_input_manager->get_raw_axis().zero(); }
 
 void Hero::fixed_update(double deltaTime) {
-  if(is_moving()){
-    for(auto& prop : *g_collider_tiles){
-      CollisionBox2D box = get_interaction_box();
-      box.offset = get_pos() + g_input_manager->get_raw_axis() * 3;
-
-      CollisionBox2D prop_box;
-      if(get_pos().y < prop.y){
-        prop_box.offset = {static_cast<float>(prop.x), static_cast<float>(prop.y+2)};
-      }else{
-        prop_box.offset = {static_cast<float>(prop.x), static_cast<float>(prop.y)-8};
-      }
-      prop_box.scale = prop.collision.scale;
-
-      if(is_colliding(box, prop_box)){
-        return;
-      }
+  if (can_move) {
+    if((m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).x < -g_grid.x/2 || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).x > g_grid.x || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).y < -g_grid.y/2 || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).y > g_grid.y){
+      return;
     }
+
+    m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
   }
-  m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
 }
 
 void Hero::update(double deltaTime) {
   Entity::update(deltaTime);
+  can_move = true;
+
+  if (is_moving()) {
+    for (auto &prop : *g_collider_tiles) {
+      CollisionBox2D box = get_interaction_box();
+      box.offset = get_pos() + g_input_manager->get_raw_axis() * 3;
+
+      CollisionBox2D prop_box;
+      if (get_pos().y < prop.y) {
+        prop_box.offset = {static_cast<float>(prop.x),
+                           static_cast<float>(prop.y + 2)};
+      } else {
+        prop_box.offset = {static_cast<float>(prop.x),
+                           static_cast<float>(prop.y) - 8};
+      }
+      prop_box.scale = prop.collision.scale;
+
+      if (is_colliding(box, prop_box)) {
+        can_move = false;
+      }
+    }
+  }
 
   if (g_input_manager->get_raw_axis() != vec2f(0, 0)) {
     m_current_sprite.facing_right = g_input_manager->get_raw_axis().x == 1;
@@ -100,7 +110,8 @@ void Hero::draw() {
   /*Gizmos::draw_rect(get_interaction_box().offset, get_interaction_box().scale,
                     g_atlas, {255, 0, 0}, 85, g_camera);
   if(is_moving()){
-    Gizmos::draw_rect(get_pos() + g_input_manager->get_raw_axis() * 3, get_interaction_box().scale, g_atlas, {0,255,0}, 125, g_camera); 
+    Gizmos::draw_rect(get_pos() + g_input_manager->get_raw_axis() * 3,
+  get_interaction_box().scale, g_atlas, {0,255,0}, 125, g_camera);
   }*/
 #endif
 }

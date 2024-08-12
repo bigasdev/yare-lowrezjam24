@@ -2,6 +2,8 @@
 #ifndef GLOBALS_HPP
 #define GLOBALS_HPP
 
+#include "../Utils/Common.hpp"
+
 enum GameState {
   PLAYING,
   PAUSED
@@ -33,8 +35,10 @@ extern InputManager *g_input_manager;
 extern Atlas *g_atlas;
 extern Resources *g_resources;
 
-extern int g_grid;
-
 extern bool g_controller_connected;
+extern GameState g_game_state;
+extern HeroState g_hero_state;
+
+extern vec2i g_grid;
 
 #endif
