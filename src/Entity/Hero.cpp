@@ -26,6 +26,10 @@ void Hero::init() {
   m_speed = 50;
 
   inventory.coins = 50;
+  SpriteAnimation idle = SpriteAnimation{"idle", {0,1}, 2, .5f, get_current_sprite()};
+  SpriteAnimation walk = SpriteAnimation{"walk", {2,1}, 5, .1f, get_current_sprite()};
+  add_sprite_animation(idle);
+  add_sprite_animation(walk);
 }
 
 bool Hero::is_moving() { return !g_input_manager->get_raw_axis().zero(); }
@@ -128,8 +132,8 @@ void Hero::animation_manager() {
     set_animation("walk");
     return;
   }
-
   set_animation("idle");
+
 }
 
 void Hero::post_update(double deltaTime) { Entity::post_update(deltaTime); }

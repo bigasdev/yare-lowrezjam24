@@ -86,15 +86,13 @@ void GameScene::load_assets() {
       m_resources->get_aseprite_texture("concept");
   hero->set_pos(35, 50);
 
-  hero->get_current_sprite()->xpu = 8;
+  hero->get_current_sprite()->xpu = 7;
   hero->get_current_sprite()->ypu = 8;
   hero->get_current_sprite()->x = 0;
   hero->get_current_sprite()->y = 1;
   hero->set_life(100, 100);
   hero->m_tag = Tag::HERO;
   hero->set_collision_box({{2, 2}, {10, 11}});
-  SpriteAnimation walk = {"walk", {0, 6}, 5, 1.08f, hero->get_current_sprite()};
-  SpriteAnimation idle = {"idle", {0, 7}, 5, 1.4f, hero->get_current_sprite()};
   hero->set_speed(50);
   hero->init();
   g_hero = hero;

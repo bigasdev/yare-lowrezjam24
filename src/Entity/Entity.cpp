@@ -279,8 +279,12 @@ void Entity::update(double deltaTime) {
     m_entity_cd->update(deltaTime);
   }
 
+  F_Debug::log(m_current_animation.get_name());
+
   if (m_current_animation.get_name() == "default")
     return;
+
+  F_Debug::log("test");
   m_current_animation.update(deltaTime);
 
   // set_texture(m_current_animation->get_current_frame());
