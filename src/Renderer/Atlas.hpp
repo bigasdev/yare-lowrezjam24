@@ -24,7 +24,7 @@ public:
   void draw_entity(Entity *entity, Camera *camera);
   void draw_unique_entity(std::unique_ptr<Entity> entity, Camera *camera);
   void draw_text(vec2f pos, const char *p_text, TTF_Font *font,
-                 SDL_Color textColor, float size = 1, int width = 128);
+                 SDL_Color textColor, float size = 1, int width = 128, Camera *camera = nullptr);
   void draw_from_sheet(Entity *entity, Camera *camera);
   void draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
                                AtlasPoint point, Camera *camera, int scale = 1,

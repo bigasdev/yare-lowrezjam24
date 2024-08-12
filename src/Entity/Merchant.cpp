@@ -1,6 +1,7 @@
 #include "Merchant.hpp"
 #include "../Core/App.hpp"
 #include "UI/PlayerUI.hpp"
+#include "../Renderer/Camera.hpp"
 #include "../Renderer/Atlas.hpp"
 #include "../Renderer/ParticleSystem.hpp"
 #include "../Tools/Cooldown.hpp"
@@ -28,16 +29,35 @@ void Merchant::init() {
 }
 
 void Merchant::fixed_update(double deltaTime) {
-  if (is_interacting(g_hero)) {
+  if (is_interacting(g_hero) && !shuffling_state) {
     interact_range = true;
 
     if (g_hero->has_interact()) {
       if(g_hero->get_inventory()->coins <= 25){
         g_player_ui->set_dialogue("Need more coins!");
+      }else{
+        g_hero->get_inventory()->coins -= 25;
+        shuffling_state = true;
       }
     }
   } else {
     interact_range = false;
+  }
+
+  if(shuffling_state && shuffle_ticks < SHUFFLE_TICKS){
+    if(!m_entity_cd->has_state("shuffle")){
+      m_entity_cd->set_state("shuffle", SHUFFLE_CD);
+
+      shuffled_amt = d20();
+
+      shuffle_ticks++;
+      if(shuffle_ticks == SHUFFLE_TICKS){
+        m_entity_cd->set_state("end_shuffle", 1.5f, [&](){
+          g_camera->set_shake(0.5f, 0.5f);
+          shuffling_state = false;
+        });
+      }
+    }
   }
 }
 
@@ -47,6 +67,10 @@ void Merchant::update(double deltaTime) {
 
 void Merchant::draw() {
   Entity::draw();
+
+  if(shuffling_state){
+    g_atlas->draw_text(get_pos() + vec2f{2,-4}, std::to_string(shuffled_amt).c_str(), g_app->get_main_font(), {255, 255, 255}, 1, 128, g_camera);
+  }
 }
 
 void Merchant::post_update(double deltaTime) {

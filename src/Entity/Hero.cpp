@@ -25,7 +25,7 @@ void Hero::init() {
   m_interaction_box.scale = {15, 15};
   m_speed = 50;
 
-  inventory.coins = 10;
+  inventory.coins = 50;
 }
 
 bool Hero::is_moving() { return !g_input_manager->get_raw_axis().zero(); }

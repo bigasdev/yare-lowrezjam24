@@ -119,7 +119,7 @@ void Atlas::draw_unique_entity(std::unique_ptr<Entity> p_entity,
 }
 
 void Atlas::draw_text(vec2f pos, const char *p_text, TTF_Font *font,
-                      SDL_Color textColor, float size, int width) {
+                      SDL_Color textColor, float size, int width, Camera *camera) {
   SDL_Surface *surfaceMessage = TTF_RenderText_Blended_Wrapped(font, p_text, textColor, width);
   SDL_Texture *message =
       SDL_CreateTextureFromSurface(m_renderer_ptr, surfaceMessage);
@@ -133,6 +133,10 @@ void Atlas::draw_text(vec2f pos, const char *p_text, TTF_Font *font,
   SDL_Rect dst;
   dst.x = pos.x;
   dst.y = pos.y;
+  if(camera != nullptr){
+    dst.x -= camera->get_pos().x;
+    dst.y -= camera->get_pos().y;
+  }
   dst.w = src.w * size;
   dst.h = src.h * size;
 

@@ -4,6 +4,9 @@
 
 #include "Entity.hpp"
 
+#define SHUFFLE_TICKS 5
+#define SHUFFLE_CD 1
+
 class Merchant : public Entity {
 public:
   Merchant();
@@ -19,6 +22,12 @@ public:
   void animation_manager();
 private:
   bool interact_range = false;
+  bool shuffling_state = false;
+
+  int shuffled_amt = 0;
+
+  int shuffle_ticks = 0;
 };
 
 #endif
+
