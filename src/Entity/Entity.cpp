@@ -261,7 +261,7 @@ void Entity::fixed_update(double deltaTime) {
       m_speed *= fric;
     }
   }
-
+/*
   if(m_tag != Tag::HERO){
     if(is_colliding(g_hero)){
       hit(-100, g_hero);
@@ -269,6 +269,7 @@ void Entity::fixed_update(double deltaTime) {
       g_camera->set_shake(.125f, .35f);
     }
   }
+  */
 }
 
 void Entity::update(double deltaTime) {

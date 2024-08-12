@@ -6,7 +6,7 @@
 #include <string.h>
 #include <iostream>
 
-#define DIALOGUE_TIME 10 
+#define DIALOGUE_TIME 3 
 #define TYPE_SPEED 0.05
 
 class PlayerUI{

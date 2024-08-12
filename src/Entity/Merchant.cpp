@@ -34,17 +34,19 @@ void spawn_compost(Merchant* merchant) {
       g_fort->recruit<Merchant>(g_resources, g_atlas->get_game_scale());
   compost->set_pos(merchant->get_pos().x + rnd(-5, 5), merchant->get_pos().y);
   compost->init();
-  compost->set_speed(50);
+  compost->set_speed(400);
   compost->set_life(100, 100);
+  compost->set_friction(0.98f);
   compost->move_dir({rnd(-15.f, 15.f), rnd(-15.f, 15.f)});
 }
 
 void Merchant::fixed_update(double deltaTime) {
+  Entity::fixed_update(deltaTime);
   if (is_interacting(g_hero) && !shuffling_state) {
     interact_range = true;
 
     if (g_hero->has_interact()) {
-      if (g_hero->get_inventory()->coins <= 25) {
+      if (g_hero->get_inventory()->coins < 25) {
         g_player_ui->set_dialogue("Need 25 coins!");
       } else {
         g_hero->get_inventory()->coins -= 25;
@@ -62,11 +64,12 @@ void Merchant::fixed_update(double deltaTime) {
       shuffled_amt = d20();
 
       shuffle_ticks++;
-      g_camera->set_shake(5.f, .1f);
+      g_camera->set_shake(35.f, .1f);
       if (shuffle_ticks == SHUFFLE_TICKS) {
         m_entity_cd->set_state("end_shuffle", 1.5f, [&]() {
-          g_camera->set_shake(50.5f, .05f);
+          g_camera->set_shake(60.5f, .15f);
           shuffling_state = false;
+          shuffle_ticks = 0;
 
           if (shuffled_amt == 0) {
             g_player_ui->set_dialogue("Unlucky");

@@ -75,8 +75,7 @@ void Hero::update(double deltaTime) {
     }
   }
 
-  if (actions.attack && !m_entity_cd->has_state("attack")) {
-    g_camera->set_entity(nullptr);
+  if (actions.attack && !m_entity_cd->has_state("attack") && g_hero_state == HeroState::BATTLE) {
     auto p = g_fort->recruit<Projectile>(g_resources, g_camera->s_scale);
     p->get_current_sprite()->texture = get_current_sprite()->texture;
     p->set_pos(get_pos().x + 5, get_pos().y);
