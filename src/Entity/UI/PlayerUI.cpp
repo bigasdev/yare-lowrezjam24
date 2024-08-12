@@ -28,9 +28,6 @@ void PlayerUI::update(double deltaTime) {
       if(dialogue.size() == new_dialogue.size())return;
 
       dialogue += new_dialogue[dialogue.size()];
-      if(dialogue.size() % 6 == 0){
-        dialogue += '\n';
-      }
       type_timer = 0;
     }
   }
@@ -58,6 +55,6 @@ void PlayerUI::draw() {
         g_app->get_main_font(), {255, 255, 255});
   }else{
     g_atlas->draw_texture_from_sheet(*dialogue_texture, {0, 35}, {64,16,0,4}, nullptr, 1,false,false);
-    g_atlas->draw_text({4, 54}, dialogue.c_str(), g_app->get_main_font(), {255, 255, 255});
+    g_atlas->draw_text({4, 45}, dialogue.c_str(), g_app->get_main_font(), {255, 255, 255}, 1, 68);
   }
 }

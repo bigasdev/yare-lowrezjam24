@@ -152,7 +152,7 @@ void GameScene::init() {
   m_input_manager->bind_joy(JoyInput::RIGHT_TRIGGER, &g_hero->actions.interact);
 
   //tutorial and stuff 
-  m_player_ui->set_dialogue("I should start planting some carrots...");
+  m_player_ui->set_dialogue("Lets plant carrots!");
 }
 
 void GameScene::fixed_update(double deltaTime) {

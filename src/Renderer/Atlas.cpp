@@ -4,6 +4,8 @@
 #include "SDL_blendmode.h"
 #include "SDL_rect.h"
 #include "SDL_render.h"
+#include "SDL_surface.h"
+#include "SDL_ttf.h"
 #include <tuple>
 
 Atlas::Atlas(SDL_Renderer *renderer, float *_scale) {
@@ -117,8 +119,8 @@ void Atlas::draw_unique_entity(std::unique_ptr<Entity> p_entity,
 }
 
 void Atlas::draw_text(vec2f pos, const char *p_text, TTF_Font *font,
-                      SDL_Color textColor, float size) {
-  SDL_Surface *surfaceMessage = TTF_RenderText_Blended(font, p_text, textColor);
+                      SDL_Color textColor, float size, int width) {
+  SDL_Surface *surfaceMessage = TTF_RenderText_Blended_Wrapped(font, p_text, textColor, width);
   SDL_Texture *message =
       SDL_CreateTextureFromSurface(m_renderer_ptr, surfaceMessage);
 
