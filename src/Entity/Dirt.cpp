@@ -1,6 +1,6 @@
 #include "Dirt.hpp"
-#include "../Core/App.hpp"
 #include "../Core/Globals.hpp"
+#include "../Core/App.hpp"
 #include "UI/PlayerUI.hpp"
 #include "../Renderer/Atlas.hpp"
 #include "../Renderer/ParticleSystem.hpp"
