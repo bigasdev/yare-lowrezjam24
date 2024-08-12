@@ -7,7 +7,7 @@
 #include <iostream>
 
 #define DIALOGUE_TIME 10 
-#define TYPE_SPEED 0.1
+#define TYPE_SPEED 0.05
 
 class PlayerUI{
 public: 

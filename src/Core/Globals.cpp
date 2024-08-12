@@ -9,6 +9,7 @@ ParticleSystem *g_particle_system;
 InputManager *g_input_manager;
 Atlas *g_atlas;
 Resources *g_resources;
+PlayerUI *g_player_ui;
 
 bool g_controller_connected;
 
@@ -16,3 +17,6 @@ GameState g_game_state = PLAYING;
 HeroState g_hero_state = FARM;
 
 vec2i g_grid = {175, 175}; 
+
+bool has_planted_info = false;
+bool has_merchant_info = false;

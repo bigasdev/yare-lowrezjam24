@@ -8,6 +8,7 @@
 #include "../Entity/Dirt.hpp"
 #include "../Entity/Item.hpp"
 #include "../Entity/Projectile.hpp"
+#include "../Entity/Merchant.hpp"
 #include "../Entity/UI/PlayerUI.hpp"
 #include "../Entity/Room.hpp"
 #include <algorithm>
@@ -98,6 +99,10 @@ void GameScene::load_assets() {
   hero->init();
   g_hero = hero;
 
+  auto merchant = m_fort->recruit<Merchant>(m_resources, m_atlas->get_game_scale());
+  merchant->set_pos(45, -10);
+  merchant->init();
+
   /*for(int i = 0; i < 1000; i++){
     auto e = m_fort->recruit<Entity>(m_resources, m_atlas->get_game_scale());
     e->set_pos(1200 + rnd(-1900, 1900), 400 + rnd(-1900, 1900));
@@ -132,6 +137,7 @@ void GameScene::init() {
   g_input_manager = m_input_manager;
   g_ALL = &visible_entities;
   g_enemies = &visible_enemies;
+  g_player_ui = m_player_ui;
   // example of castle db loading
   load_assets();
 

@@ -1,6 +1,7 @@
 #include "Dirt.hpp"
 #include "../Core/App.hpp"
 #include "../Core/Globals.hpp"
+#include "UI/PlayerUI.hpp"
 #include "../Renderer/Atlas.hpp"
 #include "../Renderer/ParticleSystem.hpp"
 #include "../Tools/Cooldown.hpp"
@@ -56,6 +57,11 @@ void Dirt::update(double deltaTime) {
     m_entity_cd->set_state("plant_grown", PLANT_CD);
 
     plant_state++;
+
+    if(plant_state >= 10 && has_planted_info == false){
+      g_player_ui->set_dialogue("Harvest the crop");
+      has_planted_info = true;
+    }
   }
 }
 
