@@ -34,7 +34,7 @@ void Merchant::fixed_update(double deltaTime) {
 
     if (g_hero->has_interact()) {
       if(g_hero->get_inventory()->coins <= 25){
-        g_player_ui->set_dialogue("Need more coins!");
+        g_player_ui->set_dialogue("Need 25 coins!");
       }else{
         g_hero->get_inventory()->coins -= 25;
         shuffling_state = true;
@@ -51,10 +51,10 @@ void Merchant::fixed_update(double deltaTime) {
       shuffled_amt = d20();
 
       shuffle_ticks++;
-      g_camera->set_shake(300.f, .7f);
+      g_camera->set_shake(5.f, .1f);
       if(shuffle_ticks == SHUFFLE_TICKS){
         m_entity_cd->set_state("end_shuffle", 1.5f, [&](){
-          g_camera->set_shake(1225.5f, 1.5f);
+          g_camera->set_shake(50.5f, .05f);
           shuffling_state = false;
 
         });
