@@ -1,13 +1,14 @@
 #include "Merchant.hpp"
 #include "../Core/App.hpp"
-#include "UI/PlayerUI.hpp"
-#include "../Renderer/Camera.hpp"
+#include "../Core/Fort.hpp"
 #include "../Renderer/Atlas.hpp"
+#include "../Renderer/Camera.hpp"
 #include "../Renderer/ParticleSystem.hpp"
 #include "../Tools/Cooldown.hpp"
 #include "../Utils/Gizmos.hpp"
 #include "EntityParty.hpp"
 #include "Hero.hpp"
+#include "UI/PlayerUI.hpp"
 #include <string>
 
 Merchant::Merchant() {}
@@ -28,14 +29,24 @@ void Merchant::init() {
   m_collision_box.scale = {8, 8};
 }
 
+void spawn_compost(Merchant* merchant) {
+  auto compost =
+      g_fort->recruit<Merchant>(g_resources, g_atlas->get_game_scale());
+  compost->set_pos(merchant->get_pos().x + rnd(-5, 5), merchant->get_pos().y);
+  compost->init();
+  compost->set_life(100, 100);
+  compost->move_dir({rnd(-15.f, 15.f), rnd(-15.f, 15.f)});
+}
+
 void Merchant::fixed_update(double deltaTime) {
+  Entity::fixed_update(deltaTime);
   if (is_interacting(g_hero) && !shuffling_state) {
     interact_range = true;
 
     if (g_hero->has_interact()) {
-      if(g_hero->get_inventory()->coins <= 25){
+      if (g_hero->get_inventory()->coins <= 25) {
         g_player_ui->set_dialogue("Need 25 coins!");
-      }else{
+      } else {
         g_hero->get_inventory()->coins -= 25;
         shuffling_state = true;
       }
@@ -44,38 +55,66 @@ void Merchant::fixed_update(double deltaTime) {
     interact_range = false;
   }
 
-  if(shuffling_state && shuffle_ticks < SHUFFLE_TICKS){
-    if(!m_entity_cd->has_state("shuffle")){
+  if (shuffling_state && shuffle_ticks < SHUFFLE_TICKS) {
+    if (!m_entity_cd->has_state("shuffle")) {
       m_entity_cd->set_state("shuffle", SHUFFLE_CD);
 
       shuffled_amt = d20();
 
       shuffle_ticks++;
       g_camera->set_shake(5.f, .1f);
-      if(shuffle_ticks == SHUFFLE_TICKS){
-        m_entity_cd->set_state("end_shuffle", 1.5f, [&](){
+      if (shuffle_ticks == SHUFFLE_TICKS) {
+        m_entity_cd->set_state("end_shuffle", 1.5f, [&]() {
           g_camera->set_shake(50.5f, .05f);
           shuffling_state = false;
 
+          if (shuffled_amt == 0) {
+            g_player_ui->set_dialogue("Unlucky");
+            return;
+          }
+
+          if (shuffled_amt <= 5) {
+            g_player_ui->set_dialogue("You got 1 compost!");
+
+            spawn_compost(this);
+          }
+
+          if (shuffled_amt > 5 && shuffled_amt <= 10) {
+            g_player_ui->set_dialogue("You got 2 compost!");
+
+            for(int i = 0; i < 2; i++)
+              spawn_compost(this);
+          }
+
+          if (shuffled_amt > 10 && shuffled_amt <= 15) {
+            g_player_ui->set_dialogue("You got 3 compost!");
+
+            for(int i = 0; i < 3; i++)
+              spawn_compost(this);
+          }
+
+          if (shuffled_amt == 20) {
+            g_player_ui->set_dialogue("JACKPOT!");
+
+            for(int i = 0; i < 5; i++)
+              spawn_compost(this);
+          }
         });
       }
     }
   }
 }
 
-void Merchant::update(double deltaTime) {
-  Entity::update(deltaTime);
-}
+void Merchant::update(double deltaTime) { Entity::update(deltaTime); }
 
 void Merchant::draw() {
   Entity::draw();
 
-  if(shuffling_state){
-    g_atlas->draw_text(get_pos() + vec2f{2,-4}, std::to_string(shuffled_amt).c_str(), g_app->get_main_font(), {255, 255, 255}, 1, 128, g_camera);
+  if (shuffling_state) {
+    g_atlas->draw_text(
+        get_pos() + vec2f{2, -4}, std::to_string(shuffled_amt).c_str(),
+        g_app->get_main_font(), {255, 255, 255}, 1, 128, g_camera);
   }
 }
 
-void Merchant::post_update(double deltaTime) {
-  Entity::post_update(deltaTime);
-}
-
+void Merchant::post_update(double deltaTime) { Entity::post_update(deltaTime); }
