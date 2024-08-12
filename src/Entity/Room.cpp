@@ -26,7 +26,7 @@ Room::Room(vec2i _pos, vec2i _size) {
 
   for(int i = 0; i < 12; i++){
     coll.scale = {12,12};
-    props.push_back({20 + i*8, 30, coll, 6, 1});
+    props.push_back({-40 + i*8, 30, coll, 6, 1});
   }
 
   g_collider_tiles = &props;

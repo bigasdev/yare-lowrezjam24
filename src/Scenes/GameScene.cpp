@@ -100,7 +100,7 @@ void GameScene::load_assets() {
   g_hero = hero;
 
   auto merchant = m_fort->recruit<Merchant>(m_resources, m_atlas->get_game_scale());
-  merchant->set_pos(45, -10);
+  merchant->set_pos(35, 0);
   merchant->init();
 
   /*for(int i = 0; i < 1000; i++){
@@ -158,7 +158,6 @@ void GameScene::init() {
   m_input_manager->bind_joy(JoyInput::RIGHT_TRIGGER, &g_hero->actions.interact);
 
   //tutorial and stuff 
-  m_player_ui->set_dialogue("Lets plant carrots!");
 }
 
 void GameScene::fixed_update(double deltaTime) {
