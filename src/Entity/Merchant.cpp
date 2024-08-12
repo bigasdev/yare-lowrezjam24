@@ -51,10 +51,12 @@ void Merchant::fixed_update(double deltaTime) {
       shuffled_amt = d20();
 
       shuffle_ticks++;
+      g_camera->set_shake(300.f, .7f);
       if(shuffle_ticks == SHUFFLE_TICKS){
         m_entity_cd->set_state("end_shuffle", 1.5f, [&](){
-          g_camera->set_shake(0.5f, 0.5f);
+          g_camera->set_shake(1225.5f, 1.5f);
           shuffling_state = false;
+
         });
       }
     }

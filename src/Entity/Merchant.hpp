@@ -5,7 +5,7 @@
 #include "Entity.hpp"
 
 #define SHUFFLE_TICKS 5
-#define SHUFFLE_CD 1
+#define SHUFFLE_CD 0.25
 
 class Merchant : public Entity {
 public:
