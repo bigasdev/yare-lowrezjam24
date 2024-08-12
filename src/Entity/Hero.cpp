@@ -84,7 +84,6 @@ void Hero::update(double deltaTime) {
     p->get_current_sprite()->x = 0;
     p->get_current_sprite()->y = 5;
     p->set_life(100, 100);
-    p->set_tag(ProjectileTag::PROJECTILE_HERO);
     p->set_collision_box({{2, 2}, {10, 11}});
     p->set_speed(250);
     p->init();

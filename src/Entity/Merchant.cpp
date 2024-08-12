@@ -89,7 +89,7 @@ void Merchant::fixed_update(double deltaTime) {
               spawn_compost(this);
           }
 
-          if (shuffled_amt > 10 && shuffled_amt <= 15) {
+          if (shuffled_amt > 10 && shuffled_amt <= 19) {
             g_player_ui->set_dialogue("You got 3 compost!");
 
             for(int i = 0; i < 3; i++)
