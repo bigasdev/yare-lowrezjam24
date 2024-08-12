@@ -4,7 +4,7 @@ NAME = rpg_side_screen
 CC = g++ -std=c++20 -Wno-narrowing
 STATIC_LIBS = -static-libstdc++ -static-libgcc
 INCLUDES = -Iinclude -Iinclude/sdl -Iinclude/headers -Llib
-LIBS = -lstdc++fs -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lole32 -mwindows
+LIBS = -lstdc++fs -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lole32 -mwindows
 # set all the files needed
 DEBUG_FOLDER = .build
 RELEASE_FOLDER = .release

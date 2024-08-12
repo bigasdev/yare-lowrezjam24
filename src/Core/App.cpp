@@ -14,10 +14,12 @@
 #include "../Renderer/Atlas.hpp"
 #include "App.hpp"
 #include "Globals.hpp"
+#include "SDL.h"
 #include "SDL_hints.h"
 #include "SDL_rect.h"
 #include "SDL_render.h"
 #include "SDL_ttf.h"
+#include "SDL_mixer.h"
 #include "SDL_version.h"
 #include "SDL_video.h"
 #include <string>
@@ -65,9 +67,9 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
 
   int ini = -99;
 #ifdef __EMSCRIPTEN__
-  ini = SDL_Init(SDL_INIT_VIDEO);
+  ini = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
 #else
-  ini = SDL_Init(SDL_INIT_EVERYTHING);
+  ini = SDL_Init(SDL_INIT_EVERYTHING | SDL_INIT_AUDIO);
 #endif
   F_Debug::log("SDL INIT : " + std::to_string(ini));
 
@@ -98,13 +100,15 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
 
     int rendererFlags = SDL_RENDERER_ACCELERATED;
 
-    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-      fprintf(stderr, "SDL could not initialize\n");
-      F_Debug::error("SDL could not initialize");
-    }
-    if (IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) != IMG_INIT_PNG | IMG_INIT_JPG) {
-      fprintf(stderr, "SDL_image could not initialize\n");
+    if (!IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG)) {
       F_Debug::error("SDL_image could not initialize");
+    }
+
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+      F_Debug::error("SDL_mixer could not initialize! SDL_mixer Error: " +
+                     std::string(Mix_GetError()));
+    }else{
+      F_Debug::log("SDL_mixer initialized!");
     }
 
     m_renderer = SDL_CreateRenderer(m_window, -1, rendererFlags);

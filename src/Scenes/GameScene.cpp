@@ -161,9 +161,6 @@ void GameScene::init() {
 }
 
 void GameScene::fixed_update(double deltaTime) {
-  /*for (auto &e : visible_entities) {
-    e->fixed_update(deltaTime);
-  }*/
 }
 
 

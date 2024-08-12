@@ -34,12 +34,12 @@ void spawn_compost(Merchant* merchant) {
       g_fort->recruit<Merchant>(g_resources, g_atlas->get_game_scale());
   compost->set_pos(merchant->get_pos().x + rnd(-5, 5), merchant->get_pos().y);
   compost->init();
+  compost->set_speed(50);
   compost->set_life(100, 100);
   compost->move_dir({rnd(-15.f, 15.f), rnd(-15.f, 15.f)});
 }
 
 void Merchant::fixed_update(double deltaTime) {
-  Entity::fixed_update(deltaTime);
   if (is_interacting(g_hero) && !shuffling_state) {
     interact_range = true;
 

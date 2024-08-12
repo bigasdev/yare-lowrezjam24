@@ -15,6 +15,22 @@ void Boss::init()
   m_collision_box.scale = {8, 8};
 }
 
+void Boss::walking_state(double deltaTime)
+{
+}
+
+void Boss::hit_state(double deltaTime)
+{
+}
+
+void Boss::invicible_state(double deltaTime)
+{
+}
+
+void Boss::rage_state(double deltaTime)
+{
+}
+
 void Boss::fixed_update(double deltaTime)
 {
 }
@@ -38,6 +54,10 @@ void Boss::update(double deltaTime)
       rage_state(deltaTime);
       break;
   }
+}
+
+void Boss::post_update(double deltaTime)
+{
 }
 
 void Boss::draw()
