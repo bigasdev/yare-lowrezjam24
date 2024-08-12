@@ -28,7 +28,7 @@ public:
   void draw_from_sheet(Entity *entity, Camera *camera);
   void draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
                                AtlasPoint point, Camera *camera, int scale = 1,
-                               bool flip = false);
+                               bool flip = false, bool ignore_scale = false);
 
   // getters
   SDL_Renderer *get_renderer();

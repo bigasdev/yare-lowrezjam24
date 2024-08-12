@@ -4,6 +4,7 @@
 #include "SDL_blendmode.h"
 #include "SDL_rect.h"
 #include "SDL_render.h"
+#include <tuple>
 
 Atlas::Atlas(SDL_Renderer *renderer, float *_scale) {
   std::cout << "Instantiated atlas!..." << std::endl;
@@ -179,10 +180,15 @@ void Atlas::draw_from_sheet(Entity *entity, Camera *camera) {
 }
 void Atlas::draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
                                     AtlasPoint point, Camera *camera, int scale,
-                                    bool flip) {
+                                    bool flip, bool ignore_scale) {
 
   int scaled_x = point.xpu * (*m_game_scale + scale);
   int scaled_y = point.ypu * (*m_game_scale + scale);
+
+  if(ignore_scale){
+    scaled_x = point.xpu;
+    scaled_y = point.ypu;
+  }
 
   SDL_Rect src = {point.x * point.xpu, point.y * point.ypu, point.xpu,
                   point.ypu};
