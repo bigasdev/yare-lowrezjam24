@@ -29,6 +29,23 @@ Room::Room(vec2i _pos, vec2i _size) {
     props.push_back({-40 + i*8, 30, coll, 6, 1});
   }
 
+  for(int i = -30; i < 175; i+=8){
+    coll.scale = {8,8};
+    props.push_back({-40, i, coll, 1, -1});
+  }
+  for(int i = -30; i < 175; i+=8){
+    coll.scale = {8,8};
+    props.push_back({190, i, coll, 1, -1});
+  }
+  for(int i = -100; i < 175; i+=8){
+    coll.scale = {8,8};
+    props.push_back({i, 175, coll, 1, -1});
+  }
+  for(int i = -100; i < 175; i+=8){
+    coll.scale = {8,8};
+    props.push_back({i, -30, coll, 1, -1});
+  }
+
   g_collider_tiles = &props;
 }
 
@@ -42,6 +59,7 @@ void Room::draw() {
   }
 #endif
   for (auto& prop : props) {
+    if(prop.flags == -1)continue;
     g_atlas->draw_texture_from_sheet(*m_tileset_texture, {static_cast<float>(prop.x),static_cast<float>(prop.y)}, {8,8,0,prop.tile}, g_camera);
   }
 }

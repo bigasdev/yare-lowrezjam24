@@ -36,10 +36,6 @@ bool Hero::is_moving() { return !g_input_manager->get_raw_axis().zero(); }
 
 void Hero::fixed_update(double deltaTime) {
   if (can_move) {
-    if((m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).x < -g_grid.x/2 || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).x > g_grid.x || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).y < -g_grid.y/2 || (m_pos + (g_input_manager->get_raw_axis() * m_speed) * deltaTime).y > g_grid.y){
-      if(g_hero_state == HeroState::FARM)return;
-    }
-
     m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
   }
 }
