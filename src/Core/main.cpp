@@ -16,7 +16,7 @@ Uint64 currentTick = SDL_GetPerformanceCounter();
 const double desiredFPS = 60.0;
 #else 
 Uint64 currentTick = SDL_GetTicks();
-const double desiredFPS = 30.0;
+const double desiredFPS = 60.0;
 #endif
 const double frameTime = 1.0 / desiredFPS;
 double accumulatedTime = 0;
