@@ -11,7 +11,6 @@ SpriteAnimation::SpriteAnimation(std::string name, vec2f pos, int frame_count,
   starting_x = pos.x;
   starting_y = pos.y;
   frame_timer = _frame_timer;
-  F_Debug::log(std::to_string(starting_x));
 }
 
 void SpriteAnimation::add_callback(std::function<void()> callback) {

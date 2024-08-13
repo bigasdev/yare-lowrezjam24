@@ -11,6 +11,7 @@ ParticleSystem *g_particle_system;
 InputManager *g_input_manager;
 Atlas *g_atlas;
 Resources *g_resources;
+SoundManager *g_sound_manager;
 PlayerUI *g_player_ui;
 
 bool g_controller_connected;

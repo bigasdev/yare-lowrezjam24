@@ -8,6 +8,7 @@
 #include "../Entity/Dirt.hpp"
 #include "../Entity/Item.hpp"
 #include "../Entity/Projectile.hpp"
+#include "../Core/SoundManager.hpp"
 #include "../Entity/Merchant.hpp"
 #include "../Entity/UI/PlayerUI.hpp"
 #include "../Entity/Room.hpp"
@@ -55,6 +56,7 @@ std::vector<Entity *> visible_entities;
 std::vector<Entity *> visible_enemies;
 
 // Polish
+SoundManager *m_sound_manager = nullptr;
 ParticleSystem *m_particle_system = nullptr;
 LightSystem *m_light_system = nullptr;
 
@@ -128,11 +130,13 @@ void GameScene::init() {
 
   m_particle_system = new ParticleSystem(m_atlas, m_camera, 1000);
   m_light_system = new LightSystem(1000);
+  m_sound_manager = new SoundManager();
   //
   g_fort = m_fort;
   g_projectile_system = m_projectile_system;
   g_particle_system = m_particle_system;
   g_input_manager = m_input_manager;
+  g_sound_manager = m_sound_manager;
   g_ALL = &visible_entities;
   g_enemies = &visible_enemies;
   g_player_ui = m_player_ui;
@@ -155,6 +159,7 @@ void GameScene::init() {
 
   //input controller 
   m_input_manager->bind_joy(JoyInput::RIGHT_TRIGGER, &g_hero->actions.interact);
+  m_sound_manager->play_sound("merchant_finish");
 
   //tutorial and stuff 
 }
@@ -256,4 +261,5 @@ void GameScene::clean() {
   delete m_projectile_system;
   delete m_particle_system;
   delete m_light_system;
+  delete m_sound_manager;
 }

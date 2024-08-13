@@ -26,6 +26,7 @@ class ParticleSystem;
 class Atlas;
 class Resources;
 class InputManager;
+class SoundManager;
 class PlayerUI;
 
 extern App *g_app;
@@ -37,6 +38,7 @@ extern ParticleSystem *g_particle_system;
 extern InputManager *g_input_manager;
 extern Atlas *g_atlas;
 extern Resources *g_resources;
+extern SoundManager *g_sound_manager;
 extern PlayerUI *g_player_ui;
 
 extern bool g_controller_connected;
