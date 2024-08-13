@@ -34,6 +34,10 @@ void Worm::radial_shoot(int increase){
 }
 
 void Worm::walking_state(double deltaTime) {
+  m_entity_cd->set_state("shoot", .25f, [&]() {
+    radial_shoot(45);
+  });
+
   if(m_entity_cd->has_state("walking")) return;
 
   move_dir({rnd(-25.f,25.f), rnd(-25.f,25.f)});
