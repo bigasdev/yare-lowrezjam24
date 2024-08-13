@@ -1,38 +1,44 @@
 #include "Item.hpp"
+#include "../Core/Globals.hpp"
+#include "EntityParty.hpp"
+#include "Hero.hpp"
+#include "../Renderer/Camera.hpp"
 #include "../Tools/Cooldown.hpp"
 
 Item::Item()
 {
 }
 
-Item::Item(Resources* _resources, float _scale)
-{
-  Sprite _sprite;
-  if (_resources != nullptr)
-    _sprite.texture = _resources->get_aseprite_texture("character_atlas");
-
-  _sprite.xpu = 11;
-  _sprite.ypu = 10;
-  _sprite.x = 0;
-  _sprite.y = 0;
-
-  m_parent_scale = _scale;
-
-  m_current_sprite = _sprite;
-
-  m_affect_manager = new AffectManager();
-  m_entity_cd = new Cooldown();
-}
-
 Item::~Item()
 {
 }
 
+void Item::init()
+{
+  m_interaction_box.offset = {4, 4};
+  m_interaction_box.scale = {8, 8};
+  m_collision_box.scale = {8, 8};
+}
+
+void Item::fixed_update(double deltaTime)
+{
+  Entity::fixed_update(deltaTime);
+
+  if(is_colliding(g_hero)){
+    hit(-100, g_hero);
+    g_camera->set_shake(.125f, .35f);
+  }
+}
+
 void Item::update(double deltaTime)
 {
-  if(m_hero != nullptr){
-    if(is_colliding(m_hero)){
-      kill();
-    }
-  }
+  Entity::update(deltaTime);
+}
+
+void Item::draw()
+{
+}
+
+void Item::post_update(double deltaTime)
+{
 }

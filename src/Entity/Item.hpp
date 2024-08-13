@@ -7,16 +7,16 @@
 class Item : public Entity {
 public:
   Item();
-  Item(Resources* _resources, float _scale);
+  Item(Resources* _resources, float _scale) : Entity(_resources, _scale) {};
   ~Item();
 
-  void update(double deltaTime);
-
-  void add_hero(Entity** _hero) { m_hero = *_hero; }
+  void init() override;
+  void fixed_update(double deltaTime) override;
+  void update(double deltaTime) override;
+  void draw() override;
+  void post_update(double deltaTime) override;
 
 private:
-  Entity* m_hero;
-
   float float_speed = 0.5f;
   vec2f start_pos;
 };
