@@ -1,5 +1,7 @@
 #include "Globals.hpp"
 
+bool is_paused = false;
+
 App *g_app;
 Camera *g_camera;
 Fort *g_fort;

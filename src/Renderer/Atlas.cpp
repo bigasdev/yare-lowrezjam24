@@ -119,8 +119,10 @@ void Atlas::draw_unique_entity(std::unique_ptr<Entity> p_entity,
 }
 
 void Atlas::draw_text(vec2f pos, const char *p_text, TTF_Font *font,
-                      SDL_Color textColor, float size, int width, Camera *camera) {
-  SDL_Surface *surfaceMessage = TTF_RenderText_Blended_Wrapped(font, p_text, textColor, width);
+                      SDL_Color textColor, float size, int width,
+                      Camera *camera) {
+  SDL_Surface *surfaceMessage =
+      TTF_RenderText_Blended_Wrapped(font, p_text, textColor, width);
   SDL_Texture *message =
       SDL_CreateTextureFromSurface(m_renderer_ptr, surfaceMessage);
 
@@ -133,7 +135,7 @@ void Atlas::draw_text(vec2f pos, const char *p_text, TTF_Font *font,
   SDL_Rect dst;
   dst.x = pos.x;
   dst.y = pos.y;
-  if(camera != nullptr){
+  if (camera != nullptr) {
     dst.x -= camera->get_pos().x;
     dst.y -= camera->get_pos().y;
   }
@@ -191,7 +193,7 @@ void Atlas::draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
   int scaled_x = point.xpu * (*m_game_scale + scale);
   int scaled_y = point.ypu * (*m_game_scale + scale);
 
-  if(ignore_scale){
+  if (ignore_scale) {
     scaled_x = point.xpu;
     scaled_y = point.ypu;
   }
@@ -200,13 +202,12 @@ void Atlas::draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
                   point.ypu};
   SDL_Rect dst;
   if (camera != nullptr) {
-    dst = {
-        static_cast<int>(pos.x) - static_cast<int>(camera->get_pos().x),
-        static_cast<int>(pos.y) - static_cast<int>(camera->get_pos().y),
-        scaled_x, scaled_y};
-  }else{
+    dst = {static_cast<int>(pos.x) - static_cast<int>(camera->get_pos().x),
+           static_cast<int>(pos.y) - static_cast<int>(camera->get_pos().y),
+           scaled_x, scaled_y};
+  } else {
     dst = {static_cast<int>(pos.x), static_cast<int>(pos.y), scaled_x,
-                    scaled_y};
+           scaled_y};
   }
 
   auto flip_state = flip ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
@@ -323,7 +324,12 @@ void Atlas::draw_rect(vec2f pos, vec2f size, vec3f color, int a, Camera *camera,
   SDL_RenderFillRect(m_renderer_ptr, &rect);
 }
 
-void Atlas::draw_screen_filter(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
+void Atlas::draw_screen_filter(Uint8 r, Uint8 g, Uint8 b, Uint8 a, int mode) {
   SDL_SetRenderDrawColor(m_renderer_ptr, r, g, b, a);
+  if (mode == 1) {
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_ADD);
+  } else {
+    SDL_SetRenderDrawBlendMode(m_renderer_ptr, SDL_BLENDMODE_BLEND);
+  }
   SDL_RenderFillRect(m_renderer_ptr, NULL);
 }

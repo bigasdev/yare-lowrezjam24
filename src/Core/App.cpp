@@ -258,8 +258,9 @@ void App::handle_events() {
       break;
     case SDL_SCANCODE_ESCAPE:
 #if F_ENABLE_DEBUG
-      m_is_running = false;
+      if(is_paused) m_is_running = false;
 #endif
+      is_paused = !is_paused;
       break;
     }
     break;

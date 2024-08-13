@@ -15,6 +15,8 @@ enum HeroState{
   BATTLE_DEAD
 };
 
+extern bool is_paused;
+
 class App;
 class Camera;
 class Fort;

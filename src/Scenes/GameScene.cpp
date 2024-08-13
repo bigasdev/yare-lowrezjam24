@@ -139,6 +139,7 @@ void GameScene::init() {
   // example of castle db loading
   load_assets();
 
+
   //
   ui_partial_scene = new UIPartialScene(m_app, m_logger, m_cd, m_camera);
 
@@ -234,6 +235,11 @@ void GameScene::draw() {
 
   ui_partial_scene->draw();
   m_player_ui->draw();
+
+  if(is_paused){
+    g_atlas->draw_screen_filter(0,0,0,125,0);
+    g_atlas->draw_text({16, 8}, "PAUSED", g_app->get_main_font(), {255, 255, 255}, 1, 128, nullptr);
+  }
 }
 
 void GameScene::input(SDL_Event event) {
