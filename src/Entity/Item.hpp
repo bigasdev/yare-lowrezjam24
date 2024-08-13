@@ -4,6 +4,12 @@
 
 #include "Entity.hpp"
 
+enum ItemType{
+  STR,
+  DEF,
+  SPD
+};
+
 class Item : public Entity {
 public:
   Item();
@@ -16,9 +22,13 @@ public:
   void draw() override;
   void post_update(double deltaTime) override;
 
+  void set_type(ItemType _type) { type = _type; }
+
 private:
   float float_speed = 0.5f;
   vec2f start_pos;
+
+  ItemType type = ItemType::STR;
 };
 
 #endif

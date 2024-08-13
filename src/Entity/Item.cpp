@@ -27,6 +27,18 @@ void Item::fixed_update(double deltaTime)
   if(is_colliding(g_hero)){
     hit(-100, g_hero);
     g_camera->set_shake(.125f, .35f);
+
+    switch(type){
+      case ItemType::STR:
+        g_hero->get_stats()->str += 1;
+        break;
+      case ItemType::DEF:
+        g_hero->get_stats()->def += 1;
+        break;
+      case ItemType::SPD:
+        g_hero->get_stats()->spd += 1;
+        break;
+    }
   }
 }
 

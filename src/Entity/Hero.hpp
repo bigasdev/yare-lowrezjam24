@@ -21,6 +21,12 @@ struct Inventory{
   int pumpkins = 0;
 };
 
+struct Stats{
+  int str = 1;
+  int def = 1;
+  int spd = 1;
+};
+
 class Hero : public Entity {
 public:
   Hero();
@@ -37,12 +43,14 @@ public:
   bool is_moving();
 
   Inventory* get_inventory() { return &inventory; }
+  Stats* get_stats() { return &stats; }
 
   void animation_manager();
   
   HeroActions actions = {false,false,false,false,false,false,false};
 private:
   Inventory inventory;
+  Stats stats;
 };
 
 #endif
