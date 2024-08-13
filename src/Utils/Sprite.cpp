@@ -31,7 +31,6 @@ void SpriteAnimation::update(double deltaTime) {
 
   // F_Debug::log_group("Frame Time", std::to_string(m_frame_time));
   // F_Debug::log_group("Frame Timer", std::to_string(frame_timer));
-  F_Debug::log_group("Current Frame", std::to_string(current_frame));
 
   if (m_frame_time >= frame_timer) {
     m_frame_time = 0;

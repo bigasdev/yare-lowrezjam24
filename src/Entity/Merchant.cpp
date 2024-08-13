@@ -8,25 +8,34 @@
 #include "../Utils/Gizmos.hpp"
 #include "EntityParty.hpp"
 #include "Hero.hpp"
+#include "SDL_render.h"
 #include "UI/PlayerUI.hpp"
 #include <string>
+
+SDL_Texture** concept_text;
 
 Merchant::Merchant() {}
 
 Merchant::~Merchant() {}
 
 void Merchant::init() {
-  m_current_sprite.texture = g_resources->get_aseprite_texture("concept");
+  concept_text = g_resources->get_aseprite_texture("concept");
+  m_current_sprite.texture = concept_text;
 
-  m_current_sprite.xpu = 8;
-  m_current_sprite.ypu = 8;
-  m_current_sprite.x = 0;
-  m_current_sprite.y = 3;
+  m_current_sprite.xpu = 16;
+  m_current_sprite.ypu = 16;
+  m_current_sprite.x = 1;
+  m_current_sprite.y = 1;
   set_life(100, 100);
 
   m_interaction_box.offset = {0, 0};
-  m_interaction_box.scale = {8, 8};
+  m_interaction_box.scale = {16, 16};
   m_collision_box.scale = {8, 8};
+
+  SpriteAnimation idle = SpriteAnimation{"idle", {1, 1}, 2, .5f,
+                                         &m_current_sprite};
+  add_sprite_animation(idle);
+  set_animation("idle");
 }
 
 void spawn_compost(Merchant* merchant) {
@@ -114,8 +123,9 @@ void Merchant::draw() {
   Entity::draw();
 
   if (shuffling_state) {
+    g_atlas->draw_texture_from_sheet(*concept_text, get_pos() + vec2f{2,-8}, {16,16,3,1}, g_camera );
     g_atlas->draw_text(
-        get_pos() + vec2f{2, -4}, std::to_string(shuffled_amt).c_str(),
+        get_pos() + vec2f{13, 5}, std::to_string(shuffled_amt).c_str(),
         g_app->get_main_font(), {255, 255, 255}, 1, 128, g_camera);
   }
 }
