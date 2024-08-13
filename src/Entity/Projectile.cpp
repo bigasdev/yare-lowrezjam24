@@ -38,7 +38,7 @@ void Projectile::fixed_update(double deltaTime) {
   if (b_tag == ProjectileTag::PROJECTILE_HERO) {
     for (auto mob : *g_enemies) {
       if (is_colliding(mob)) {
-        mob->hit(-100, this);
+        mob->hit(-3, this);
         g_particle_system->grab_example(mob->get_pos() + vec2f(20, 25),
                                         m_angle);
 

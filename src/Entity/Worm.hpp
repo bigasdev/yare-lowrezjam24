@@ -22,6 +22,8 @@ public:
   void draw() override;
   void post_update(double deltaTime) override;
 
+  void radial_shoot(int increase = 45) override;
+
   void animation_manager();
 
 private:

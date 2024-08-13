@@ -22,6 +22,9 @@ public:
   void update(double deltaTime) override;
   void draw() override;
   void post_update(double deltaTime) override;
+  void change_state(BossState _state) { state = _state; }
+
+  virtual void radial_shoot(int increase = 45);
 
   virtual void walking_state(double deltaTime);
   virtual void hit_state(double deltaTime);
