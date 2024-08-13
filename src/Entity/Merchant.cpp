@@ -1,5 +1,6 @@
 #include "Merchant.hpp"
 #include "../Core/App.hpp"
+#include "UI/EntityTooltips.hpp"
 #include "../Core/Fort.hpp"
 #include "../Renderer/Atlas.hpp"
 #include "../Renderer/Camera.hpp"
@@ -127,6 +128,10 @@ void Merchant::draw() {
     g_atlas->draw_text(
         get_pos() + vec2f{13, 5}, std::to_string(shuffled_amt).c_str(),
         g_app->get_main_font(), {255, 255, 255}, 1, 128, g_camera);
+  }
+
+  if(interact_range){
+    m_tooltip->draw(*concept_text, get_pos() + vec2f{4, -16});
   }
 }
 

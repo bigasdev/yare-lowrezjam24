@@ -22,6 +22,7 @@ class Rune;
 class Cooldown;
 class AffectManager;
 class Sprite;
+class EntityTooltips;
 
 // main class for the entities, in our app everything that will be displayed and
 // have interaction is an entity
@@ -138,6 +139,7 @@ protected:
 
   // draw/pos stuff
   EntityRenderer *m_renderer;
+  EntityTooltips *m_tooltip;
   Sprite m_current_sprite = Sprite();
   vec2f m_pos;
   float m_angle = 0;

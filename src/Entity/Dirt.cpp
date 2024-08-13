@@ -2,6 +2,7 @@
 #include "../Core/Globals.hpp"
 #include "../Core/App.hpp"
 #include "UI/PlayerUI.hpp"
+#include "UI/EntityTooltips.hpp"
 #include "../Renderer/Atlas.hpp"
 #include "../Renderer/ParticleSystem.hpp"
 #include "../Tools/Cooldown.hpp"
@@ -71,9 +72,7 @@ void Dirt::draw() {
                     g_atlas, {255, 0, 0}, 85, g_camera);
 #endif
   if (interact_range) {
-    auto str = "Crop : " + std::to_string(m_uid);
-    g_atlas->draw_text({10, 55}, str.c_str(), g_app->get_main_font(),
-                       {255, 255, 255});
+    m_tooltip->draw(*get_current_sprite()->texture, get_pos() + vec2f{4, -16});
   }
 
   if (has_plant) {

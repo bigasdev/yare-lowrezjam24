@@ -1,6 +1,7 @@
 #include "Entity.hpp"
 #include "../Core/App.hpp"
 #include "../Entity/Hero.hpp"
+#include "UI/EntityTooltips.hpp"
 #include "../Core/Globals.hpp"
 #include "../Renderer/ParticleSystem.hpp"
 #include "../Renderer/Atlas.hpp"
@@ -36,6 +37,7 @@ Entity::Entity(Resources *_resources, float _scale) {
 
   m_entity_cd = new Cooldown();
   m_affect_manager = new AffectManager();
+  m_tooltip = new EntityTooltips();
 }
 
 void Entity::init() {
@@ -305,6 +307,10 @@ void Entity::kill() {
   m_life.value = 0;
   if (m_on_death != nullptr)
     m_on_death();
+
+  delete m_entity_cd;
+  delete m_affect_manager;
+  delete m_tooltip;
 }
 
 void Entity::set_death_callback(std::function<void()> _on_death) {
