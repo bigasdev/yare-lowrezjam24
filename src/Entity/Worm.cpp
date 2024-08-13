@@ -77,3 +77,16 @@ void Worm::init() {
   add_sprite_animation(idle);
   set_animation("idle");
 }
+
+void Worm::fixed_update(double deltaTime) {
+  Entity::fixed_update(deltaTime);
+}
+
+void Worm::post_update(double deltaTime) {
+  Entity::post_update(deltaTime);
+}
+
+void Worm::draw(){
+  
+}
+

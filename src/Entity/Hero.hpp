@@ -24,7 +24,7 @@ struct Inventory{
 struct Stats{
   int str = 1;
   int def = 1;
-  int spd = 1;
+  int spd = 0;
 };
 
 class Hero : public Entity {
@@ -32,7 +32,6 @@ public:
   Hero();
   Hero(Resources* _resources, float _scale) : Entity(_resources, _scale) {}
   ~Hero();
-
   void init() override;
   void fixed_update(double deltaTime) override;
   void update(double deltaTime) override;

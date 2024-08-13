@@ -36,7 +36,7 @@ void Item::fixed_update(double deltaTime)
         g_hero->get_stats()->def += 1;
         break;
       case ItemType::SPD:
-        g_hero->get_stats()->spd += 1;
+        g_hero->get_stats()->spd += 5;
         break;
     }
   }

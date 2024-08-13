@@ -36,7 +36,7 @@ bool Hero::is_moving() { return !g_input_manager->get_raw_axis().zero(); }
 
 void Hero::fixed_update(double deltaTime) {
   if (can_move) {
-    m_pos += (g_input_manager->get_raw_axis() * m_speed) * deltaTime;
+    m_pos += (g_input_manager->get_raw_axis() * (m_speed + get_stats()->spd)) * deltaTime;
   }
 }
 

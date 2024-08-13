@@ -15,6 +15,10 @@ void Boss::init()
   m_collision_box.scale = {8, 8};
 }
 
+void Boss::radial_shoot(int increase)
+{
+}
+
 void Boss::walking_state(double deltaTime)
 {
 }
