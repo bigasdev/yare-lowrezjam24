@@ -14,6 +14,7 @@
 #include "../Renderer/Atlas.hpp"
 #include "App.hpp"
 #include "Globals.hpp"
+#include "SoundManager.hpp"
 #include "SDL.h"
 #include "SDL_hints.h"
 #include "SDL_rect.h"
@@ -109,6 +110,8 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
                      std::string(Mix_GetError()));
     }else{
       F_Debug::log("SDL_mixer initialized!");
+      m_sound_manager = new SoundManager();
+      g_sound_manager = m_sound_manager;
     }
 
     m_renderer = SDL_CreateRenderer(m_window, -1, rendererFlags);
@@ -261,6 +264,11 @@ void App::handle_events() {
       if(is_paused) m_is_running = false;
 #endif
       is_paused = !is_paused;
+      if(is_paused){
+        g_sound_manager->play_sound("pause");
+      }else{
+        g_sound_manager->play_sound("unpause");
+      }
       break;
     }
     break;

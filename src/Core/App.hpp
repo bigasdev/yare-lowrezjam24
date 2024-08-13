@@ -7,6 +7,7 @@
 class Scene;
 class Resources;
 class Atlas;
+class SoundManager;
 //global variables
 extern bool debug_mode;
 
@@ -63,6 +64,7 @@ private:
 	SDL_Window* m_window = nullptr;
 	SDL_Renderer* m_renderer = nullptr;
 	Resources* m_resources_ptr = nullptr;
+  SoundManager* m_sound_manager = nullptr;
 	Atlas* m_atlas_ptr = nullptr;
 
 	//Local
