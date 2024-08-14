@@ -41,18 +41,13 @@ void PlayerUI::set_dialogue(std::string p_dialogue) {
 
 void PlayerUI::draw() {
   if (!has_dialogue) {
-    g_atlas->draw_text({4, 54},
+    g_atlas->draw_texture_from_sheet(*dialogue_texture, {0, 32}, {64,16,0,5}, nullptr);
+    g_atlas->draw_text({18, 52.5f},
                        std::to_string(g_hero->get_inventory()->coins).c_str(),
                        g_app->get_main_font(), {255, 255, 255});
-    g_atlas->draw_text({38, 54},
+    g_atlas->draw_text({50, 52.5f},
                        std::to_string(g_hero->get_inventory()->carrots).c_str(),
                        g_app->get_main_font(), {255, 255, 255});
-    g_atlas->draw_text({46, 54},
-                       std::to_string(g_hero->get_inventory()->potatos).c_str(),
-                       g_app->get_main_font(), {255, 255, 255});
-    g_atlas->draw_text(
-        {54, 54}, std::to_string(g_hero->get_inventory()->pumpkins).c_str(),
-        g_app->get_main_font(), {255, 255, 255});
   }else{
     g_atlas->draw_texture_from_sheet(*dialogue_texture, {0, 35}, {64,16,0,4}, nullptr, 1,false,false);
     g_atlas->draw_text({4, 45}, dialogue.c_str(), g_app->get_main_font(), {255, 255, 255}, 1, 68);

@@ -103,10 +103,6 @@ void GameScene::load_assets() {
   merchant->set_pos(45, -10);
   merchant->init();
 
-  auto worm = m_fort->recruit<Worm>(m_resources, m_atlas->get_game_scale());
-  worm->set_pos(500, 450);
-  worm->init();
-
   /*for(int i = 0; i < 1000; i++){
     auto e = m_fort->recruit<Entity>(m_resources, m_atlas->get_game_scale());
     e->set_pos(1200 + rnd(-1900, 1900), 400 + rnd(-1900, 1900));

@@ -6,7 +6,7 @@ class ParticleSystem;
 class Projectile : public Entity {
 public:
   Projectile();
-  Projectile(Resources *_res, float _scale);
+  Projectile(Resources *_res, float _scale) : Entity(_res, _scale) {};
   ~Projectile();
 
   void fixed_update(double deltaTime) override;

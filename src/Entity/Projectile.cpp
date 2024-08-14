@@ -6,14 +6,6 @@
 
 Projectile::Projectile() {}
 
-Projectile::Projectile(Resources *_res, float _scale) : Entity(_res, _scale) {
-  m_speed = 0.5f;
-  m_friction = .94f;
-  lifeTime = 1;
-  
-  m_tag = Tag::BULLET;
-}
-
 Projectile::~Projectile() { delete this; }
 
 void Projectile::reset() {
