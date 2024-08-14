@@ -7,6 +7,7 @@
 #include "../Renderer/ParticleSystem.hpp"
 #include "../Tools/Cooldown.hpp"
 #include "../Utils/Gizmos.hpp"
+#include "../Core/SoundManager.hpp" 
 #include "EntityParty.hpp"
 #include "Hero.hpp"
 #include <string>
@@ -37,11 +38,13 @@ void Dirt::fixed_update(double deltaTime) {
 
     if (g_hero->has_interact()) {
       if (!has_plant) {
+        g_sound_manager->play_sound("planting");
         g_particle_system->plant_carrot(get_pos());
         has_plant = true;
       }else{
         if(plant_state >= 10){
           g_hero_state = HeroState::BATTLE;
+          g_sound_manager->play_sound("entering");
           g_hero->set_pos(500, 500);
         }
       }
