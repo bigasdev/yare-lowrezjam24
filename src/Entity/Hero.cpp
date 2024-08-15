@@ -28,8 +28,12 @@ void Hero::init() {
   inventory.coins = 50;
   SpriteAnimation idle = SpriteAnimation{"idle", {0,1}, 2, .5f, get_current_sprite()};
   SpriteAnimation walk = SpriteAnimation{"walk", {2,1}, 5, .1f, get_current_sprite()};
+  SpriteAnimation idle_battle = SpriteAnimation{"idle_battle", {0,2}, 2, .5f, get_current_sprite()};
+  SpriteAnimation walk_battle = SpriteAnimation{"walk_battle", {2,2}, 5, .1f, get_current_sprite()};
   add_sprite_animation(idle);
   add_sprite_animation(walk);
+  add_sprite_animation(idle_battle);
+  add_sprite_animation(walk_battle);
 }
 
 bool Hero::is_moving() { return !g_input_manager->get_raw_axis().zero(); }
@@ -124,11 +128,28 @@ void Hero::animation_manager() {
     m_current_sprite.facing_right = false;
   }
 
+  if(g_hero_state == HeroState::BATTLE){
+    m_current_sprite.xpu = 9;
+    m_current_sprite.ypu = 16;
+  }else{
+    m_current_sprite.xpu = 7;
+    m_current_sprite.ypu = 8;
+  }
+
   if (g_input_manager->get_raw_axis() != vec2f(0, 0)) {
+    if(g_hero_state == HeroState::BATTLE){
+      set_animation("walk_battle");
+    }else{
     set_animation("walk");
+    }
     return;
   }
+
+  if(g_hero_state == HeroState::BATTLE){
+    set_animation("idle_battle");
+  }else{
   set_animation("idle");
+  }
 
 }
 
