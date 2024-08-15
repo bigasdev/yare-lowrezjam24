@@ -44,6 +44,7 @@ extern PlayerUI *g_player_ui;
 extern bool g_controller_connected;
 extern GameState g_game_state;
 extern HeroState g_hero_state;
+extern int g_hero_health;
 
 extern vec2i g_grid;
 

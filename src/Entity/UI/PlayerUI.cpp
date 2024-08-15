@@ -41,6 +41,12 @@ void PlayerUI::set_dialogue(std::string p_dialogue) {
 
 void PlayerUI::draw() {
   if (!has_dialogue) {
+    if(g_hero_state == HeroState::BATTLE){
+      g_atlas->draw_texture_from_sheet(*dialogue_texture, {0, 35}, {64,16,0,6}, nullptr, 1,false,false);
+      for(int i = 0; i < 7; i++){
+      g_atlas->draw_line({5, 55+i}, {57, 55+i}, {255, 0, 0}, 255, nullptr);
+      }
+    }else{
     g_atlas->draw_texture_from_sheet(*dialogue_texture, {0, 32}, {64,16,0,5}, nullptr);
     g_atlas->draw_text({18, 52.5f},
                        std::to_string(g_hero->get_inventory()->coins).c_str(),
@@ -48,6 +54,7 @@ void PlayerUI::draw() {
     g_atlas->draw_text({50, 52.5f},
                        std::to_string(g_hero->get_inventory()->carrots).c_str(),
                        g_app->get_main_font(), {255, 255, 255});
+    }
   }else{
     g_atlas->draw_texture_from_sheet(*dialogue_texture, {0, 35}, {64,16,0,4}, nullptr, 1,false,false);
     g_atlas->draw_text({4, 45}, dialogue.c_str(), g_app->get_main_font(), {255, 255, 255}, 1, 68);

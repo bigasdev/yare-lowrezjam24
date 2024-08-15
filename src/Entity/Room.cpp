@@ -24,8 +24,8 @@ Room::Room(vec2i _pos, vec2i _size) {
     }
   }
 
-  for (int i = 350; i < 900; i++) {
-    for (int j = 350; j < 900; j++) {
+  for (int i = 350; i < 900; i+=8) {
+    for (int j = 350; j < 900; j+=8) {
       coll.scale = {8, 8};
       tiles.push_back({i, j, coll, 10, 0});
     }
@@ -51,6 +51,24 @@ Room::Room(vec2i _pos, vec2i _size) {
   for (int i = -100; i < 175; i += 8) {
     coll.scale = {8, 8};
     props.push_back({i, -30, coll, 1, -1});
+  }
+
+  //battle arena
+  for (int i = 350; i < 900; i+=8) {
+    coll.scale = {8, 8};
+    props.push_back({i, 350, coll, 1, -1});
+  }
+  for (int i = 350; i < 900; i+=8) {
+    coll.scale = {8, 8};
+    props.push_back({i, 900, coll, 1, -1});
+  }
+  for (int i = 350; i < 900; i+=8) {
+    coll.scale = {8, 8};
+    props.push_back({350, i, coll, 1, -1});
+  }
+  for (int i = 350; i < 900; i+=8) {
+    coll.scale = {8, 8};
+    props.push_back({900, i, coll, 1, -1});
   }
 
   g_collider_tiles = &props;

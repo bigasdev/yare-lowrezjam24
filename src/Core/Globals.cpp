@@ -18,6 +18,7 @@ bool g_controller_connected;
 
 GameState g_game_state = PLAYING;
 HeroState g_hero_state = FARM;
+int g_hero_health = 100;
 
 vec2i g_grid = {175, 175}; 
 
