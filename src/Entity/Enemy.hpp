@@ -15,6 +15,8 @@ public:
   void update(double deltaTime) override;
   void post_update(double deltaTime) override;
   void draw() override;
+
+  void kill() override;
 };
 
 #endif

@@ -1,17 +1,25 @@
 #include "Room.hpp"
+#include "../Core/App.hpp"
 #include "../Core/Fort.hpp"
 #include "../Core/Globals.hpp"
 #include "../Renderer/Atlas.hpp"
 #include "../Renderer/Camera.hpp"
 #include "../Resources/Resources.hpp"
+#include "../Tools/Cooldown.hpp"
 #include "../Utils/Gizmos.hpp"
+#include "Enemy.hpp"
 #include "EntityParty.hpp"
+#include "Hero.hpp"
+
+Cooldown *m_room_cd = nullptr;
 
 Room::Room() {}
 
 Room::Room(vec2i _pos, vec2i _size) {
   pos = _pos;
   size = _size;
+
+  m_room_cd = new Cooldown();
 
   CollisionBox2D coll;
   coll.offset = {0, 0};
@@ -24,8 +32,8 @@ Room::Room(vec2i _pos, vec2i _size) {
     }
   }
 
-  for (int i = 350; i < 900; i+=8) {
-    for (int j = 350; j < 900; j+=8) {
+  for (int i = 350; i < 900; i += 8) {
+    for (int j = 350; j < 900; j += 8) {
       coll.scale = {8, 8};
       tiles.push_back({i, j, coll, 10, 0});
     }
@@ -53,25 +61,41 @@ Room::Room(vec2i _pos, vec2i _size) {
     props.push_back({i, -30, coll, 1, -1});
   }
 
-  //battle arena
-  for (int i = 350; i < 900; i+=8) {
+  // battle arena
+  for (int i = 350; i < 900; i += 8) {
     coll.scale = {8, 8};
     props.push_back({i, 350, coll, 1, -1});
   }
-  for (int i = 350; i < 900; i+=8) {
+  for (int i = 350; i < 900; i += 8) {
     coll.scale = {8, 8};
     props.push_back({i, 900, coll, 1, -1});
   }
-  for (int i = 350; i < 900; i+=8) {
+  for (int i = 350; i < 900; i += 8) {
     coll.scale = {8, 8};
     props.push_back({350, i, coll, 1, -1});
   }
-  for (int i = 350; i < 900; i+=8) {
+  for (int i = 350; i < 900; i += 8) {
     coll.scale = {8, 8};
     props.push_back({900, i, coll, 1, -1});
   }
 
   g_collider_tiles = &props;
+}
+
+void Room::update(double deltaTime) {
+  m_room_cd->update(deltaTime);
+
+  if (g_hero_state == HeroState::BATTLE) {
+    if (!m_room_cd->has_state("spawn")) {
+      for (int i = 0; i < 2; i++) {
+        auto e = g_fort->recruit<Enemy>(g_resources, g_atlas->get_game_scale());
+        e->set_pos(g_hero->get_pos().x + rnd(-90,90), g_hero->get_pos().y + rnd(-90,90));
+        e->m_tag = Tag::ENEMY;
+        e->init();
+      }
+      m_room_cd->set_state("spawn", 5.f, [&]() {});
+    }
+  }
 }
 
 void Room::draw() {

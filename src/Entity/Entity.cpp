@@ -249,6 +249,7 @@ bool Entity::is_interacting(Entity *en) {
 void Entity::hit(float damage, Entity *from) {
   m_life.add(damage);
   if (m_life.value <= 0) {
+    kill();
     if (m_on_death != nullptr)
       m_on_death();
   }

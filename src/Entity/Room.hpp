@@ -20,6 +20,8 @@ public:
   Room(vec2i _pos, vec2i _size);
   ~Room();
 
+  void update(double deltaTime);
+
   void draw();
   void post_draw();
 private:

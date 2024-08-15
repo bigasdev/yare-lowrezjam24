@@ -15,9 +15,24 @@ Item::~Item()
 
 void Item::init()
 {
-  m_interaction_box.offset = {4, 4};
-  m_interaction_box.scale = {8, 8};
-  m_collision_box.scale = {8, 8};
+  m_interaction_box.offset = {0, 0};
+  m_interaction_box.scale = {16, 16};
+  m_collision_box.scale = {16, 16};
+
+  m_current_sprite.texture = g_resources->get_aseprite_texture("concept");
+  m_current_sprite.xpu = 11;
+  m_current_sprite.ypu = 16;
+  m_current_sprite.x = 0;
+  m_current_sprite.y = 8;
+
+  int r = rnd(0,3);
+  type = static_cast<ItemType>(r);
+}
+void Item::set_coin(){
+
+  m_current_sprite.xpu = 16;
+  m_current_sprite.y = 13;
+  type = ItemType::COIN;
 }
 
 void Item::fixed_update(double deltaTime)
@@ -26,7 +41,7 @@ void Item::fixed_update(double deltaTime)
 
   if(is_colliding(g_hero)){
     hit(-100, g_hero);
-    g_camera->set_shake(.125f, .35f);
+    g_camera->set_shake(3.125f, .35f);
 
     switch(type){
       case ItemType::STR:
@@ -37,6 +52,9 @@ void Item::fixed_update(double deltaTime)
         break;
       case ItemType::SPD:
         g_hero->get_stats()->spd += 5;
+        break;
+      case ItemType::COIN:
+        g_hero->get_inventory()->coins += 1;
         break;
     }
   }

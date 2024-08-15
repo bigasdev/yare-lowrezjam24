@@ -107,7 +107,7 @@ public:
   virtual void draw();
   void set_affect(Affect affect, float cd);
   bool is_alive();
-  void kill();
+  virtual void kill();
   void set_death_callback(std::function<void()> _on_death);
   float get_current_life();
   void apply_filter();

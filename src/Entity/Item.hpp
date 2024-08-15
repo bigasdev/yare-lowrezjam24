@@ -7,7 +7,8 @@
 enum ItemType{
   STR,
   DEF,
-  SPD
+  SPD,
+  COIN
 };
 
 class Item : public Entity {
@@ -17,6 +18,7 @@ public:
   ~Item();
 
   void init() override;
+  void set_coin();
   void fixed_update(double deltaTime) override;
   void update(double deltaTime) override;
   void draw() override;

@@ -171,6 +171,7 @@ void GameScene::update(double deltaTime) {
   m_particle_system->update(deltaTime);
   m_light_system->update(deltaTime);
   m_player_ui->update(deltaTime);
+  m_room->update(deltaTime);
 
   ui_partial_scene->update(deltaTime);
   if(!m_cd->has_state("update_drawing")){

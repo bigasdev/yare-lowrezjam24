@@ -9,6 +9,7 @@
 #include "../Utils/Gizmos.hpp"
 #include "EntityParty.hpp"
 #include "Hero.hpp"
+#include "Item.hpp"
 #include "SDL_render.h"
 #include "UI/EntityTooltips.hpp"
 #include "UI/PlayerUI.hpp"
@@ -43,7 +44,7 @@ void Merchant::init() {
 
 void spawn_compost(Merchant *merchant) {
   auto compost =
-      g_fort->recruit<Merchant>(g_resources, g_atlas->get_game_scale());
+      g_fort->recruit<Item>(g_resources, g_atlas->get_game_scale());
   compost->set_pos(merchant->get_pos().x + rnd(-5, 5), merchant->get_pos().y);
   compost->init();
   compost->set_speed(400);
@@ -139,7 +140,7 @@ void Merchant::draw() {
   }
 
   if (interact_range) {
-    m_tooltip->draw(*concept_text, get_pos() + vec2f{4, -16});
+    m_tooltip->draw(*concept_text, get_pos() + vec2f{8, -2});
   }
 }
 

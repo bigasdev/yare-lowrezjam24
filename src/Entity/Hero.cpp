@@ -92,15 +92,15 @@ void Hero::update(double deltaTime) {
     p->set_speed(250);
     p->init();
 
-    auto angle = atan2(Mouse::get_mouse_pos().y - get_pos().y,
-                       Mouse::get_mouse_pos().x - get_pos().x);
+    auto angle = atan2(Mouse::get_mouse_pos().y,
+                       Mouse::get_mouse_pos().x);
     if (g_input_manager->get_right_axis() != vec2f(0, 0)) {
       angle = atan2(g_input_manager->get_right_axis().y,
                     g_input_manager->get_right_axis().x);
     }
-    p->set_velocity({cos(angle), sin(angle)});
+    p->set_velocity({cos(-angle), sin(-angle)});
 
-    m_entity_cd->set_state("attack", 5.f);
+    m_entity_cd->set_state("attack", .5f);
   }
 
   animation_manager();
