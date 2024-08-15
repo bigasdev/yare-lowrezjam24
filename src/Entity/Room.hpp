@@ -6,6 +6,8 @@
 #include <vector>
 #include "SDL.h"
 
+#define BATTLE_TIME 30
+
 struct Tile{
   int x;
   int y;
@@ -31,6 +33,8 @@ private:
 
   std::vector<Tile> tiles;
   std::vector<Tile> props;
+
+  float battle_timer = 0;
 };
 
 #endif

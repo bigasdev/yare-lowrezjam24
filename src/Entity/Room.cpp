@@ -86,6 +86,7 @@ void Room::update(double deltaTime) {
   m_room_cd->update(deltaTime);
 
   if (g_hero_state == HeroState::BATTLE) {
+    battle_timer += deltaTime;
     if (!m_room_cd->has_state("spawn")) {
       for (int i = 0; i < 2; i++) {
         auto e = g_fort->recruit<Enemy>(g_resources, g_atlas->get_game_scale());
@@ -94,6 +95,12 @@ void Room::update(double deltaTime) {
         e->init();
       }
       m_room_cd->set_state("spawn", 5.f, [&]() {});
+    }
+
+    if (battle_timer > 30.f) {
+      battle_timer = 0;
+      g_hero_state = HeroState::FARM;
+      g_hero->set_pos(g_last_pos.x, g_last_pos.y);
     }
   }
 }

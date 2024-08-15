@@ -47,6 +47,7 @@ extern HeroState g_hero_state;
 extern int g_hero_health;
 
 extern vec2i g_grid;
+extern vec2f g_last_pos;
 
 // UNIQUE STUFF
 extern bool has_planted_info;

@@ -119,12 +119,12 @@ void Entity::add_sprite_animation(SpriteAnimation _animation) {
   m_animations.push_back(_animation);
 }
 
-void Entity::set_animation(std::string _name) {
+void Entity::set_animation(std::string _name) 
+{
   for (auto const animation : m_animations) {
     if (m_current_animation.get_name() == _name)
       return;
     if (animation.get_name() == _name) {
-      F_Debug::log_group("Animation", _name);
       m_current_animation = animation;
       m_current_animation.start();
       return;
@@ -306,9 +306,6 @@ void Entity::kill() {
   if (m_on_death != nullptr)
     m_on_death();
 
-  delete m_entity_cd;
-  delete m_affect_manager;
-  delete m_tooltip;
 }
 
 void Entity::set_death_callback(std::function<void()> _on_death) {

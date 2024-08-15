@@ -344,7 +344,7 @@ void App::render() {
     // logger rendering
     m_logger->draw();
 
-    m_atlas_ptr->draw_text({1, 1}, std::to_string(m_fps).c_str(), s_main_font, {255, 255, 255, 255}, 1);
+    //m_atlas_ptr->draw_text({1, 1}, std::to_string(m_fps).c_str(), s_main_font, {255, 255, 255, 255}, 1);
   } else {
 #ifndef __EMSCRIPTEN__
     m_atlas_ptr->draw_text(

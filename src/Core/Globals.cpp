@@ -21,6 +21,7 @@ HeroState g_hero_state = FARM;
 int g_hero_health = 100;
 
 vec2i g_grid = {175, 175}; 
+vec2f g_last_pos = {0,0};
 
 bool has_planted_info = false;
 bool has_merchant_info = false;

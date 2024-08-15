@@ -46,6 +46,8 @@ void Dirt::fixed_update(double deltaTime) {
           g_hero_state = HeroState::BATTLE;
           g_sound_manager->play_sound("entering");
           g_hero->set_pos(500, 500);
+          has_plant = false;
+          g_last_pos = get_pos();
         }
       }
     }
