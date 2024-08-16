@@ -82,13 +82,14 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
   {
     std::cout << "App initialized!..." << std::endl;
     m_window = SDL_CreateWindow(title, xpos, ypos, width, height, window_flags);
+    SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
     GPU_SetInitWindow(SDL_GetWindowID(m_window));
     int h = 0, w = 0;
     SDL_GetWindowSize(m_window, &h, &w);
     SDL_SetWindowMaximumSize(m_window, 640, 640);
     // ensure the window cant be so small
     // SDL_SetWindowMinimumSize(m_window, w, h);
-    SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
 
     auto *m_version = new SDL_version();
     SDL_GetVersion(m_version);
@@ -357,6 +358,7 @@ void App::post_update(double deltaTime)
 void App::render()
 {
   GPU_Clear(m_gpu);
+  GPU_SetVirtualResolution(m_gpu, m_window_size.x, m_window_size.y);
   /*auto x = static_cast<int>(m_window_size.x - (64*z_camera))/2;
   auto y = static_cast<int>(m_window_size.y - (64*z_camera))/2;
   SDL_Rect viewport = {x/z_camera, y/z_camera, 64, 64};

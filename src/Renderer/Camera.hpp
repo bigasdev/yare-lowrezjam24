@@ -19,7 +19,7 @@ public:
 
   void set_shake(float power, float time);
 
-  float s_scale = 1;
+  float s_scale = 4;
 private:
   vec2f* m_camera_size;
   vec2i m_viewport;

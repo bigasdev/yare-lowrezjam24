@@ -58,6 +58,7 @@ GPU_Image *CreateTextureFromRGBA(SDL_Renderer *renderer, const uint8_t *rgba,
   }
 
   GPU_Image *texture = GPU_CopyImageFromSurface(surface);
+  GPU_SetImageFilter(texture, GPU_FILTER_NEAREST);
 
   if (!texture)
   {

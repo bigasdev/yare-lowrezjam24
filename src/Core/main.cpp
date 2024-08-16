@@ -102,8 +102,8 @@ void mainloop() {
 int main(int args, char *argv[]) {
   mApp = std::make_unique<App>();
   F_Debug::log("App created!");
-  int width = 128;
-  int height = 128;
+  int width = 448;
+  int height = 448;
 
 #ifdef __EMSCRIPTEN__
   width = 448;
