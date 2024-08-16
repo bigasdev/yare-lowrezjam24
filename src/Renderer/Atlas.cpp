@@ -6,6 +6,7 @@
 #include "SDL_render.h"
 #include "SDL_surface.h"
 #include "SDL_ttf.h"
+#include "SDL_gpu.h"
 #include <tuple>
 
 Atlas::Atlas(SDL_Renderer *renderer, float *_scale) {

@@ -14,6 +14,7 @@
 #include "../Renderer/Atlas.hpp"
 #include "App.hpp"
 #include "Globals.hpp"
+#include "SDL_gpu.h"
 #include "SoundManager.hpp"
 #include "SDL.h"
 #include "SDL_hints.h"
@@ -78,6 +79,7 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
   if (ini == 0) {
     std::cout << "App initialized!..." << std::endl;
     m_window = SDL_CreateWindow(title, xpos, ypos, width, height, window_flags);
+    GPU_SetInitWindow(SDL_GetWindowID(m_window));
     int h = 0, w = 0;
     SDL_GetWindowSize(m_window, &h, &w);
     SDL_SetWindowMaximumSize(m_window, 640,640);
