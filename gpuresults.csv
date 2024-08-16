@@ -1,0 +1,655 @@
+Name,Exclusive secs,Inclusive secs,% Exclusive,% Inclusive,Module,Source File,Source Line
+"mainCRTStartup",0,31.405,0,4.17495,"fortress","[unknown]",0
+"__tmainCRTStartup",0,31.405,0,4.17495,"fortress","[unknown]",0
+"App::handle_events",0,1.57349,0,0.209178,"fortress","[unknown]",0
+"App::update",0,3.00582,0,0.39959,"fortress","[unknown]",0
+"App::post_update",0,0.111979,0,0.0148864,"fortress","[unknown]",0
+"App::render",0,26.5863,0,3.53436,"fortress","[unknown]",0
+"App::clean",0,0.0528625,0,0.00702748,"fortress","[unknown]",0
+"App::change_scene",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"App::set_fps",0.0069829,0.0069829,0.000928299,0.000928299,"fortress","[unknown]",0
+"GUI::draw",0,0.340482,0,0.0452633,"fortress","[unknown]",0
+"Atlas::draw_text",0.0069839,13.4927,0.000928432,1.7937,"fortress","[unknown]",0
+"Atlas::draw_from_sheet",0,0.0069808,0,0.00092802,"fortress","[unknown]",0
+"Atlas::draw_texture_from_sheet",0.648524,2.09881,0.0862141,0.279013,"fortress","[unknown]",0
+"Atlas::draw_pixel",0.0676631,4.87955,0.00899506,0.648682,"fortress","[unknown]",0
+"Atlas::draw_line",0,0.0211125,0,0.00280667,"fortress","[unknown]",0
+"Atlas::draw_rect",0.0209423,0.688168,0.00278405,0.0914842,"fortress","[unknown]",0
+"Camera::move",0,0.0059845,0,0.000795573,"fortress","[unknown]",0
+"Camera::update",0,0.0848066,0,0.0112741,"fortress","[unknown]",0
+"Camera::get_pos",0.0979033,0.0979033,0.0130152,0.0130152,"fortress","[unknown]",0
+"Cooldown::update",0,0.0069846,0,0.000928525,"fortress","[unknown]",0
+"Cooldown::set_state",0,0.0150773,0,0.00200436,"fortress","[unknown]",0
+"Dirt::update",0,0.006983,0,0.000928312,"fortress","[unknown]",0
+"Dirt::draw",0,0.0270974,0,0.0036023,"fortress","[unknown]",0
+"Entity::set_animation",0,0.0070225,0,0.000933563,"fortress","[unknown]",0
+"Entity::get_collision_box",0,0.0059845,0,0.000795573,"fortress","[unknown]",0
+"Entity::get_interaction_box",0.054883,0.0818125,0.00729608,0.0108761,"fortress","[unknown]",0
+"Entity::is_colliding",0.0139665,0.0139665,0.00185669,0.00185669,"fortress","[unknown]",0
+"Entity::update",0,0.0139676,0,0.00185684,"fortress","[unknown]",0
+"Entity::get_current_life",0.0072406,0.0072406,0.000962557,0.000962557,"fortress","[unknown]",0
+"F_Debug::log",0,0.0848066,0,0.0112741,"fortress","[unknown]",0
+"F_Debug::write_to_file",0,0.0069751,0,0.000927262,"fortress","[unknown]",0
+"Fort::party",0.0069758,0.0069758,0.000927355,0.000927355,"fortress","[unknown]",0
+"GameScene::load_assets",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"GameScene::init",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"GameScene::update",0.0069746,0.234565,0.000927196,0.0311828,"fortress","[unknown]",0
+"GameScene::post_update",0,0.111979,0,0.0148864,"fortress","[unknown]",0
+"GameScene::draw",0,18.7488,0,2.49245,"fortress","[unknown]",0
+"std::_Function_handler<void (), GameScene::draw()::{lambda()#1}>::_M_manager",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"std::_Function_base::_Base_manager<GameScene::draw()::{lambda()#1}>::_M_manager",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"std::_Function_base::_Base_manager<GameScene::draw()::{lambda()#1}>::_M_destroy",0.0069807,0.0069807,0.000928006,0.000928006,"fortress","[unknown]",0
+"GarbageCollector::update()::{lambda(Entity*)#1}::operator()",0,0.0072406,0,0.000962557,"fortress","[unknown]",0
+"GarbageCollector::update",0,0.021188,0,0.00281671,"fortress","[unknown]",0
+"std::function<bool (Entity*)>::function<GarbageCollector::update()::{lambda(Entity*)#1}&, void>",0.0069716,0.0069716,0.000926797,0.000926797,"fortress","[unknown]",0
+"std::_Function_handler<bool (Entity*), GarbageCollector::update()::{lambda(Entity*)#1}>::_M_invoke",0,0.0072406,0,0.000962557,"fortress","[unknown]",0
+"std::__invoke_r<bool, GarbageCollector::update()::{lambda(Entity*)#1}&, Entity*>",0,0.0072406,0,0.000962557,"fortress","[unknown]",0
+"std::__invoke_impl<bool, GarbageCollector::update()::{lambda(Entity*)#1}&, Entity*>",0,0.0072406,0,0.000962557,"fortress","[unknown]",0
+"Gizmos::draw_area",0,0.0347213,0,0.00461581,"fortress","[unknown]",0
+"Gizmos::draw_rect",0.0068815,0.695049,0.000914819,0.0923991,"fortress","[unknown]",0
+"Hero::fixed_update",0.0070977,0.0070977,0.00094356,0.00094356,"fortress","[unknown]",0
+"Hero::update",0.0408141,0.185467,0.00542578,0.0246557,"fortress","[unknown]",0
+"Hero::animation_manager",0,0.0070225,0,0.000933563,"fortress","[unknown]",0
+"ImHashStr",0.0139863,0.0139863,0.00185932,0.00185932,"fortress","[unknown]",0
+"ImGui::FindRenderedTextEnd",0.0069835,0.0069835,0.000928379,0.000928379,"fortress","[unknown]",0
+"ImGui::RenderTextClippedEx",0,0.0142996,0,0.00190097,"fortress","[unknown]",0
+"ImGui::RenderTextClipped",0,0.0212831,0,0.00282935,"fortress","[unknown]",0
+"ImGui::GetIO",0.0069793,0.0069793,0.00092782,0.00092782,"fortress","[unknown]",0
+"ImGui::NewFrame",0.0069835,0.269628,0.000928379,0.035844,"fortress","[unknown]",0
+"ImGui::PushClipRect",0,0.0069657,0,0.000926012,"fortress","[unknown]",0
+"ImGui::CalcTextSize",0,0.0069825,0,0.000928246,"fortress","[unknown]",0
+"ImGui::FindWindowByName",0,0.0139863,0,0.00185932,"fortress","[unknown]",0
+"CalcWindowContentSizes",0.0069788,0.0139124,0.000927754,0.0018495,"fortress","[unknown]",0
+"CalcWindowAutoFitSize",0.0069828,0.0069828,0.000928286,0.000928286,"fortress","[unknown]",0
+"ImGui::UpdateWindowManualResize",0.0069825,0.0069825,0.000928246,0.000928246,"fortress","[unknown]",0
+"ImGui::RenderWindowDecorations",0,0.0488352,0,0.0064921,"fortress","[unknown]",0
+"ImGui::RenderWindowTitleBarContents",0,0.0552408,0,0.00734365,"fortress","[unknown]",0
+"ImGui::Begin",0.020008,0.179873,0.00265984,0.0239122,"fortress","[unknown]",0
+"ImGui::UpdateKeyRoutingTable",0.0069842,0.0069842,0.000928472,0.000928472,"fortress","[unknown]",0
+"ImGui::SetShortcutRouting",0.0070346,0.0070346,0.000935172,0.000935172,"fortress","[unknown]",0
+"ImGui::UpdateKeyboardInputs",0.0478646,0.0548488,0.00636307,0.00729154,"fortress","[unknown]",0
+"ImGui::UpdateMouseInputs",0.0069817,0.0069817,0.000928139,0.000928139,"fortress","[unknown]",0
+"ImGui::Shortcut",0,0.0070346,0,0.000935172,"fortress","[unknown]",0
+"ImGui::ErrorCheckNewFrameSanityChecks",0,0.0069219,0,0.00092019,"fortress","[unknown]",0
+"ImGuiStackSizes::SetToCurrentState",0.0069597,0.0069597,0.000925215,0.000925215,"fortress","[unknown]",0
+"ImGui::NavUpdate",0,0.0070346,0,0.000935172,"fortress","[unknown]",0
+"ImGui::NavUpdateWindowing",0,0.0070346,0,0.000935172,"fortress","[unknown]",0
+"ImMax<float>",0.0139071,0.0139071,0.00184879,0.00184879,"fortress","[unknown]",0
+"operator*",0.007043,0.007043,0.000936289,0.000936289,"fortress","[unknown]",0
+"ImDrawList::_OnChangedClipRect",0,0.0069657,0,0.000926012,"fortress","[unknown]",0
+"ImDrawList::PushClipRect",0,0.0069657,0,0.000926012,"fortress","[unknown]",0
+"ImDrawList::AddConvexPolyFilled",0.027882,0.027882,0.0037066,0.0037066,"fortress","[unknown]",0
+"ImDrawList::_PathArcToFastEx",0.0069789,0.0129639,0.000927767,0.00172341,"fortress","[unknown]",0
+"ImDrawList::PathArcToFast",0,0.0199455,0,0.00265153,"fortress","[unknown]",0
+"FixRectCornerFlags",0.0069845,0.0069845,0.000928512,0.000928512,"fortress","[unknown]",0
+"ImDrawList::PathRect",0,0.02693,0,0.00358004,"fortress","[unknown]",0
+"ImDrawList::AddRectFilled",0,0.0339108,0,0.00450806,"fortress","[unknown]",0
+"ImDrawList::AddTriangleFilled",0,0.0059768,0,0.000794549,"fortress","[unknown]",0
+"ImDrawList::AddText",0,0.0142996,0,0.00190097,"fortress","[unknown]",0
+"ImFont::FindGlyph",0.0073126,0.0073126,0.000972129,0.000972129,"fortress","[unknown]",0
+"ImFont::CalcTextSizeA",0.0069825,0.0069825,0.000928246,0.000928246,"fortress","[unknown]",0
+"ImFont::RenderText",0.006987,0.0142996,0.000928844,0.00190097,"fortress","[unknown]",0
+"ImGui::RenderArrow",0,0.0130198,0,0.00173084,"fortress","[unknown]",0
+"ImClamp<int>",0.005985,0.005985,0.000795639,0.000795639,"fortress","[unknown]",0
+"ImGui_ImplSDL2_UpdateMouseData",0,0.0429358,0,0.00570784,"fortress","[unknown]",0
+"ImGui_ImplSDL2_NewFrame",0,0.0429358,0,0.00570784,"fortress","[unknown]",0
+"ImGui_ImplSDLRenderer_GetBackendData",0,0.0069793,0,0.00092782,"fortress","[unknown]",0
+"ImGui_ImplSDLRenderer_SetupRenderState",0,0.0139631,0,0.00185624,"fortress","[unknown]",0
+"ImGui_ImplSDLRenderer_RenderDrawData",0.006976,0.0348309,0.000927382,0.00463038,"fortress","[unknown]",0
+"ImGui::ButtonBehavior",0.0069819,0.0069819,0.000928166,0.000928166,"fortress","[unknown]",0
+"ImGui::CollapseButton",0,0.0200017,0,0.002659,"fortress","[unknown]",0
+"LightSystem::draw",0,4.46399,0,0.593438,"fortress","[unknown]",0
+"mainloop",0,31.2916,0,4.15987,"fortress","[unknown]",0
+"SDL_main",0,31.3445,0,4.1669,"fortress","[unknown]",0
+"MainScene::update",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"MainScene::draw",0,4.16168,0,0.553249,"fortress","[unknown]",0
+"std::function<void ()>::function<MainScene::draw()::{lambda()#1}, void>",0,0.0069806,0,0.000927993,"fortress","[unknown]",0
+"std::_Function_base::_Base_manager<MainScene::draw()::{lambda()#1}>::_M_init_functor<{lambda()#1}>",0,0.0069806,0,0.000927993,"fortress","[unknown]",0
+"std::_Function_base::_Base_manager<MainScene::draw()::{lambda()#1}>::_M_create<{lambda()#1}>",0,0.0069806,0,0.000927993,"fortress","[unknown]",0
+"Merchant::draw",0,0.240311,0,0.0319466,"fortress","[unknown]",0
+"ParticleSystem::update",0.0059848,0.0059848,0.000795613,0.000795613,"fortress","[unknown]",0
+"ParticleSystem::draw",0.0140501,0.394891,0.0018678,0.0524964,"fortress","[unknown]",0
+"PlayerUI::draw",0.0069799,9.27904,0.0009279,1.23355,"fortress","[unknown]",0
+"get_aseprite_edited_time[abi:cxx11]",0,2.72141,0,0.361781,"fortress","[unknown]",0
+"Resources::aseprite_hot_reload",0,2.76427,0,0.367479,"fortress","[unknown]",0
+"Room::Room",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"Room::draw",0.893888,4.09477,0.118832,0.544355,"fortress","[unknown]",0
+"SpriteAnimation::get_name[abi:cxx11]",0,0.006983,0,0.000928312,"fortress","[unknown]",0
+"UIPartialScene::draw",0,0.0069763,0,0.000927422,"fortress","[unknown]",0
+"main",0,31.3445,0,4.1669,"fortress","[unknown]",0
+"main_getcmdline",0,31.3445,0,4.1669,"fortress","/Users/valve/release/SDL2/SDL2-2.28.4-source/foo-x64/../src/main/windows/SDL_windows_main.c",80
+"SDL_RenderCopyEx",0.02094,0.02094,0.00278374,0.00278374,"fortress","[unknown]",0
+"wmemset",0.0129638,0.0129638,0.00172339,0.00172339,"fortress","[unknown]",0
+"fopen64",0,0.0069751,0,0.000927262,"fortress","[unknown]",0
+"rnd",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"ImDrawList::PathFillConvex",0,0.027882,0,0.0037066,"fortress","[unknown]",0
+"effolkronium::seeder_default::seeder_default",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"effolkronium::basic_random_base<effolkronium::basic_random_static<std::mersenne_twister_engine<unsigned int, 32ull, 624ull, 397ull, 31ull, 2567483615u, 11ull, 4294967295u, 7ull, 2636928640u, 15ull, 4022730752u, 18ull, 1812433253u>, effolkronium::seeder_default, std::uniform_int_distribution, std::uniform_real_distribution, std::bernoulli_distribution>, std::mersenne_twister_engine<unsigned int, 32ull, 624ull, 397ull, 31ull, 2567483615u, 11ull, 4294967295u, 7ull, ",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"effolkronium::basic_random_static<std::mersenne_twister_engine<unsigned int, 32ull, 624ull, 397ull, 31ull, 2567483615u, 11ull, 4294967295u, 7ull, 2636928640u, 15ull, 4022730752u, 18ull, 1812433253u>, effolkronium::seeder_default, std::uniform_int_distribution, std::uniform_real_distribution, std::bernoulli_distribution>::engine_instance",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"effolkronium::basic_random_static<std::mersenne_twister_engine<unsigned int, 32ull, 624ull, 397ull, 31ull, 2567483615u, 11ull, 4294967295u, 7ull, 2636928640u, 15ull, 4022730752u, 18ull, 1812433253u>, effolkronium::seeder_default, std::uniform_int_distribution, std::uniform_real_distribution, std::bernoulli_distribution>::engine",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"AsepriteHelper::AsepriteHelper",0,0.0209087,0,0.00277958,"fortress","[unknown]",0
+"AsepriteHelper::~AsepriteHelper",0,0.0149738,0,0.0019906,"fortress","[unknown]",0
+"CollisionBox2D::CollisionBox2D",0.0059845,0.0189496,0.000795573,0.00251914,"fortress","[unknown]",0
+"SpriteAnimation::SpriteAnimation",0.0070225,0.0070225,0.000933563,0.000933563,"fortress","[unknown]",0
+"Vec::remove_vec_element_if<Entity*>",0,0.0072406,0,0.000962557,"fortress","[unknown]",0
+"vec2f::vec2f",0.149565,0.149565,0.019883,0.019883,"fortress","[unknown]",0
+"vec3f::vec3f",0.012998,0.012998,0.00172794,0.00172794,"fortress","[unknown]",0
+"ImVector<ImVec2>::push_back",0.0069816,0.0069816,0.000928126,0.000928126,"fortress","[unknown]",0
+"ImVector<int>::push_back",0.0069837,0.0069837,0.000928405,0.000928405,"fortress","[unknown]",0
+"__gnu_cxx::__normal_iterator<Tile*, std::vector<Tile, std::allocator<Tile> > >::operator++",0.105858,0.105858,0.0140727,0.0140727,"fortress","[unknown]",0
+"__gnu_cxx::__normal_iterator<std::unique_ptr<ImageObject, std::default_delete<ImageObject> >*, std::vector<std::unique_ptr<ImageObject, std::default_delete<ImageObject> >, std::allocator<std::unique_ptr<ImageObject, std::default_delete<ImageObject> > > > >::__normal_iterator",0.0069763,0.0069763,0.000927422,0.000927422,"fortress","[unknown]",0
+"__gnu_cxx::operator==<Tile*, std::vector<Tile, std::allocator<Tile> > >",0.102683,0.164476,0.0136505,0.0218653,"fortress","[unknown]",0
+"ImFontAtlas::IsBuilt",0.0069219,0.0069219,0.00092019,0.00092019,"fortress","[unknown]",0
+"vec2f::operator*",0.0070117,0.0070117,0.000932128,0.000932128,"fortress","[unknown]",0
+"vec2f::operator+",0.0069815,0.013962,0.000928113,0.00185609,"fortress","[unknown]",0
+"__gnu_cxx::__normal_iterator<Tile*, std::vector<Tile, std::allocator<Tile> > >::base",0.0617933,0.0617933,0.00821473,0.00821473,"fortress","[unknown]",0
+"__gnu_cxx::__normal_iterator<Tile*, std::vector<Tile, std::allocator<Tile> > >::operator*",0.0419141,0.0419141,0.00557201,0.00557201,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::_List::_Impl_deleter::operator()",0,0.0079781,0,0.0010606,"fortress","[unknown]",0
+"std::unique_ptr<App, std::default_delete<App> >::get",0,0.006981,0,0.000928046,"fortress","[unknown]",0
+"std::unique_ptr<App, std::default_delete<App> >::operator->",0,0.006981,0,0.000928046,"fortress","[unknown]",0
+"std::__uniq_ptr_impl<App, std::default_delete<App> >::_M_ptr",0,0.006981,0,0.000928046,"fortress","[unknown]",0
+"std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::max_length",0.005984,0.005984,0.000795506,0.000795506,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local",0,0.006995,0,0.000929907,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data",0.006995,0.006995,0.000929907,0.000929907,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_is_local",0,0.0140206,0,0.00186388,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_local_data",0,0.0140206,0,0.00186388,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_check_length",0.0069999,0.0069999,0.000930559,0.000930559,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::size",0.0199572,0.0199572,0.00265309,0.00265309,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_data",0.0069827,0.0069827,0.000928272,0.000928272,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::capacity",0.0069861,0.0139695,0.000928724,0.00185709,"fortress","[unknown]",0
+"std::__cxx11::list<Event*, std::allocator<Event*> >::_M_node_count",0.0069846,0.0069846,0.000928525,0.000928525,"fortress","[unknown]",0
+"std::__cxx11::list<Event*, std::allocator<Event*> >::size",0,0.0069846,0,0.000928525,"fortress","[unknown]",0
+"std::function<bool (Entity*)>::operator()",0,0.0072406,0,0.000962557,"fortress","[unknown]",0
+"std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>::_M_head",0.0079784,0.0079784,0.00106064,0.00106064,"fortress","[unknown]",0
+"std::filesystem::last_write_time",0,2.46715,0,0.32798,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::_S_convert<std::basic_string_view<char, std::char_traits<char> > >",0,0.127692,0,0.0169752,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::_S_convert<char>",0,0.127692,0,0.0169752,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::_M_split_cmpts",0.00698,0.00698,0.000927913,0.000927913,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::_List::~_List",0,0.0229175,0,0.00304663,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::_Codecvt<wchar_t>::~_Codecvt",0,0.0059838,0,0.00079548,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::path<char const*, std::filesystem::__cxx11::path>",0,0.141781,0,0.0188482,"fortress","[unknown]",0
+"std::filesystem::__cxx11::path::~path",0,0.078551,0,0.0104425,"fortress","[unknown]",0
+"std::filesystem::__cxx11::__detail::__effective_range<char const*>",0,0.0071091,0,0.000945076,"fortress","[unknown]",0
+"std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr",0,0.0229175,0,0.00304663,"fortress","[unknown]",0
+"std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head",0,0.0079784,0,0.00106064,"fortress","[unknown]",0
+"std::char_traits<char>::assign",0.0209382,0.0209382,0.0027835,0.0027835,"fortress","[unknown]",0
+"std::char_traits<char>::length",0,0.0071091,0,0.000945076,"fortress","[unknown]",0
+"std::char_traits<wchar_t>::assign",0,0.0129638,0,0.00172339,"fortress","[unknown]",0
+"std::(anonymous namespace)::__winxp_rand_s",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"std::__basic_file<char>::open",0,0.0069751,0,0.000927262,"fortress","[unknown]",0
+"std::basic_filebuf<char, std::char_traits<char> >::open",0,0.0069751,0,0.000927262,"fortress","[unknown]",0
+"std::random_device::operator()",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"std::_Function_base::~_Function_base",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"std::basic_ofstream<char, std::char_traits<char> >::open",0,0.0069751,0,0.000927262,"fortress","[unknown]",0
+"std::__new_allocator<char>::deallocate",0,0.0079788,0,0.00106069,"fortress","[unknown]",0
+"std::__new_allocator<char>::allocate",0,0.0069038,0,0.000917783,"fortress","[unknown]",0
+"std::__new_allocator<wchar_t>::deallocate",0,0.034668,0,0.00460873,"fortress","[unknown]",0
+"std::__new_allocator<wchar_t>::allocate",0,0.0209456,0,0.00278448,"fortress","[unknown]",0
+"std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_ptr",0,0.0079784,0,0.00106064,"fortress","[unknown]",0
+"std::basic_string_view<char, std::char_traits<char> >::basic_string_view",0,0.0071091,0,0.000945076,"fortress","[unknown]",0
+"std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::~codecvt_utf8_utf16",0,0.0059838,0,0.00079548,"fortress","[unknown]",0
+"std::__ptr_traits_ptr_to<wchar_t const*, wchar_t const, false>::pointer_to",0,0.0140206,0,0.00186388,"fortress","[unknown]",0
+"std::__codecvt_utf8_utf16_base<wchar_t>::~__codecvt_utf8_utf16_base",0.0059838,0.0059838,0.00079548,0.00079548,"fortress","[unknown]",0
+"std::vector<std::unique_ptr<ImageObject, std::default_delete<ImageObject> >, std::allocator<std::unique_ptr<ImageObject, std::default_delete<ImageObject> > > >::begin",0,0.0069763,0,0.000927422,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy",0,0.0079788,0,0.00106069,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose",0,0.0149738,0,0.0019906,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_allocate",0,0.0069038,0,0.000917783,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct",0,0.0209843,0,0.00278963,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>",0,0.0139222,0,0.0018508,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length",0.0070268,0.0140075,0.000934135,0.00186214,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create",0,0.0069038,0,0.000917783,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_assign",0,0.0139575,0,0.00185549,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string",0.0210725,0.0349947,0.00280135,0.00465216,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >",0,0.027965,0,0.00371764,"fortress","[unknown]",0
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string",0.0069822,0.021956,0.000928206,0.00291881,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_destroy",0,0.0416139,0,0.00553211,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_dispose",0.0069824,0.0556335,0.000928232,0.00739586,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_capacity",0.0059834,0.0059834,0.000795426,0.000795426,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_S_allocate",0.0069816,0.0279272,0.000928126,0.00371261,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_set_length",0,0.0069756,0,0.000927328,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_replace_aux",0,0.0688425,0,0.00915184,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_get_allocator",0.013928,0.013928,0.00185157,0.00185157,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::front",0,0.0139652,0,0.00185652,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::append",0,0.0688425,0,0.00915184,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::resize",0,0.0688425,0,0.00915184,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_create",0,0.0349093,0,0.0046408,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_length",0.0069756,0.0069756,0.000927328,0.000927328,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_M_mutate",0,0.0418927,0,0.00556917,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::_S_assign",0,0.0129638,0,0.00172339,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::basic_string",0,0.012959,0,0.00172275,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::~basic_string",0,0.0556335,0,0.00739586,"fortress","[unknown]",0
+"std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::operator[]",0.0069825,0.0139652,0.000928246,0.00185652,"fortress","[unknown]",0
+"std::__cxx11::list<Event*, std::allocator<Event*> >::push_back",0,0.0079743,0,0.00106009,"fortress","[unknown]",0
+"std::__cxx11::to_string",0,0.0469356,0,0.00623957,"fortress","[unknown]",0
+"std::__detail::__to_chars_10_impl<unsigned int>",0.0059788,0.0059788,0.000794815,0.000794815,"fortress","[unknown]",0
+"std::__detail::__to_chars_10_impl<unsigned long long>",0.0199725,0.0199725,0.00265512,0.00265512,"fortress","[unknown]",0
+"std::function<void ()>::~function",0,0.0069807,0,0.000928006,"fortress","[unknown]",0
+"std::_Any_data::_M_access",0.0069806,0.0069806,0.000927993,0.000927993,"fortress","[unknown]",0
+"std::__addressof<wchar_t const>",0.0069834,0.0069834,0.000928365,0.000928365,"fortress","[unknown]",0
+"std::__get_helper<0ull, App*, std::default_delete<App> >",0.006981,0.006981,0.000928046,0.000928046,"fortress","[unknown]",0
+"std::__get_helper<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>",0,0.0079784,0,0.00106064,"fortress","[unknown]",0
+"std::__do_str_codecvt<std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >, char, std::codecvt<wchar_t, char, _Mbstatet>, _Mbstatet, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const>",0,0.108749,0,0.014457,"fortress","[unknown]",0
+"std::__ostream_insert<char, std::char_traits<char> >",0,0.0848066,0,0.0112741,"fortress","[unknown]",0
+"std::__str_codecvt_in<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>",0,0.108749,0,0.014457,"fortress","[unknown]",0
+"std::__str_codecvt_in_all<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>",0,0.108749,0,0.014457,"fortress","[unknown]",0
+"std::get<0ull, App*, std::default_delete<App> >",0,0.006981,0,0.000928046,"fortress","[unknown]",0
+"std::get<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>",0,0.0079784,0,0.00106064,"fortress","[unknown]",0
+"std::move<Event*&>",0.0079743,0.0079743,0.00106009,0.00106009,"fortress","[unknown]",0
+"std::addressof<wchar_t const>",0.0070372,0.0140206,0.000935517,0.00186388,"fortress","[unknown]",0
+"std::operator<< <std::char_traits<char> >",0,0.0707602,0,0.00940678,"fortress","[unknown]",0
+"void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)::_Guard::_Guard",0.0070184,0.0070184,0.000933018,0.000933018,"fortress","[unknown]",0
+"operator new",0.0278494,0.0278494,0.00370227,0.00370227,"fortress","[unknown]",0
+"[00007FFC722F77DA]",0,31.3514,0,4.16782,"ig9icd64","",0
+"[00007FFC722F83B2]",0,31.3514,0,4.16782,"ig9icd64","",0
+"[00007FFC727B51A5]",0,31.3514,0,4.16782,"ig9icd64","",0
+"[00007FFC727B529B]",0,31.3514,0,4.16782,"ig9icd64","",0
+"[00007FFC727B6CED]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727B6E12]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727B722F]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727C44AA]",0,31.3514,0,4.16782,"ig9icd64","",0
+"[00007FFC727C76CD]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727D19D9]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727D1A81]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727D1B63]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727D9005]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"[00007FFC727DC070]",0,0.0019999,0,0.000265864,"ig9icd64","",0
+"DumpRegistryKeyDefinitions",0,94.0542,0,12.5035,"ig9icd64","[unknown]",0
+"RegisterProcTableCallback",0,31.3514,0,4.16782,"ig9icd64","[unknown]",0
+"[00007FFCBE0428A2]",0.006981,0.006981,0.000928046,0.000928046,"SDL2_ttf","",0
+"[00007FFCBE0428F5]",0.00698,0.00698,0.000927913,0.000927913,"SDL2_ttf","",0
+"[00007FFCBE0428FE]",0,0.0159699,0,0.00212302,"SDL2_ttf","",0
+"[00007FFCBE04297A]",0,0.0698241,0,0.00928234,"SDL2_ttf","",0
+"[00007FFCBE042F10]",0.0069814,0.0069814,0.000928099,0.000928099,"SDL2_ttf","",0
+"[00007FFCBE042FB3]",0,0.0069812,0,0.000928073,"SDL2_ttf","",0
+"[00007FFCBE042FED]",0,0.0069858,0,0.000928684,"SDL2_ttf","",0
+"[00007FFCBE0435F3]",0,0.0209484,0,0.00278486,"SDL2_ttf","",0
+"[00007FFCBE049EE8]",0.0069801,0.0069801,0.000927927,0.000927927,"SDL2_ttf","",0
+"[00007FFCBE049F08]",0.0069823,0.0069823,0.000928219,0.000928219,"SDL2_ttf","",0
+"[00007FFCBE04B4B4]",0,0.0638446,0,0.00848743,"SDL2_ttf","",0
+"[00007FFCBE04B690]",0,0.0139624,0,0.00185615,"SDL2_ttf","",0
+"[00007FFCBE04B76F]",0,0.0219433,0,0.00291712,"SDL2_ttf","",0
+"[00007FFCBE04B808]",0,0.0069869,0,0.000928831,"SDL2_ttf","",0
+"[00007FFCBE04B8E2]",0,0.0209484,0,0.00278486,"SDL2_ttf","",0
+"[00007FFCBE04BA01]",0,0.0069841,0,0.000928458,"SDL2_ttf","",0
+"[00007FFCBE04BA7C]",0,0.0139434,0,0.00185362,"SDL2_ttf","",0
+"[00007FFCBE04BAE2]",0,0.0139671,0,0.00185677,"SDL2_ttf","",0
+"[00007FFCBE04BED1]",0,0.0059838,0,0.00079548,"SDL2_ttf","",0
+"TTF_RenderText_Blended_Wrapped",0,0.168564,0,0.0224087,"SDL2_ttf","[unknown]",0
+"TTF_GetFontKerningSizeGlyphs",0.062841,0.085794,0.00835401,0.0114054,"SDL2_ttf","[unknown]",0
+"OpenAdapter",2.96142,14.3639,0.393688,1.90952,"igdumdim64","[unknown]",0
+"[00007FFCE53E635C]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EA1D2]",0.006976,0.006976,0.000927382,0.000927382,"D3D9","",0
+"[00007FFCE53EA1D8]",0.0069808,0.0069808,0.00092802,0.00092802,"D3D9","",0
+"[00007FFCE53EB968]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EBA57]",0,0.0059845,0,0.000795573,"D3D9","",0
+"[00007FFCE53EC17C]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EC7EF]",0,0,0,0,"D3D9","",0
+"[00007FFCE53ECE8A]",0,0,0,0,"D3D9","",0
+"[00007FFCE53ED194]",0,0.528662,0,0.0702797,"D3D9","",0
+"[00007FFCE53ED19A]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EE56D]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EE609]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EE70E]",0.0069832,0.0069832,0.000928339,0.000928339,"D3D9","",0
+"[00007FFCE53EE940]",0.0079773,0.0079773,0.00106049,0.00106049,"D3D9","",0
+"[00007FFCE53EE9C3]",0.0069798,0.0069798,0.000927887,0.000927887,"D3D9","",0
+"[00007FFCE53EEA6C]",0,0.0059845,0,0.000795573,"D3D9","",0
+"[00007FFCE53EED70]",0.091696,0.510955,0.01219,0.0679257,"D3D9","",0
+"[00007FFCE53EEE4B]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EEFE5]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EF08E]",0,0.419259,0,0.0557358,"D3D9","",0
+"[00007FFCE53EF61F]",1.09016,11.7764,0.144924,1.56554,"D3D9","",0
+"[00007FFCE53EF752]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EF770]",0,10.6862,0,1.42062,"D3D9","",0
+"[00007FFCE53EF7B1]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EFA30]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EFAFC]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EFC86]",0,0.419259,0,0.0557358,"D3D9","",0
+"[00007FFCE53EFCEF]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EFDC0]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EFE28]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EFEAD]",0,0,0,0,"D3D9","",0
+"[00007FFCE53EFF30]",0,10.6862,0,1.42062,"D3D9","",0
+"[00007FFCE53EFFCB]",0,10.6862,0,1.42062,"D3D9","",0
+"[00007FFCE53F0051]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F00AE]",0,10.6862,0,1.42062,"D3D9","",0
+"[00007FFCE53F00DC]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F01C1]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0218]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0269]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0394]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F03D1]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0DF0]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0ED7]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0F05]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0F99]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F0FA1]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F129C]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F13FC]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F1440]",0,0,0,0,"D3D9","",0
+"[00007FFCE53F399D]",0.0069829,0.0069829,0.000928299,0.000928299,"D3D9","",0
+"[00007FFCE53F39B4]",0.0069827,0.0069827,0.000928272,0.000928272,"D3D9","",0
+"[00007FFCE53F3A34]",0.00698,0.314414,0.000927913,0.0417978,"D3D9","",0
+"[00007FFCE53F3E34]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FA548]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FAD98]",0,0.0628016,0,0.00834877,"D3D9","",0
+"[00007FFCE53FAD9F]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FB01C]",0,0.46586,0,0.0619309,"D3D9","",0
+"[00007FFCE53FB18F]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FB36C]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FB389]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FB993]",0,0.776284,0,0.103198,"D3D9","",0
+"[00007FFCE53FB9A5]",0.006938,0.006938,0.00092233,0.00092233,"D3D9","",0
+"[00007FFCE53FBC59]",0,0.419259,0,0.0557358,"D3D9","",0
+"[00007FFCE53FC0C3]",0,0.419259,0,0.0557358,"D3D9","",0
+"[00007FFCE53FC207]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FC5D5]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FCA24]",0,0.0628016,0,0.00834877,"D3D9","",0
+"[00007FFCE53FCFCB]",0.0069821,0.0069821,0.000928193,0.000928193,"D3D9","",0
+"[00007FFCE53FD1A2]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FFAB3]",0.0069821,0.0069821,0.000928193,0.000928193,"D3D9","",0
+"[00007FFCE53FFABA]",0.0069804,0.0069804,0.000927967,0.000927967,"D3D9","",0
+"[00007FFCE53FFAD9]",0.01497,0.01497,0.0019901,0.0019901,"D3D9","",0
+"[00007FFCE53FFAE6]",0.0278841,0.0278841,0.00370688,0.00370688,"D3D9","",0
+"[00007FFCE53FFAEC]",0.0069752,0.0069752,0.000927275,0.000927275,"D3D9","",0
+"[00007FFCE53FFAF3]",0.0071743,0.0071743,0.000953743,0.000953743,"D3D9","",0
+"[00007FFCE53FFB06]",0.007006,0.007006,0.00093137,0.00093137,"D3D9","",0
+"[00007FFCE53FFB1B]",0.006943,0.006943,0.000922995,0.000922995,"D3D9","",0
+"[00007FFCE53FFB9C]",0.0138445,0.0138445,0.00184047,0.00184047,"D3D9","",0
+"[00007FFCE53FFBAF]",0.0199343,0.0199343,0.00265004,0.00265004,"D3D9","",0
+"[00007FFCE53FFBBF]",0.543744,0.543744,0.0722847,0.0722847,"D3D9","",0
+"[00007FFCE53FFBDF]",0.0069805,0.0069805,0.00092798,0.00092798,"D3D9","",0
+"[00007FFCE53FFBE7]",0.0069855,0.0069855,0.000928645,0.000928645,"D3D9","",0
+"[00007FFCE53FFD68]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FFD74]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FFD83]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FFD99]",0,0,0,0,"D3D9","",0
+"[00007FFCE53FFDAB]",0,0,0,0,"D3D9","",0
+"[00007FFCE5406733]",0,0,0,0,"D3D9","",0
+"[00007FFCE54067B5]",0,0,0,0,"D3D9","",0
+"[00007FFCE541138B]",0,0,0,0,"D3D9","",0
+"[00007FFCE5411557]",0,0.0209449,0,0.00278439,"D3D9","",0
+"[00007FFCE541217C]",0,0,0,0,"D3D9","",0
+"[00007FFCE5412238]",0,0,0,0,"D3D9","",0
+"[00007FFCE5412423]",0,0,0,0,"D3D9","",0
+"[00007FFCE541253D]",0,0,0,0,"D3D9","",0
+"[00007FFCE54126D7]",0,10.6862,0,1.42062,"D3D9","",0
+"[00007FFCE54127A8]",0,10.6862,0,1.42062,"D3D9","",0
+"[00007FFCE54127BA]",0,0,0,0,"D3D9","",0
+"[00007FFCE5415929]",0,0.41128,0,0.0546751,"D3D9","",0
+"[00007FFCE541595B]",0,0,0,0,"D3D9","",0
+"[00007FFCE5415961]",0,0.0079786,0,0.00106067,"D3D9","",0
+"[00007FFCE5415BA4]",0,0,0,0,"D3D9","",0
+"Direct3DCreate9Ex",0.0069769,0.0069769,0.000927501,0.000927501,"D3D9","[unknown]",0
+"Direct3DCreate9On12Ex",0.0069816,0.130077,0.000928126,0.0172923,"D3D9","[unknown]",0
+"DebugSetMute",0,0.163689,0,0.0217606,"D3D9","[unknown]",0
+"Ordinal19",0.0279393,9.96617,0.00371422,1.32489,"D3D9","[unknown]",0
+"Ordinal23",2.70274,3.36946,0.359299,0.447932,"D3D9","[unknown]",0
+"Direct3DShaderValidatorCreate9",0,14.3639,0,1.90952,"D3D9","[unknown]",0
+"[00007FFCEDC4145F]",0,0.0309131,0,0.00410955,"SDL2","",0
+"[00007FFCEDC418DD]",0,0.0309131,0,0.00410955,"SDL2","",0
+"[00007FFCEDC4268F]",0,0.0069795,0,0.000927847,"SDL2","",0
+"[00007FFCEDC4314F]",0,0.126658,0,0.0168378,"SDL2","",0
+"[00007FFCEDC4316C]",0.0069801,0.0069801,0.000927927,0.000927927,"SDL2","",0
+"[00007FFCEDC43174]",0,0.0069781,0,0.000927661,"SDL2","",0
+"[00007FFCEDC44060]",0.0129639,0.0129639,0.00172341,0.00172341,"SDL2","",0
+"[00007FFCEDC44061]",0.0269386,0.0269386,0.00358119,0.00358119,"SDL2","",0
+"[00007FFCEDC44064]",0.0069776,0.0069776,0.000927594,0.000927594,"SDL2","",0
+"[00007FFCEDC44068]",0.0339073,0.0339073,0.0045076,0.0045076,"SDL2","",0
+"[00007FFCEDC44072]",0.0129771,0.0129771,0.00172516,0.00172516,"SDL2","",0
+"[00007FFCEDC44075]",0.0129651,0.0129651,0.00172357,0.00172357,"SDL2","",0
+"[00007FFCEDC4407C]",0.0209457,0.0209457,0.0027845,0.0027845,"SDL2","",0
+"[00007FFCEDC4407F]",0.0077244,0.0077244,0.00102687,0.00102687,"SDL2","",0
+"[00007FFCEDC4408A]",0,0.999308,0,0.132847,"SDL2","",0
+"[00007FFCEDC440A6]",0.0340205,0.0340205,0.00452265,0.00452265,"SDL2","",0
+"[00007FFCEDC440B3]",0.0517733,0.101528,0.00688268,0.013497,"SDL2","",0
+"[00007FFCEDC440BA]",0.0538568,0.0538568,0.00715966,0.00715966,"SDL2","",0
+"[00007FFCEDC44120]",0.0908812,0.0908812,0.0120816,0.0120816,"SDL2","",0
+"[00007FFCEDC44126]",0.034737,0.034737,0.0046179,0.0046179,"SDL2","",0
+"[00007FFCEDC44131]",0.807927,0.807927,0.107405,0.107405,"SDL2","",0
+"[00007FFCEDC44138]",0.0329151,0.0329151,0.0043757,0.0043757,"SDL2","",0
+"[00007FFCEDC44178]",0.0328472,0.0328472,0.00436667,0.00436667,"SDL2","",0
+"[00007FFCEDC44180]",0.0497547,0.0497547,0.00661433,0.00661433,"SDL2","",0
+"[00007FFCEDC44515]",0,0.0239453,0,0.00318326,"SDL2","",0
+"[00007FFCEDC4455B]",0,0.0069397,0,0.000922556,"SDL2","",0
+"[00007FFCEDC445E3]",0,0.0069795,0,0.000927847,"SDL2","",0
+"[00007FFCEDC44601]",0,0.0069802,0,0.00092794,"SDL2","",0
+"[00007FFCEDC4460A]",0,31.2995,0,4.16093,"SDL2","",0
+"[00007FFCEDC446B7]",0,0.02492,0,0.00331284,"SDL2","",0
+"[00007FFCEDC446F0]",0,0.0059931,0,0.000796716,"SDL2","",0
+"[00007FFCEDC456EC]",0,0.0309131,0,0.00410955,"SDL2","",0
+"[00007FFCEDC4EE6A]",0,0.0069397,0,0.000922556,"SDL2","",0
+"[00007FFCEDC50386]",0,0.0069795,0,0.000927847,"SDL2","",0
+"[00007FFCEDC512B0]",0.0069397,0.0069397,0.000922556,0.000922556,"SDL2","",0
+"[00007FFCEDC5A630]",0.0069806,0.0069806,0.000927993,0.000927993,"SDL2","",0
+"SDL_RenderDrawPoint",0.0069802,0.0069802,0.00092794,0.00092794,"SDL2","[unknown]",0
+"SDL_DYNAPI_entry",5.76867,88.2385,0.76688,11.7303,"SDL2","[unknown]",0
+"[00007FFD23B96EA1]",0,0.0535935,0,0.00712466,"OPENGL32","",0
+"[00007FFD23B97296]",0,0.0535935,0,0.00712466,"OPENGL32","",0
+"glPushClientAttrib",0,1.42391,0,0.189293,"OPENGL32","[unknown]",0
+"wglSwapBuffers",0,0.0535935,0,0.00712466,"OPENGL32","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::GetGmmLibContext",0.0070064,0.0070064,0.000931423,0.000931423,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::GetMipTailStartLodSurfaceState",0.0069601,0.0069601,0.000925268,0.000925268,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::GetResFlags",0.0268924,0.0268924,0.00357505,0.00357505,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::GetSize",0,0.0069801,0,0.000927927,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::GetUnifiedAuxSurfaceOffset",0,0.0070064,0,0.000931423,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::GetVAlign",0,0.0070648,0,0.000939187,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::Create",0,0.0069806,0,0.000927993,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::GetOffset",0,0.0139067,0,0.00184874,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoCommon::Is64KBPageSuitable",0.0069801,0.0069801,0.000927927,0.000927927,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoWin::CopyClientParams",0,0.0069806,0,0.000927993,"igdgmm64","[unknown]",0
+"GmmLib::GmmResourceInfoWin::KmdGetSetCpSurfTag",0.0139067,0.0208873,0.00184874,0.00277673,"igdgmm64","[unknown]",0
+"GmmLib::GmmClientContext::GetPlatformInfo",0.0070648,0.0070648,0.000939187,0.000939187,"igdgmm64","[unknown]",0
+"GmmLib::GmmClientContext::CreateResInfoObject",0,0.0069806,0,0.000927993,"igdgmm64","[unknown]",0
+"Ordinal219",0.0049832,0.0049832,0.000662461,0.000662461,"dxcore","[unknown]",0
+"Ordinal136",0,0.0049832,0,0.000662461,"dxcore","[unknown]",0
+"DllGetClassObject",0,31.3514,0,4.16782,"Windows.Gaming.Input","[unknown]",0
+"Ordinal2604",0,31.3514,0,4.16782,"inputhost","[unknown]",0
+"DllGetActivationFactory",0,31.3514,0,4.16782,"inputhost","[unknown]",0
+"DllCanUnloadNow",0.0139623,0.026937,0.00185613,0.00358097,"AUDIOSES","[unknown]",0
+"CreateDispatcherQueueController",0,31.3584,0,4.16875,"CoreMessaging","[unknown]",0
+"CoreUICreateEx",0,31.3514,0,4.16782,"CoreMessaging","[unknown]",0
+"SE_WINRT_HookObject",0,0.0069844,0,0.000928498,"apphelp","[unknown]",0
+"GetThemeBitmap",0,0,0,0,"uxtheme","[unknown]",0
+"Ordinal44",0,0.0069267,0,0.000920828,"uxtheme","[unknown]",0
+"Ordinal96",0,1.40202,0,0.186383,"uxtheme","[unknown]",0
+"Ordinal139",0,0.0079811,0,0.001061,"uxtheme","[unknown]",0
+"GetUserColorPreference",0,1.40202,0,0.186383,"uxtheme","[unknown]",0
+"IsCompositionActive",0,1.40895,0,0.187304,"uxtheme","[unknown]",0
+"DrawThemeBackground",0,0.0078507,0,0.00104366,"uxtheme","[unknown]",0
+"GetThemeTextExtent",0,0.0079811,0,0.001061,"uxtheme","[unknown]",0
+"Ordinal101",0,0.0069267,0,0.000920828,"uxtheme","[unknown]",0
+"Ordinal116",0,0.0158318,0,0.00210466,"uxtheme","[unknown]",0
+"DwmFlush",31.3514,31.3514,4.16781,4.16781,"dwmapi","[unknown]",0
+"DwmUnregisterThumbnail",0,0,0,0,"dwmapi","[unknown]",0
+"DwmpDxGetWindowSharedSurface",0,0.0628016,0,0.00834877,"dwmapi","[unknown]",0
+"NtUserGetThreadState",0.0069801,0.0069801,0.000927927,0.000927927,"win32u","[unknown]",0
+"NtUserPeekMessage",0.0469316,0.10249,0.00623903,0.0136249,"win32u","[unknown]",0
+"NtUserGetKeyState",0.0138105,0.0138105,0.00183595,0.00183595,"win32u","[unknown]",0
+"NtUserMessageCall",1.38607,1.41,0.184262,0.187444,"win32u","[unknown]",0
+"NtUserSetTimer",0.0069826,0.0069826,0.000928259,0.000928259,"win32u","[unknown]",0
+"NtUserCallTwoParam",0.0359535,0.0359535,0.00477962,0.00477962,"win32u","[unknown]",0
+"NtUserShowWindow",0,0.0069844,0,0.000928498,"win32u","[unknown]",0
+"NtUserMapVirtualKeyEx",0.0069756,0.0069756,0.000927328,0.000927328,"win32u","[unknown]",0
+"NtGdiDrawStream",0.0078507,0.0078507,0.00104366,0.00104366,"win32u","[unknown]",0
+"NtGdiGetTextFaceW",0.0079811,0.0079811,0.001061,0.001061,"win32u","[unknown]",0
+"NtGdiDdDDICreateAllocation",0.307434,0.307434,0.0408699,0.0408699,"win32u","[unknown]",0
+"NtGdiDdDDIDestroyAllocation2",0.163689,0.163689,0.0217606,0.0217606,"win32u","[unknown]",0
+"NtGdiDdDDILock2",0.195577,0.195577,0.0259998,0.0259998,"win32u","[unknown]",0
+"NtGdiDdDDIMakeResident",0.0357747,0.0357747,0.00475585,0.00475585,"win32u","[unknown]",0
+"NtGdiDdDDIMapGpuVirtualAddress",0.139582,0.139582,0.0185558,0.0185558,"win32u","[unknown]",0
+"NtGdiDdDDIOfferAllocations",0.0139667,0.0139667,0.00185672,0.00185672,"win32u","[unknown]",0
+"NtGdiDdDDIPresent",0.776284,0.776284,0.103198,0.103198,"win32u","[unknown]",0
+"NtGdiDdDDIReclaimAllocations2",0.0275449,0.0275449,0.00366179,0.00366179,"win32u","[unknown]",0
+"NtGdiDdDDISignalSynchronizationObjectFromGpu",0.156268,0.156268,0.0207741,0.0207741,"win32u","[unknown]",0
+"NtGdiDdDDISubmitCommand",0.15861,0.15861,0.0210854,0.0210854,"win32u","[unknown]",0
+"NtGdiDdDDIUnlock2",0.186485,0.186485,0.0247911,0.0247911,"win32u","[unknown]",0
+"NtGdiDdDDIWaitForSynchronizationObjectFromCpu",8.92893,8.92893,1.187,1.187,"win32u","[unknown]",0
+"NtGdiDdDDIWaitForSynchronizationObjectFromGpu",0.0547575,0.0547575,0.0072794,0.0072794,"win32u","[unknown]",0
+"NtUserAssociateInputContext",0.0069844,0.0069844,0.000928498,0.000928498,"win32u","[unknown]",0
+"NtUserHwndQueryRedirectionInfo",0.0628016,0.0628016,0.00834877,0.00834877,"win32u","[unknown]",0
+"NtUserIsTopLevelWindow",0.0069267,0.0069267,0.000920828,0.000920828,"win32u","[unknown]",0
+"mktime64",0.006978,0.006978,0.000927647,0.000927647,"ucrtbase","[unknown]",0
+"get_dstbias",0.006981,0.0218122,0.000928046,0.00289969,"ucrtbase","[unknown]",0
+"free",0.0219213,0.0219213,0.00291419,0.00291419,"ucrtbase","[unknown]",0
+"free_base",0,0.0356646,0,0.00474121,"ucrtbase","[unknown]",0
+"malloc_base",0,0,0,0,"ucrtbase","[unknown]",0
+"execute_onexit_table",0,0.0049832,0,0.000662461,"ucrtbase","[unknown]",0
+"o_atoi",0,0.0049832,0,0.000662461,"ucrtbase","[unknown]",0
+"o_qsort_s",0,0,0,0,"ucrtbase","[unknown]",0
+"write",0,0,0,0,"ucrtbase","[unknown]",0
+"fwrite",0.0848066,0.0848066,0.0112741,0.0112741,"ucrtbase","[unknown]",0
+"wfsopen",0,0,0,0,"ucrtbase","[unknown]",0
+"wsplitpath_s",0,0.0069751,0,0.000927262,"ucrtbase","[unknown]",0
+"exit",0,0.0605766,0,0.00805299,"ucrtbase","[unknown]",0
+"rand_s",0,0.0069807,0,0.000928006,"ucrtbase","[unknown]",0
+"strlen",0.0071091,0.0071091,0.000945076,0.000945076,"ucrtbase","[unknown]",0
+"memcmp",0.0069657,0.0069657,0.000926012,0.000926012,"ucrtbase","[unknown]",0
+"getwc",0,0.0069751,0,0.000927262,"ucrtbase","[unknown]",0
+"_stdio_common_vfwscanf",0,0.0069751,0,0.000927262,"ucrtbase","[unknown]",0
+"wsplitpath",0.0249332,2.46715,0.00331459,0.32798,"ucrtbase","[unknown]",0
+"wmktemp_s",0,0.0069751,0,0.000927262,"ucrtbase","[unknown]",0
+"sopen_dispatch",0,0.0069751,0,0.000927262,"ucrtbase","[unknown]",0
+"sopen_s",0,0.0069751,0,0.000927262,"ucrtbase","[unknown]",0
+"localtime32_s",0.0069802,0.0357704,0.00092794,0.00475528,"ucrtbase","[unknown]",0
+"ScriptString_pcOutChars",0,0.0079811,0,0.001061,"gdi32full","[unknown]",0
+"GetTextFaceW",0,0.0079811,0,0.001061,"gdi32full","[unknown]",0
+"ModifyWorldTransform",0,0.0079811,0,0.001061,"gdi32full","[unknown]",0
+"LpkDrawTextEx",0,0.0079811,0,0.001061,"gdi32full","[unknown]",0
+"ScriptStringAnalyse",0,0.0079811,0,0.001061,"gdi32full","[unknown]",0
+"GdiDrawStream",0,0.0078507,0,0.00104366,"gdi32full","[unknown]",0
+"GetFileInformationByHandle",0.3919,0.3919,0.0520988,0.0520988,"KERNELBASE","[unknown]",0
+"GetProcAddress",0.0069807,0.0069807,0.000928006,0.000928006,"KERNELBASE","[unknown]",0
+"SystemTimeToTzSpecificLocalTime",0.136681,0.136681,0.0181702,0.0181702,"KERNELBASE","[unknown]",0
+"GetLocalTime",0,0,0,0,"KERNELBASE","[unknown]",0
+"IsTimeZoneRedirectionEnabled",0,0,0,0,"KERNELBASE","[unknown]",0
+"WaitForSingleObject",0,0,0,0,"KERNELBASE","[unknown]",0
+"WaitForSingleObjectEx",62.6619,62.6619,8.3302,8.3302,"KERNELBASE","[unknown]",0
+"LocalFree",0,0,0,0,"KERNELBASE","[unknown]",0
+"LocalAlloc",0,0,0,0,"KERNELBASE","[unknown]",0
+"CloseHandle",0.562331,0.562331,0.0747557,0.0747557,"KERNELBASE","[unknown]",0
+"CreateFileW",1.29566,1.29566,0.172243,0.172243,"KERNELBASE","[unknown]",0
+"WriteFile",0,0,0,0,"KERNELBASE","[unknown]",0
+"OpenThreadToken",0,0,0,0,"KERNELBASE","[unknown]",0
+"GetLastError",0.0079996,0.0079996,0.00106346,0.00106346,"KERNELBASE","[unknown]",0
+"SleepEx",31.4289,31.4289,4.17813,4.17813,"KERNELBASE","[unknown]",0
+"FlsGetValue",0.0068316,0.0068316,0.000908185,0.000908185,"KERNELBASE","[unknown]",0
+"WaitForMultipleObjects",31.3514,31.3514,4.16782,4.16782,"KERNELBASE","[unknown]",0
+"WaitForMultipleObjectsEx",94.0542,94.0542,12.5035,12.5035,"KERNELBASE","[unknown]",0
+"SetEvent",0,0,0,0,"KERNELBASE","[unknown]",0
+"GetFileType",0.0268466,0.0268466,0.00356896,0.00356896,"KERNELBASE","[unknown]",0
+"IsApiSetImplemented",0,0,0,0,"KERNELBASE","[unknown]",0
+"GetEnvironmentVariableA",0.126658,0.126658,0.0168378,0.0168378,"KERNELBASE","[unknown]",0
+"WaitOnAddress",31.3444,31.3444,4.16689,4.16689,"KERNELBASE","[unknown]",0
+"SleepConditionVariableSRW",31.3514,31.3514,4.16782,4.16782,"KERNELBASE","[unknown]",0
+"RemoveDllDirectory",0,0,0,0,"KERNELBASE","[unknown]",0
+"CtfImeProcessKey",0,0.0197063,0,0.00261973,"MSCTF","[unknown]",0
+"CtfImeAssociateFocus",0,0.0197063,0,0.00261973,"MSCTF","[unknown]",0
+"TF_Notify",0,0.0347567,0,0.00462052,"MSCTF","[unknown]",0
+"CtfImeSetActiveContext",0,0.0209462,0,0.00278456,"MSCTF","[unknown]",0
+"TF_SetDefaultRemoteKeyboardLayout",0,0.0209462,0,0.00278456,"MSCTF","[unknown]",0
+"D3DKMTCreateAllocation",0,0.307434,0,0.0408699,"GDI32","[unknown]",0
+"GetPropW",0,0,0,0,"USER32","[unknown]",0
+"PeekMessageW",0,0.10249,0,0.0136249,"USER32","[unknown]",0
+"IsIconic",0,1.40202,0,0.186383,"USER32","[unknown]",0
+"GetWindowTextW",0,1.40895,0,0.187304,"USER32","[unknown]",0
+"SendMessageW",0,0.0159962,0,0.00212652,"USER32","[unknown]",0
+"DispatchMessageW",0,1.43089,0,0.190221,"USER32","[unknown]",0
+"CallWindowProcW",0,1.43089,0,0.190221,"USER32","[unknown]",0
+"SetWindowLongW",0,0,0,0,"USER32","[unknown]",0
+"GetClientRect",0.0069822,0.0069822,0.000928206,0.000928206,"USER32","[unknown]",0
+"GetKeyState",0,0.0138105,0,0.00183595,"USER32","[unknown]",0
+"IsWindowVisible",0,0.0209462,0,0.00278456,"USER32","[unknown]",0
+"DrawTextExW",0,0.0079811,0,0.001061,"USER32","[unknown]",0
+"DrawTextW",0,0.0079811,0,0.001061,"USER32","[unknown]",0
+"SendMessageTimeoutW",0,1.21099,0,0.160988,"USER32","[unknown]",0
+"GetSystemMetrics",0.0480318,0.0480318,0.00638529,0.00638529,"USER32","[unknown]",0
+"InitDManipHook",0,0.0099798,0,0.0013267,"USER32","[unknown]",0
+"SetTimer",0,0.0069826,0,0.000928259,"USER32","[unknown]",0
+"MBToWCSEx",0,0.0078507,0,0.00104366,"USER32","[unknown]",0
+"LookupIconIdFromDirectoryEx",0,0.008017,0,0.00106577,"USER32","[unknown]",0
+"IsThreadMessageQueueAttached",0,0.0209462,0,0.00278456,"USER32","[unknown]",0
+"SystemParametersInfoForDpi",0,0.0197063,0,0.00261973,"USER32","[unknown]",0
+"RegisterPowerSettingNotification",0,0.0079811,0,0.001061,"USER32","[unknown]",0
+"MapVirtualKeyExW",0.0069905,0.0069905,0.000929309,0.000929309,"USER32","[unknown]",0
+"DwmGetDxSharedSurface",0,0.0628016,0,0.00834877,"USER32","[unknown]",0
+"calloc",0.0159699,0.0159699,0.00212302,0.00212302,"msvcrt","[unknown]",0
+"realloc",0,0,0,0,"msvcrt","[unknown]",0
+"strlen",0.0069841,0.0069841,0.000928458,0.000928458,"msvcrt","[unknown]",0
+"memcpy",0.285869,0.285869,0.0380032,0.0380032,"msvcrt","[unknown]",0
+"memset",0.0069831,0.0069831,0.000928325,0.000928325,"msvcrt","[unknown]",0
+"GlobalFindAtomW",0,0,0,0,"KERNEL32","[unknown]",0
+"HeapFree",0.0069841,0.0069841,0.000928458,0.000928458,"KERNEL32","[unknown]",0
+"BaseThreadInitThunk",0,347.553,0,46.2034,"KERNEL32","[unknown]",0
+"FatalExit",0,0.0605766,0,0.00805299,"KERNEL32","[unknown]",0
+"ImmSetActiveContext",0,0.0079792,0,0.00106075,"IMM32","[unknown]",0
+"ImmLockIMC",0,0.0058958,0,0.000783781,"IMM32","[unknown]",0
+"ImmLockClientImc",0.0058958,0.0058958,0.000783781,0.000783781,"IMM32","[unknown]",0
+"ImmProcessKey",0,0.0197063,0,0.00261973,"IMM32","[unknown]",0
+"ImmAssociateContext",0,0.0149636,0,0.00198924,"IMM32","[unknown]",0
+"RoGetServerActivatableClasses",0,62.7028,0,8.33564,"combase","[unknown]",0
+"RpcBindingFromStringBindingW",0,0,0,0,"RPCRT4","[unknown]",0
+"I_RpcSendReceive",0,0,0,0,"RPCRT4","[unknown]",0
+"NdrSendReceive",0,0,0,0,"RPCRT4","[unknown]",0
+"NdrMesSimpleTypeEncodeAll",0,0,0,0,"RPCRT4","[unknown]",0
+"NdrClientCall3",0.0059931,0.0059931,0.000796716,0.000796716,"RPCRT4","[unknown]",0
+"RtlSetUserValueHeap",0,0,0,0,"ntdll","[unknown]",0
+"TpWaitForWait",0,0,0,0,"ntdll","[unknown]",0
+"RtlCreateTimer",0,0,0,0,"ntdll","[unknown]",0
+"RtlReleaseSRWLockExclusive",0.0129353,0.0129353,0.0017196,0.0017196,"ntdll","[unknown]",0
+"RtlIsCriticalSectionLockedByThread",0,0,0,0,"ntdll","[unknown]",0
+"RtlInitAnsiString",0,0,0,0,"ntdll","[unknown]",0
+"RtlQueryEnvironmentVariable",0,0,0,0,"ntdll","[unknown]",0
+"RtlCompareUnicodeStrings",0,0,0,0,"ntdll","[unknown]",0
+"RtlFreeAnsiString",0,0,0,0,"ntdll","[unknown]",0
+"RtlDosPathNameToNtPathName_U_WithStatus",0,0,0,0,"ntdll","[unknown]",0
+"RtlAnsiStringToUnicodeString",0,0,0,0,"ntdll","[unknown]",0
+"RtlActivateActivationContextUnsafeFast",0,0.0605766,0,0.00805299,"ntdll","[unknown]",0
+"RtlDosPathNameToRelativeNtPathName_U_WithStatus",0,0,0,0,"ntdll","[unknown]",0
+"RtlFindCharInUnicodeString",0,0,0,0,"ntdll","[unknown]",0
+"RtlGetFullPathName_UstrEx",0,0,0,0,"ntdll","[unknown]",0
+"RtlTryEnterCriticalSection",0,0,0,0,"ntdll","[unknown]",0
+"RtlFreeHeap",0.0737719,0.0737719,0.00980715,0.00980715,"ntdll","[unknown]",0
+"RtlGetCurrentServiceSessionId",0,0,0,0,"ntdll","[unknown]",0
+"RtlAcquireSRWLockExclusive",0.0409975,0.0409975,0.00545016,0.00545016,"ntdll","[unknown]",0
+"RtlAllocateHeap",0.0139606,0.0139606,0.00185591,0.00185591,"ntdll","[unknown]",0
+"RtlLeaveCriticalSection",0.0149616,0.0149616,0.00198898,0.00198898,"ntdll","[unknown]",0
+"RtlEnterCriticalSection",0,0,0,0,"ntdll","[unknown]",0
+"LdrGetProcedureAddressForCaller",0,0,0,0,"ntdll","[unknown]",0
+"RtlQueryEnvironmentVariable_U",0,0,0,0,"ntdll","[unknown]",0
+"RtlUserThreadStart",404.665,720.813,53.7957,95.8241,"ntdll","[unknown]",0
+"TpReleaseCleanupGroupMembers",0,0,0,0,"ntdll","[unknown]",0
+"RtlSetLastWin32Error",0,0,0,0,"ntdll","[unknown]",0
+"RtlNtStatusToDosError",0,0,0,0,"ntdll","[unknown]",0
+"RtlFlsGetValue",0,0,0,0,"ntdll","[unknown]",0
+"RtlpTimeFieldsToTime",0,0,0,0,"ntdll","[unknown]",0
+"RtlGetCurrentDirectory_U",0,0,0,0,"ntdll","[unknown]",0
+"RtlExitUserProcess",0,0.0605766,0,0.00805299,"ntdll","[unknown]",0
+"LdrShutdownProcess",0,0.0605766,0,0.00805299,"ntdll","[unknown]",0
+"RtlUnlockHeap",0,0,0,0,"ntdll","[unknown]",0
+"RtlWaitOnAddress",0,0,0,0,"ntdll","[unknown]",0
+"RtlSleepConditionVariableSRW",0,0,0,0,"ntdll","[unknown]",0
+"ApiSetQueryApiSetPresenceEx",0,0,0,0,"ntdll","[unknown]",0
+"RtlInitializeSRWLock",0.0069809,0.0069809,0.000928033,0.000928033,"ntdll","[unknown]",0
+"RtlAllocateAndInitializeSid",0,0,0,0,"ntdll","[unknown]",0
+"RtlGetActiveConsoleId",0,0,0,0,"ntdll","[unknown]",0
+"RtlRetrieveNtUserPfn",0,0,0,0,"ntdll","[unknown]",0
+"ZwWaitForSingleObject",0,0,0,0,"ntdll","[unknown]",0
+"NtWriteFile",0,0,0,0,"ntdll","[unknown]",0
+"NtSetEvent",0,0,0,0,"ntdll","[unknown]",0
+"ZwClose",0,0,0,0,"ntdll","[unknown]",0
+"NtQueryInformationFile",0,0,0,0,"ntdll","[unknown]",0
+"NtFindAtom",0,0,0,0,"ntdll","[unknown]",0
+"ZwFreeVirtualMemory",0,0,0,0,"ntdll","[unknown]",0
+"NtMapViewOfSection",0,0,0,0,"ntdll","[unknown]",0
+"NtDelayExecution",0,0,0,0,"ntdll","[unknown]",0
+"ZwQuerySystemInformation",0,0,0,0,"ntdll","[unknown]",0
+"NtQueryVolumeInformationFile",0,0,0,0,"ntdll","[unknown]",0
+"ZwCreateFile",0,0,0,0,"ntdll","[unknown]",0
+"NtWaitForMultipleObjects",0,0,0,0,"ntdll","[unknown]",0
+"NtAlpcSendWaitReceivePort",0,0,0,0,"ntdll","[unknown]",0
+"NtWaitForAlertByThreadId",0,0,0,0,"ntdll","[unknown]",0
+"ZwWaitForWorkViaWorkerFactory",0,0,0,0,"ntdll","[unknown]",0
+"KiUserCallbackDispatcher",0.0081017,1.25164,0.00107703,0.166392,"ntdll","[unknown]",0
+"RtlGetCurrentProcessorNumber",0.0069806,0.0069806,0.000927993,0.000927993,"ntdll","[unknown]",0
+"memset",0,0,0,0,"ntdll","[unknown]",0

@@ -54,7 +54,7 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
                uint32_t height, bool fullscreen, bool splash_screen) {
   // This can be edited to add more flags to the window, like borderless etc
   SDL_WindowFlags window_flags =
-      (SDL_WindowFlags)(SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+      (SDL_WindowFlags)(SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_OPENGL);
 
   if (fullscreen) {
     window_flags =

@@ -1,3 +1,4 @@
+#include "SDL_gpu.h"
 #define CUTE_ASEPRITE_IMPLEMENTATION
 
 #include "../Utils/cute_aseprite.h"
@@ -10,6 +11,7 @@
 #include "Resources.hpp"
 
 #include "../Utils/FDebug.hpp"
+#include "SDL_opengl.h"
 
 std::string mCurrentFolderResources = "";
 
