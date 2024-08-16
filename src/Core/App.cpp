@@ -51,12 +51,14 @@ App::App() { std::cout << "Instantied App!..." << std::endl; }
 App::~App() {}
 
 void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
-               uint32_t height, bool fullscreen, bool splash_screen) {
+               uint32_t height, bool fullscreen, bool splash_screen)
+{
   // This can be edited to add more flags to the window, like borderless etc
   SDL_WindowFlags window_flags =
       (SDL_WindowFlags)(SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_OPENGL);
 
-  if (fullscreen) {
+  if (fullscreen)
+  {
     window_flags =
         (SDL_WindowFlags)(SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI |
                           SDL_WINDOW_FULLSCREEN_DESKTOP);
@@ -76,13 +78,14 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
   F_Debug::log("SDL INIT : " + std::to_string(ini));
 
   // SDL Initialization
-  if (ini == 0) {
+  if (ini == 0)
+  {
     std::cout << "App initialized!..." << std::endl;
     m_window = SDL_CreateWindow(title, xpos, ypos, width, height, window_flags);
     GPU_SetInitWindow(SDL_GetWindowID(m_window));
     int h = 0, w = 0;
     SDL_GetWindowSize(m_window, &h, &w);
-    SDL_SetWindowMaximumSize(m_window, 640,640);
+    SDL_SetWindowMaximumSize(m_window, 640, 640);
     // ensure the window cant be so small
     // SDL_SetWindowMinimumSize(m_window, w, h);
     SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
@@ -95,7 +98,8 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
               << std::endl;
 
     // This is true if the windows was created
-    if (m_window) {
+    if (m_window)
+    {
       std::cout << "Window created!..." << std::endl;
       F_Debug::log("Window created!...");
     }
@@ -103,23 +107,29 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
 
     int rendererFlags = SDL_RENDERER_ACCELERATED;
 
-    if (!IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG)) {
+    if (!IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG))
+    {
       F_Debug::error("SDL_image could not initialize");
     }
 
-    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+    {
       F_Debug::error("SDL_mixer could not initialize! SDL_mixer Error: " +
                      std::string(Mix_GetError()));
-    }else{
+    }
+    else
+    {
       F_Debug::log("SDL_mixer initialized!");
       m_sound_manager = new SoundManager();
       g_sound_manager = m_sound_manager;
     }
 
     m_renderer = SDL_CreateRenderer(m_window, -1, rendererFlags);
+    m_gpu = GPU_Init(width, height, GPU_DEFAULT_INIT_FLAGS);
 
     // This is true if the renderer was created
-    if (m_renderer) {
+    if (m_renderer)
+    {
       SDL_SetRenderDrawColor(m_renderer, 50, 40, 0, 255);
       std::cout << "Renderer created!..." << std::endl;
       F_Debug::log("Renderer created!...");
@@ -129,18 +139,21 @@ void App::init(const char *title, uint32_t xpos, uint32_t ypos, uint32_t width,
       TTF_Init();
 
       m_camera = new Camera(nullptr, &m_window_size, {64, 64});
-      m_atlas_ptr = new Atlas(m_renderer, &m_camera->s_scale);
+      m_atlas_ptr = new Atlas(m_gpu, &m_camera->s_scale);
 
       s_main_font = TTF_OpenFont("res/font/NotJamChunkySans.ttf", 6);
       F_Debug::log("Loaded atlas and fonts!...");
     }
     m_is_running = true;
-  } else {
+  }
+  else
+  {
     m_is_running = false;
   }
 }
 
-void App::load() {
+void App::load()
+{
   if (m_is_loaded)
     return;
   // loading resources
@@ -157,9 +170,12 @@ void App::load() {
     F_Debug::log("Loaded resources and utils!...");
 
     // Starting scenes
-    if (m_has_splash_screen) {
+    if (m_has_splash_screen)
+    {
       m_current_scene = new IntroScene(this, m_logger, m_cd, m_camera);
-    } else {
+    }
+    else
+    {
 #if F_ENABLE_DEBUG
       m_current_scene = new MainScene(this, m_logger, m_cd, m_camera);
 #else
@@ -181,21 +197,18 @@ void App::load() {
   }
 }
 // FIX: remove this later
-std::vector<vec2i> resolutions = {{128, 128}, {192, 192},
-                                  {256, 256}, {320, 320}, 
-                                  {384, 384},             
-                                  {448, 448},             
-                                  {512, 512},             
-                                  {576, 576},             
-                                  {640, 640}};
+std::vector<vec2i> resolutions = {{128, 128}, {192, 192}, {256, 256}, {320, 320}, {384, 384}, {448, 448}, {512, 512}, {576, 576}, {640, 640}};
 
-int App::find_res(int w, int h){
+int App::find_res(int w, int h)
+{
   int idx = 1;
   int minDiff = Math::abs(w - resolutions[0].x) + Math::abs(h - resolutions[0].y);
 
-  for(int i = 1; i < resolutions.size(); i++){
+  for (int i = 1; i < resolutions.size(); i++)
+  {
     int diff = Math::abs(w - resolutions[i].x) + Math::abs(h - resolutions[i].y);
-    if(diff < minDiff){
+    if (diff < minDiff)
+    {
       minDiff = diff;
       idx = i;
     }
@@ -204,13 +217,15 @@ int App::find_res(int w, int h){
   return idx;
 }
 
-int App::get_current_res(){
-  return 64*z_camera;
+int App::get_current_res()
+{
+  return 64 * z_camera;
 }
 
 // This function will be the core of all the events that some scripts can
 // require And will be responsible for listening to the inputs
-void App::handle_events() {
+void App::handle_events()
+{
   if (!m_is_loaded)
     return;
 
@@ -220,9 +235,11 @@ void App::handle_events() {
   GUI::event(event);
   m_current_scene->input(event);
 
-  switch (event.type) {
+  switch (event.type)
+  {
   case SDL_WINDOWEVENT:
-    if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
+    if (event.window.event == SDL_WINDOWEVENT_RESIZED)
+    {
       // updating window size
       {
         int h = 0, w = 0;
@@ -241,7 +258,8 @@ void App::handle_events() {
   case SDL_KEYDOWN:
     // moving gathering input
     // mCurrentScene->Input(event.key.keysym.scancode);
-    switch (event.key.keysym.scancode) {
+    switch (event.key.keysym.scancode)
+    {
     case SDL_SCANCODE_D:
 #if F_ENABLE_DEBUG
       // m_logger->log("Debug mode: " + std::to_string(debug_mode));
@@ -263,12 +281,16 @@ void App::handle_events() {
       break;
     case SDL_SCANCODE_ESCAPE:
 #if F_ENABLE_DEBUG
-      if(is_paused) m_is_running = false;
+      if (is_paused)
+        m_is_running = false;
 #endif
       is_paused = !is_paused;
-      if(is_paused){
+      if (is_paused)
+      {
         g_sound_manager->play_sound("pause");
-      }else{
+      }
+      else
+      {
         g_sound_manager->play_sound("unpause");
       }
       break;
@@ -276,7 +298,8 @@ void App::handle_events() {
     break;
 
   case SDL_KEYUP:
-    switch (event.key.keysym.scancode) {
+    switch (event.key.keysym.scancode)
+    {
     case SDL_SCANCODE_D:
 
       break;
@@ -297,14 +320,16 @@ void App::handle_events() {
   }
 }
 
-void App::fixed_update(double deltaTime) {
+void App::fixed_update(double deltaTime)
+{
   if (!m_is_loaded)
     return;
 
   m_current_scene->fixed_update(deltaTime);
 }
 
-void App::update(double deltaTime) {
+void App::update(double deltaTime)
+{
   if (!m_is_loaded)
     return;
 
@@ -318,7 +343,8 @@ void App::update(double deltaTime) {
     m_current_scene->update(deltaTime);
 }
 
-void App::post_update(double deltaTime) {
+void App::post_update(double deltaTime)
+{
   if (!m_is_loaded)
     return;
 
@@ -328,17 +354,17 @@ void App::post_update(double deltaTime) {
 
 // The core sdl renderer, this will encapusalate the scene rendering so there is
 // no need to clear and call the color inside the scenes
-void App::render() {
-  SDL_SetRenderDrawColor(m_renderer, m_window_color.x, m_window_color.y,
-                         m_window_color.z, 255);
-  SDL_RenderClear(m_renderer);
-  auto x = static_cast<int>(m_window_size.x - (64*z_camera))/2;
+void App::render()
+{
+  GPU_Clear(m_gpu);
+  /*auto x = static_cast<int>(m_window_size.x - (64*z_camera))/2;
   auto y = static_cast<int>(m_window_size.y - (64*z_camera))/2;
   SDL_Rect viewport = {x/z_camera, y/z_camera, 64, 64};
   SDL_RenderSetViewport(m_renderer, &viewport);
-  SDL_RenderSetScale(m_renderer, z_camera, z_camera);
+  SDL_RenderSetScale(m_renderer, z_camera, z_camera);*/
   // rendering loop here
-  if (m_is_loaded) {
+  if (m_is_loaded)
+  {
     // scene drawing
     if (m_current_scene != nullptr)
       m_current_scene->draw();
@@ -346,18 +372,21 @@ void App::render() {
     // logger rendering
     m_logger->draw();
 
-    //m_atlas_ptr->draw_text({1, 1}, std::to_string(m_fps).c_str(), s_main_font, {255, 255, 255, 255}, 1);
-  } else {
+    // m_atlas_ptr->draw_text({1, 1}, std::to_string(m_fps).c_str(), s_main_font, {255, 255, 255, 255}, 1);
+  }
+  else
+  {
 #ifndef __EMSCRIPTEN__
     m_atlas_ptr->draw_text(
         {(m_window_size.x - 70) / 2, (m_window_size.y - 50) / 2}, "Loading...",
         s_main_font, {255, 255, 255, 255});
 #endif
   }
-  SDL_RenderPresent(m_renderer);
+  GPU_Flip(m_gpu);
 }
 
-void App::clean() {
+void App::clean()
+{
   GUI::clean();
   m_current_scene->clean();
   SDL_DestroyWindow(m_window);
@@ -368,18 +397,21 @@ void App::clean() {
   F_Debug::write_to_file("log.txt");
 }
 
-void App::change_scene(Scene *scene) {
+void App::change_scene(Scene *scene)
+{
   m_current_scene->clean();
   m_current_scene = scene;
   m_current_scene->init();
 }
 
-void App::restart_scene() {
+void App::restart_scene()
+{
   m_current_scene->clean();
   m_current_scene->init();
 }
 
-void App::change_to_next_scene() {
+void App::change_to_next_scene()
+{
   m_current_scene->clean();
   m_current_scene = m_next_scene;
   m_current_scene->init();

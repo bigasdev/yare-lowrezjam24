@@ -1,6 +1,8 @@
 #pragma once
 
 #include "SDL.h"
+#include "SDL_gpu.h"
+#include "SDL_opengl.h"
 #include "SDL_ttf.h"
 #include "../Utils/Common.hpp"
 
@@ -50,6 +52,7 @@ public:
 	//Getters
 	SDL_Window* get_window();
 	SDL_Renderer* get_renderer();
+  GPU_Target* get_gpu() { return m_gpu; }
 	Resources* get_resources();
 	Atlas* get_atlas();
 	TTF_Font* get_main_font();
@@ -63,6 +66,7 @@ private:
 
 	SDL_Window* m_window = nullptr;
 	SDL_Renderer* m_renderer = nullptr;
+  GPU_Target* m_gpu = nullptr;
 	Resources* m_resources_ptr = nullptr;
   SoundManager* m_sound_manager = nullptr;
 	Atlas* m_atlas_ptr = nullptr;

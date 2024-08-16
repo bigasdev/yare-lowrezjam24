@@ -4,6 +4,7 @@
 #include "SDL_image.h"
 #include <string>
 #include <map>
+#include "SDL_gpu.h"
 #include <vector>
 
 class AssetData;
@@ -22,10 +23,10 @@ public:
   void LoadAseprites();
   void LoadFolder(std::string path);
   void LoadAssets();
-  SDL_Texture *SaveTexture(const char *file);
-  SDL_Texture *GetTexture(const char *file, bool debug);
-  SDL_Texture **get_aseprite_texture(const char *file);
-  SDL_Texture *HandleMap(const char *file);
+  GPU_Image *SaveTexture(const char *file);
+  GPU_Image *GetTexture(const char *file, bool debug);
+  GPU_Image **get_aseprite_texture(const char *file);
+  GPU_Image *HandleMap(const char *file);
 
   void aseprite_hot_reload();
 
@@ -37,16 +38,16 @@ public:
   // getters
   std::vector<std::string> GetFolders();
 
-  std::map<std::string, SDL_Texture *> GetTextures();
+  std::map<std::string, GPU_Image *> GetTextures();
   std::vector<std::string> GetTexturesName();
 
 private:
-  std::map<std::string, SDL_Texture *> mTextures;
+  std::map<std::string, GPU_Image *> mTextures;
   std::map<std::string, AssetData *> mAssets;
   SDL_Renderer *mRenderer;
 
   // aseprite
-  std::map<std::string, SDL_Texture *> m_aseprite_textures;
+  std::map<std::string, GPU_Image *> m_aseprite_textures;
   std::vector<AsepriteHelper> m_aseprite_files;
 
   std::vector<std::string> mFolders;

@@ -5,8 +5,10 @@
 #include <iostream>
 #include <memory>
 #include "../Utils/Common.hpp"
+#include "SDL_gpu.h"
 
-struct AtlasPoint {
+struct AtlasPoint
+{
   int xpu, ypu;
   int x, y;
 };
@@ -14,24 +16,24 @@ struct AtlasPoint {
 class Entity;
 class Camera;
 
-class Atlas {
+class Atlas
+{
 public:
-  Atlas(SDL_Renderer *renderer, float* _scale);
+  Atlas(GPU_Target *renderer, float *_scale);
   ~Atlas();
 
-  void draw_texture(SDL_Texture *texture, vec2f scale, vec2f pos,
+  void draw_texture(GPU_Image *texture, vec2f scale, vec2f pos,
                     bool flip = false, int size = 1, bool ignore_scale = false);
   void draw_entity(Entity *entity, Camera *camera);
-  void draw_unique_entity(std::unique_ptr<Entity> entity, Camera *camera);
   void draw_text(vec2f pos, const char *p_text, TTF_Font *font,
                  SDL_Color textColor, float size = 1, int width = 128, Camera *camera = nullptr);
   void draw_from_sheet(Entity *entity, Camera *camera);
-  void draw_texture_from_sheet(SDL_Texture *texture, vec2f pos,
+  void draw_texture_from_sheet(GPU_Image *texture, vec2f pos,
                                AtlasPoint point, Camera *camera, int scale = 1,
                                bool flip = false, bool ignore_scale = false);
 
   // getters
-  SDL_Renderer *get_renderer();
+  GPU_Target *get_renderer();
   float get_game_scale();
 
   // void draw_pixel(Uint16 p_x, Uint16 p_y, Uint8 r, Uint8 g, Uint8 b, Uint8
@@ -44,6 +46,6 @@ public:
   void draw_screen_filter(Uint8 r, Uint8 g, Uint8 b, Uint8 a, int mode = 1);
 
 private:
-  SDL_Renderer *m_renderer_ptr;
-  float* m_game_scale;
+  GPU_Target *m_renderer_ptr;
+  float *m_game_scale;
 };

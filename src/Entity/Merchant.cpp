@@ -15,14 +15,15 @@
 #include "UI/PlayerUI.hpp"
 #include <string>
 
-SDL_Texture **concept_text;
+GPU_Image **concept_text;
 int filter_a = 205;
 
 Merchant::Merchant() {}
 
 Merchant::~Merchant() {}
 
-void Merchant::init() {
+void Merchant::init()
+{
   concept_text = g_resources->get_aseprite_texture("concept");
   m_current_sprite.texture = concept_text;
 
@@ -42,7 +43,8 @@ void Merchant::init() {
   set_animation("idle");
 }
 
-void spawn_compost(Merchant *merchant) {
+void spawn_compost(Merchant *merchant)
+{
   auto compost =
       g_fort->recruit<Item>(g_resources, g_atlas->get_game_scale());
   compost->set_pos(merchant->get_pos().x + rnd(-5, 5), merchant->get_pos().y);
@@ -53,25 +55,35 @@ void spawn_compost(Merchant *merchant) {
   compost->move_dir({rnd(-15.f, 15.f), rnd(-15.f, 15.f)});
 }
 
-void Merchant::fixed_update(double deltaTime) {
+void Merchant::fixed_update(double deltaTime)
+{
   Entity::fixed_update(deltaTime);
-  if (is_interacting(g_hero) && !shuffling_state) {
+  if (is_interacting(g_hero) && !shuffling_state)
+  {
     interact_range = true;
 
-    if (g_hero->has_interact()) {
-      if (g_hero->get_inventory()->coins < 25) {
+    if (g_hero->has_interact())
+    {
+      if (g_hero->get_inventory()->coins < 25)
+      {
         g_player_ui->set_dialogue("Need 25 coins!");
-      } else {
+      }
+      else
+      {
         g_hero->get_inventory()->coins -= 25;
         shuffling_state = true;
       }
     }
-  } else {
+  }
+  else
+  {
     interact_range = false;
   }
 
-  if (shuffling_state && shuffle_ticks < SHUFFLE_TICKS) {
-    if (!m_entity_cd->has_state("shuffle")) {
+  if (shuffling_state && shuffle_ticks < SHUFFLE_TICKS)
+  {
+    if (!m_entity_cd->has_state("shuffle"))
+    {
       m_entity_cd->set_state("shuffle", SHUFFLE_CD);
 
       shuffled_amt = d20();
@@ -80,8 +92,10 @@ void Merchant::fixed_update(double deltaTime) {
       filter_a -= 30;
       g_camera->set_shake(35.f, .1f);
       g_sound_manager->play_sound("merchant_tick");
-      if (shuffle_ticks == SHUFFLE_TICKS) {
-        m_entity_cd->set_state("end_shuffle", 1.5f, [&]() {
+      if (shuffle_ticks == SHUFFLE_TICKS)
+      {
+        m_entity_cd->set_state("end_shuffle", 1.5f, [&]()
+                               {
           g_camera->set_shake(60.5f, .15f);
           shuffling_state = false;
           shuffle_ticks = 0;
@@ -117,8 +131,7 @@ void Merchant::fixed_update(double deltaTime) {
 
             for (int i = 0; i < 5; i++)
               spawn_compost(this);
-          }
-        });
+          } });
       }
     }
   }
@@ -126,20 +139,23 @@ void Merchant::fixed_update(double deltaTime) {
 
 void Merchant::update(double deltaTime) { Entity::update(deltaTime); }
 
-void Merchant::draw() {
+void Merchant::draw()
+{
   Entity::draw();
 
-  if (shuffling_state) {
+  if (shuffling_state)
+  {
     g_atlas->draw_texture_from_sheet(*concept_text, get_pos() + vec2f{2, -8},
                                      {16, 16, 3, 1}, g_camera);
     g_atlas->draw_text(
         get_pos() + vec2f{13, 5}, std::to_string(shuffled_amt).c_str(),
         g_app->get_main_font(), {255, 255, 255}, 1, 128, g_camera);
 
-    g_atlas->draw_screen_filter(125,0,125,filter_a);
+    g_atlas->draw_screen_filter(125, 0, 125, filter_a);
   }
 
-  if (interact_range) {
+  if (interact_range)
+  {
     m_tooltip->draw(*concept_text, get_pos() + vec2f{8, -2});
   }
 }

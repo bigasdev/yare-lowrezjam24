@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 #ifndef ROOM_HPP
 #define ROOM_HPP
 
@@ -8,7 +8,10 @@
 
 #define BATTLE_TIME 30
 
-struct Tile{
+class GPU_Image;
+
+struct Tile
+{
   int x;
   int y;
   CollisionBox2D collision;
@@ -16,7 +19,8 @@ struct Tile{
   int flags;
 };
 
-class Room{
+class Room
+{
 public:
   Room();
   Room(vec2i _pos, vec2i _size);
@@ -26,10 +30,11 @@ public:
 
   void draw();
   void post_draw();
+
 private:
   vec2i pos;
   vec2i size;
-  SDL_Texture** m_tileset_texture;
+  GPU_Image **m_tileset_texture;
 
   std::vector<Tile> tiles;
   std::vector<Tile> props;

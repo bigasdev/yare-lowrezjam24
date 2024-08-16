@@ -5,6 +5,7 @@
 #include "../Utils/Sprite.hpp"
 #include "AffectManager.hpp"
 #include "../Core/Globals.hpp"
+#include "SDL_gpu.h"
 
 #include "../Utils/random.hpp"
 #include <functional>
@@ -32,7 +33,7 @@ public:
   // constructors, so a entity might not be able to access app if we want to.
   Entity();
   Entity(Resources *_resources, float _scale);
-  Entity(vec2f _pos, vec2f _scale, SDL_Texture *_texture, int _uid);
+  Entity(vec2f _pos, vec2f _scale, GPU_Image *_texture, int _uid);
 
   // setters
   void set_pos(float xpos, float ypos);
@@ -40,7 +41,7 @@ public:
   void set_frame(vec2f frame);
   void set_angle(float _angle);
   void set_life(float _maxLife, float _life);
-  void set_texture(SDL_Texture *_texture);
+  void set_texture(GPU_Image *_texture);
   void set_collision_box(CollisionBox2D _collision_box);
   void set_renderer(EntityRenderer *_renderer);
   void set_current_sprite(Sprite _sprite);
@@ -62,7 +63,7 @@ public:
   void input(SDL_Event event);
 
   // getters
-  SDL_Texture *get_texture();
+  GPU_Image *get_texture();
   Sprite *get_current_sprite();
   SDL_Rect get_current_frame();
   vec2f get_pos();
@@ -87,16 +88,16 @@ public:
   void set_velocity(vec2f _velocity) { m_velocity = _velocity; }
   void set_speed(float _speed) { m_speed = _speed; }
   void set_friction(float _friction) { m_friction = _friction; }
-  void move_to(Entity* en);
+  void move_to(Entity *en);
   void move_dir(vec2f dir);
 
   int d20();
 
   // utils
   bool is_close_to_pos(vec2f pos, float radius);
-  bool is_colliding(Entity* en);
+  bool is_colliding(Entity *en);
   bool is_colliding(CollisionBox2D box1, CollisionBox2D box2);
-  bool is_interacting(Entity* en);
+  bool is_interacting(Entity *en);
 
   // functionality methods
   virtual void init();
@@ -111,7 +112,6 @@ public:
   void set_death_callback(std::function<void()> _on_death);
   float get_current_life();
   void apply_filter();
-
 
   // a default spriteanimation
   //  = SpriteAnimation("default",
@@ -130,7 +130,6 @@ protected:
   CastleDBConverter *m_castledb = g_castledb;
   ProjectileSystem *m_projectile_system = g_projectile_system;
   ParticleSystem *m_particle_system = g_particle_system;
-  
 
   // controller variables
   int m_uid;
@@ -145,7 +144,7 @@ protected:
   float m_angle = 0;
   vec2f m_scale = vec2f(1, 1);
   SDL_Rect m_current_frame = {0, 0, 0, 0};
-  SDL_Texture *m_texture;
+  GPU_Image *m_texture;
   bool m_moving = false;
   std::vector<SpriteAnimation> m_animations;
   SpriteAnimation m_current_animation;
@@ -155,7 +154,7 @@ protected:
   float m_spr_squash_x = 1;
   float m_spr_squash_y = 1;
 
-  //speed/movement stuff
+  // speed/movement stuff
   vec2f m_velocity;
   float m_speed = 8;
   float m_friction = 1;
@@ -169,7 +168,7 @@ protected:
   Life m_life = Life(0, 100);
   State m_current_state = UPDATE;
 
-  //callbacks
+  // callbacks
   std::function<void()> m_on_death;
 };
 #endif

@@ -4,14 +4,15 @@
 
 #include "../../Utils/Common.hpp"
 
-class SDL_Texture;
+class GPU_Image;
 
-class EntityTooltips {
+class EntityTooltips
+{
 public:
   EntityTooltips() = default;
   ~EntityTooltips() = default;
 
-  void draw(SDL_Texture* texture, vec2f pos);
+  void draw(GPU_Image *texture, vec2f pos);
 };
 
 #endif

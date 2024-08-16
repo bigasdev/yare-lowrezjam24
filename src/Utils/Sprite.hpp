@@ -13,8 +13,9 @@
 
 #include <functional>
 
-struct Sprite {
-  SDL_Texture **texture;
+struct Sprite
+{
+  GPU_Image **texture;
 
   int xpu, ypu;
   int x, y;
@@ -23,12 +24,13 @@ struct Sprite {
 
   int sprite_scale_multiplier = 1;
 
-  void* pixels;
+  void *pixels;
   int pitch;
 };
 
 // this script will handle all the functionality that a sprite needs
-class SpriteAnimation {
+class SpriteAnimation
+{
 public:
   SpriteAnimation();
 
